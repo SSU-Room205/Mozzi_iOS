@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0938478ABAF2D9A864D7853B /* Pods_Mozzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A678B1984AD0EF610BC90F2 /* Pods_Mozzi.framework */; };
+		3628BC3A29A9E11200A59EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3929A9E11200A59EE8 /* AppDelegate.swift */; };
+		3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */; };
+		3628BC3E29A9E11200A59EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3D29A9E11200A59EE8 /* ViewController.swift */; };
+		3628BC4129A9E11200A59EE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC3F29A9E11200A59EE8 /* Main.storyboard */; };
+		3628BC4329A9E11F00A59EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC4229A9E11F00A59EE8 /* Assets.xcassets */; };
+		3628BC4629A9E11F00A59EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */; };
+		36625E6429A9E972002F3E5F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36625E6329A9E972002F3E5F /* MainViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3628BC3629A9E11200A59EE8 /* Mozzi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mozzi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3628BC3929A9E11200A59EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3628BC3D29A9E11200A59EE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3628BC4029A9E11200A59EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3628BC4229A9E11F00A59EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3628BC4529A9E11F00A59EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3628BC4729A9E11F00A59EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36625E6329A9E972002F3E5F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7A678B1984AD0EF610BC90F2 /* Pods_Mozzi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mozzi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A128A11CF04069B1320B97CB /* Pods-Mozzi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mozzi.release.xcconfig"; path = "Target Support Files/Pods-Mozzi/Pods-Mozzi.release.xcconfig"; sourceTree = "<group>"; };
+		DE75F6A2199CEDEB0203D566 /* Pods-Mozzi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mozzi.debug.xcconfig"; path = "Target Support Files/Pods-Mozzi/Pods-Mozzi.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3628BC3329A9E11200A59EE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0938478ABAF2D9A864D7853B /* Pods_Mozzi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3628BC2D29A9E11200A59EE8 = {
+			isa = PBXGroup;
+			children = (
+				3628BC3829A9E11200A59EE8 /* Mozzi */,
+				3628BC3729A9E11200A59EE8 /* Products */,
+				52EEC224D3D85F472ABFD4CC /* Pods */,
+				D65AA13790B827580C693469 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3628BC3729A9E11200A59EE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3628BC3629A9E11200A59EE8 /* Mozzi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3628BC3829A9E11200A59EE8 /* Mozzi */ = {
+			isa = PBXGroup;
+			children = (
+				3628BC3929A9E11200A59EE8 /* AppDelegate.swift */,
+				3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */,
+				3628BC3D29A9E11200A59EE8 /* ViewController.swift */,
+				3628BC3F29A9E11200A59EE8 /* Main.storyboard */,
+				36625E6329A9E972002F3E5F /* MainViewController.swift */,
+				3628BC4229A9E11F00A59EE8 /* Assets.xcassets */,
+				3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */,
+				3628BC4729A9E11F00A59EE8 /* Info.plist */,
+			);
+			path = Mozzi;
+			sourceTree = "<group>";
+		};
+		52EEC224D3D85F472ABFD4CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE75F6A2199CEDEB0203D566 /* Pods-Mozzi.debug.xcconfig */,
+				A128A11CF04069B1320B97CB /* Pods-Mozzi.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D65AA13790B827580C693469 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A678B1984AD0EF610BC90F2 /* Pods_Mozzi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3628BC3529A9E11200A59EE8 /* Mozzi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3628BC4A29A9E11F00A59EE8 /* Build configuration list for PBXNativeTarget "Mozzi" */;
+			buildPhases = (
+				83D5A83EB89D6D522DC50502 /* [CP] Check Pods Manifest.lock */,
+				3628BC3229A9E11200A59EE8 /* Sources */,
+				3628BC3329A9E11200A59EE8 /* Frameworks */,
+				3628BC3429A9E11200A59EE8 /* Resources */,
+				1C450A4B5A163B59936B47D5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mozzi;
+			productName = Mozzi;
+			productReference = 3628BC3629A9E11200A59EE8 /* Mozzi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3628BC2E29A9E11200A59EE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					3628BC3529A9E11200A59EE8 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 3628BC3129A9E11200A59EE8 /* Build configuration list for PBXProject "Mozzi" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3628BC2D29A9E11200A59EE8;
+			productRefGroup = 3628BC3729A9E11200A59EE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3628BC3529A9E11200A59EE8 /* Mozzi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3628BC3429A9E11200A59EE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3628BC4629A9E11F00A59EE8 /* LaunchScreen.storyboard in Resources */,
+				3628BC4329A9E11F00A59EE8 /* Assets.xcassets in Resources */,
+				3628BC4129A9E11200A59EE8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C450A4B5A163B59936B47D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mozzi/Pods-Mozzi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mozzi/Pods-Mozzi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mozzi/Pods-Mozzi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83D5A83EB89D6D522DC50502 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mozzi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3628BC3229A9E11200A59EE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3628BC3E29A9E11200A59EE8 /* ViewController.swift in Sources */,
+				3628BC3A29A9E11200A59EE8 /* AppDelegate.swift in Sources */,
+				3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */,
+				36625E6429A9E972002F3E5F /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3628BC3F29A9E11200A59EE8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3628BC4029A9E11200A59EE8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3628BC4529A9E11F00A59EE8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3628BC4829A9E11F00A59EE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3628BC4929A9E11F00A59EE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3628BC4B29A9E11F00A59EE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE75F6A2199CEDEB0203D566 /* Pods-Mozzi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8D8H8KC6DH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mozzi/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LJH.Mozzi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3628BC4C29A9E11F00A59EE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A128A11CF04069B1320B97CB /* Pods-Mozzi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8D8H8KC6DH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mozzi/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LJH.Mozzi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3628BC3129A9E11200A59EE8 /* Build configuration list for PBXProject "Mozzi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3628BC4829A9E11F00A59EE8 /* Debug */,
+				3628BC4929A9E11F00A59EE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3628BC4A29A9E11F00A59EE8 /* Build configuration list for PBXNativeTarget "Mozzi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3628BC4B29A9E11F00A59EE8 /* Debug */,
+				3628BC4C29A9E11F00A59EE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3628BC2E29A9E11200A59EE8 /* Project object */;
+}
