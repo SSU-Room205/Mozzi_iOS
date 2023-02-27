@@ -6,6 +6,7 @@ target 'Mozzi' do
   use_frameworks!
 
       pod 'FSCalendar'
+      pod 'SnapKit', '~> 5.6.0'
   # Pods for Mozzi
 
 end
