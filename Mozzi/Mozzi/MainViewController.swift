@@ -11,7 +11,7 @@ import FSCalendar
 
 
 
-class MainViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource {
+class MainViewController: UITabBarController,FSCalendarDelegate,FSCalendarDataSource {
     
     lazy var horizontalScrollView: HorizontalScrollView = {
         let view = HorizontalScrollView()
@@ -19,9 +19,15 @@ class MainViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
     }()
     fileprivate weak var fsCalendar: FSCalendar!
     lazy var profileButton: UIButton = UIButton()
-    lazy var hambugerButton: UIButton = UIButton()
+    lazy var alarmButton: UIButton = UIButton()
     lazy var recentLabel: UILabel = UILabel()
-        
+    
+    lazy var tabView = UIStackView()
+    lazy var mapButton = UIButton()
+    lazy var homeButton = UIButton()
+    lazy var proflieButton = UIButton()
+    
+
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
             self.view = view
@@ -29,7 +35,7 @@ class MainViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
 
       override func viewDidLoad() {
           super.viewDidLoad()
-          view.backgroundColor = UIColor(named: "darkgreen")
+          view.backgroundColor = .white
           configure()
           insertDataSource()
          
@@ -37,45 +43,62 @@ class MainViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
 
       private func configure() {
           let fsCalendar = FSCalendar(frame: CGRect(x: 30, y: 150, width: 340, height: 400))
+          let image = UIImage(named: "notification")
           
           fsCalendar.dataSource = self
           fsCalendar.delegate = self
-          view.addSubview(profileButton)
-          view.addSubview(hambugerButton)
+          
+          fsCalendar.appearance.headerTitleColor = .black
+          fsCalendar.appearance.headerMinimumDissolvedAlpha = 0.0
+          fsCalendar.appearance.weekdayTextColor = UIColor(named: "main Color")
+          
+
+          fsCalendar.layer.borderWidth = 3
+          fsCalendar.layer.borderColor = UIColor(named: "main Color")?.cgColor
+          fsCalendar.layer.shadowOffset = CGSize(width: 0, height: 10)
+          fsCalendar.layer.shadowOpacity = 0.3
+          fsCalendar.layer.shadowRadius = 0
+          fsCalendar.layer.shadowColor = UIColor(named: "Dark Color")?.cgColor
+          
+
+          
+          view.addSubview(alarmButton)
           view.addSubview(recentLabel)
           view.addSubview(fsCalendar)
           view.addSubview(horizontalScrollView)
+          
+          
           
           self.fsCalendar = fsCalendar
           fsCalendar.backgroundColor = .white
           fsCalendar.layer.cornerRadius = 30
           
-          profileButton.setImage(UIImage(named: "profile")!, for: .normal)
-          profileButton.snp.makeConstraints{ make in
-              make.top.equalToSuperview().offset(60)
-              make.right.equalToSuperview().offset(-25)
-              make.width.height.equalTo(60)
+          fsCalendar.snp.makeConstraints{ make in
+              make.centerX.equalToSuperview()
+              make.top.equalToSuperview().offset(120)
+              make.width.equalTo(340)
+              make.height.equalTo(400)
           }
           
-          hambugerButton.setImage(UIImage(named: "hambuger"), for: .normal)
-          hambugerButton.snp.makeConstraints{ make in
-              make.top.equalToSuperview().offset(75)
-              make.left.equalToSuperview().offset(35)
+          
+          alarmButton.setImage(image, for: .normal)
+          alarmButton.snp.makeConstraints{ make in
+              make.top.equalToSuperview().offset(50)
+              make.right.equalToSuperview().offset(-35)
               make.width.height.equalTo(40)
               
           }
           
-          recentLabel.text = "최근 구매한 내용"
+          recentLabel.text = "Daily Use"
           recentLabel.snp.makeConstraints{ make in
-              make.top.equalTo(fsCalendar.snp.bottom).offset(15)
+              make.top.equalTo(fsCalendar.snp.bottom).offset(25)
               make.left.equalTo(30)
           }
           
           horizontalScrollView.snp.makeConstraints { make in
               make.width.equalToSuperview()
               make.height.equalTo(100)
-              make.top.equalTo(fsCalendar.snp.bottom).offset(40)
-              //make.top.equalTo(fsCalendar.snp.bottom).offset(10)
+              make.top.equalTo(recentLabel.snp.bottom).offset(10)
           }
 
       }
@@ -84,6 +107,7 @@ class MainViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
           horizontalScrollView.dataSource = Mocks.getDataSource()
       }
     
+
 
     /*
     // MARK: - Navigation

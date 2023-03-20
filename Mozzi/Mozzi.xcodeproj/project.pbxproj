@@ -7,33 +7,125 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0938478ABAF2D9A864D7853B /* Pods_Mozzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A678B1984AD0EF610BC90F2 /* Pods_Mozzi.framework */; };
 		3628BC3A29A9E11200A59EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3929A9E11200A59EE8 /* AppDelegate.swift */; };
 		3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */; };
-		3628BC3E29A9E11200A59EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3D29A9E11200A59EE8 /* ViewController.swift */; };
-		3628BC4129A9E11200A59EE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC3F29A9E11200A59EE8 /* Main.storyboard */; };
 		3628BC4329A9E11F00A59EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC4229A9E11F00A59EE8 /* Assets.xcassets */; };
 		3628BC4629A9E11F00A59EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */; };
+		36348BB729B94ABC00548051 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36348BB629B94ABC00548051 /* MapViewController.swift */; };
+		36348BC429BDE3B400548051 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36348BC329BDE3B400548051 /* MypageViewController.swift */; };
+		36348BC629BE11FB00548051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36348BC529BE11FB00548051 /* Main.storyboard */; };
+		36348BC829BE141E00548051 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36348BC729BE141E00548051 /* MainTabBarController.swift */; };
+		36348BF029BE37CE00548051 /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BCB29BE37CE00548051 /* map_pinup_custom@3x.png */; };
+		36348BF129BE37CE00548051 /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BCC29BE37CE00548051 /* map_pin_custom.png */; };
+		36348BF229BE37CE00548051 /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BCD29BE37CE00548051 /* shadow_balloon.png */; };
+		36348BF329BE37CE00548051 /* map_pinup.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BCE29BE37CE00548051 /* map_pinup.png */; };
+		36348BF429BE37CE00548051 /* detail_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BCF29BE37CE00548051 /* detail_button.png */; };
+		36348BF529BE37CE00548051 /* map_pin_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD029BE37CE00548051 /* map_pin_custom@3x.png */; };
+		36348BF629BE37CE00548051 /* map_pinup@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD129BE37CE00548051 /* map_pinup@3x.png */; };
+		36348BF729BE37CE00548051 /* map_pin_shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD229BE37CE00548051 /* map_pin_shadow@3x.png */; };
+		36348BF829BE37CE00548051 /* copyright.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD329BE37CE00548051 /* copyright.png */; };
+		36348BF929BE37CE00548051 /* th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD429BE37CE00548051 /* th_line.png */; };
+		36348BFA29BE37CE00548051 /* map_pin_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD529BE37CE00548051 /* map_pin_red@3x.png */; };
+		36348BFB29BE37CE00548051 /* daum_copyright.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD629BE37CE00548051 /* daum_copyright.png */; };
+		36348BFC29BE37CE00548051 /* map_pin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD729BE37CE00548051 /* map_pin@3x.png */; };
+		36348BFD29BE37CE00548051 /* map_present_tracking.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD829BE37CE00548051 /* map_present_tracking.png */; };
+		36348BFE29BE37CE00548051 /* map_pin_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BD929BE37CE00548051 /* map_pin_red.png */; };
+		36348BFF29BE37CE00548051 /* info_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BE329BE37CE00548051 /* info_box.png */; };
+		36348C0029BE37CE00548051 /* point_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BE429BE37CE00548051 /* point_sprite.png */; };
+		36348C0129BE37CE00548051 /* map_pinup_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BE529BE37CE00548051 /* map_pinup_custom.png */; };
+		36348C0229BE37CE00548051 /* info_box_tail.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BE629BE37CE00548051 /* info_box_tail.png */; };
+		36348C0329BE37CE00548051 /* noimage256.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BE729BE37CE00548051 /* noimage256.png */; };
+		36348C0429BE37CE00548051 /* map_present_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BE829BE37CE00548051 /* map_present_direction.png */; };
+		36348C0529BE37CE00548051 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BE929BE37CE00548051 /* map_pin.png */; };
+		36348C0629BE37CE00548051 /* map_present.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BEA29BE37CE00548051 /* map_present.png */; };
+		36348C0729BE37CE00548051 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BEB29BE37CE00548051 /* noimage.png */; };
+		36348C0829BE37CE00548051 /* map_present_background_update.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BEC29BE37CE00548051 /* map_present_background_update.png */; };
+		36348C0929BE37CE00548051 /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BED29BE37CE00548051 /* daum_th_line.png */; };
+		36348C0A29BE37CE00548051 /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BEE29BE37CE00548051 /* map_pin_shadow.png */; };
+		36348C0B29BE37CE00548051 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348BEF29BE37CE00548051 /* DaumMap.framework */; };
+		36348C0D29BE383200548051 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C0C29BE383200548051 /* CoreLocation.framework */; };
+		36348C1029BE384B00548051 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C0F29BE384B00548051 /* Metal.framework */; };
+		36348C1229BE385800548051 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C1129BE385800548051 /* QuartzCore.framework */; };
+		36348C1429BE385D00548051 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C1329BE385D00548051 /* SystemConfiguration.framework */; };
+		36348C1629BE3A6500548051 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C0E29BE384100548051 /* libc++.tbd */; };
+		36348C1829BE3A7F00548051 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C1729BE3A7200548051 /* libsqlite3.tbd */; };
+		36348C1A29BE3A9500548051 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C1929BE3A8A00548051 /* libxml2.tbd */; };
+		36348C2129BE404800548051 /* Pods_Mozzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C2029BE404800548051 /* Pods_Mozzi.framework */; };
 		36625E6429A9E972002F3E5F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36625E6329A9E972002F3E5F /* MainViewController.swift */; };
-		368AEE2A29ACBA5800E654F4 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368AEE2929ACBA5800E654F4 /* BaseScrollView.swift */; };
 		368AEE2C29ACBB6400E654F4 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368AEE2B29ACBB6400E654F4 /* HorizontalScrollView.swift */; };
-		368AEE2E29ACD47F00E654F4 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368AEE2D29ACD47F00E654F4 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		36348C1E29BE3B8900548051 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3628BC3629A9E11200A59EE8 /* Mozzi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mozzi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3628BC3929A9E11200A59EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3628BC3D29A9E11200A59EE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3628BC4029A9E11200A59EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3628BC4229A9E11F00A59EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3628BC4529A9E11F00A59EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3628BC4729A9E11F00A59EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36348BB629B94ABC00548051 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		36348BC329BDE3B400548051 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		36348BC529BE11FB00548051 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		36348BC729BE141E00548051 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		36348BCB29BE37CE00548051 /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
+		36348BCC29BE37CE00548051 /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
+		36348BCD29BE37CE00548051 /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
+		36348BCE29BE37CE00548051 /* map_pinup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pinup.png; sourceTree = "<group>"; };
+		36348BCF29BE37CE00548051 /* detail_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail_button.png; sourceTree = "<group>"; };
+		36348BD029BE37CE00548051 /* map_pin_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_custom@3x.png"; sourceTree = "<group>"; };
+		36348BD129BE37CE00548051 /* map_pinup@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup@3x.png"; sourceTree = "<group>"; };
+		36348BD229BE37CE00548051 /* map_pin_shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_shadow@3x.png"; sourceTree = "<group>"; };
+		36348BD329BE37CE00548051 /* copyright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copyright.png; sourceTree = "<group>"; };
+		36348BD429BE37CE00548051 /* th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th_line.png; sourceTree = "<group>"; };
+		36348BD529BE37CE00548051 /* map_pin_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_red@3x.png"; sourceTree = "<group>"; };
+		36348BD629BE37CE00548051 /* daum_copyright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_copyright.png; sourceTree = "<group>"; };
+		36348BD729BE37CE00548051 /* map_pin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin@3x.png"; sourceTree = "<group>"; };
+		36348BD829BE37CE00548051 /* map_present_tracking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_tracking.png; sourceTree = "<group>"; };
+		36348BD929BE37CE00548051 /* map_pin_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_red.png; sourceTree = "<group>"; };
+		36348BDB29BE37CE00548051 /* MTMapPOIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPOIItem.h; sourceTree = "<group>"; };
+		36348BDC29BE37CE00548051 /* MTMapCameraUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCameraUpdate.h; sourceTree = "<group>"; };
+		36348BDD29BE37CE00548051 /* MTMapReverseGeoCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapReverseGeoCoder.h; sourceTree = "<group>"; };
+		36348BDE29BE37CE00548051 /* MTMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPolyline.h; sourceTree = "<group>"; };
+		36348BDF29BE37CE00548051 /* MTMapLocationMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapLocationMarkerItem.h; sourceTree = "<group>"; };
+		36348BE029BE37CE00548051 /* MTMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapView.h; sourceTree = "<group>"; };
+		36348BE129BE37CE00548051 /* MTMapGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapGeometry.h; sourceTree = "<group>"; };
+		36348BE229BE37CE00548051 /* MTMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCircle.h; sourceTree = "<group>"; };
+		36348BE329BE37CE00548051 /* info_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_box.png; sourceTree = "<group>"; };
+		36348BE429BE37CE00548051 /* point_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_sprite.png; sourceTree = "<group>"; };
+		36348BE529BE37CE00548051 /* map_pinup_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pinup_custom.png; sourceTree = "<group>"; };
+		36348BE629BE37CE00548051 /* info_box_tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_box_tail.png; sourceTree = "<group>"; };
+		36348BE729BE37CE00548051 /* noimage256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage256.png; sourceTree = "<group>"; };
+		36348BE829BE37CE00548051 /* map_present_direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_direction.png; sourceTree = "<group>"; };
+		36348BE929BE37CE00548051 /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
+		36348BEA29BE37CE00548051 /* map_present.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present.png; sourceTree = "<group>"; };
+		36348BEB29BE37CE00548051 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
+		36348BEC29BE37CE00548051 /* map_present_background_update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_present_background_update.png; sourceTree = "<group>"; };
+		36348BED29BE37CE00548051 /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
+		36348BEE29BE37CE00548051 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
+		36348BEF29BE37CE00548051 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		36348C0C29BE383200548051 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		36348C0E29BE384100548051 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		36348C0F29BE384B00548051 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		36348C1129BE385800548051 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		36348C1329BE385D00548051 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		36348C1529BE387600548051 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		36348C1729BE3A7200548051 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		36348C1929BE3A8A00548051 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		36348C2029BE404800548051 /* Pods_Mozzi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mozzi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36625E6329A9E972002F3E5F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		368AEE2929ACBA5800E654F4 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
 		368AEE2B29ACBB6400E654F4 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
-		368AEE2D29ACD47F00E654F4 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		7A678B1984AD0EF610BC90F2 /* Pods_Mozzi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mozzi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A128A11CF04069B1320B97CB /* Pods-Mozzi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mozzi.release.xcconfig"; path = "Target Support Files/Pods-Mozzi/Pods-Mozzi.release.xcconfig"; sourceTree = "<group>"; };
 		DE75F6A2199CEDEB0203D566 /* Pods-Mozzi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mozzi.debug.xcconfig"; path = "Target Support Files/Pods-Mozzi/Pods-Mozzi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,7 +135,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0938478ABAF2D9A864D7853B /* Pods_Mozzi.framework in Frameworks */,
+				36348C2129BE404800548051 /* Pods_Mozzi.framework in Frameworks */,
+				36348C1229BE385800548051 /* QuartzCore.framework in Frameworks */,
+				36348C1629BE3A6500548051 /* libc++.tbd in Frameworks */,
+				36348C1829BE3A7F00548051 /* libsqlite3.tbd in Frameworks */,
+				36348C0D29BE383200548051 /* CoreLocation.framework in Frameworks */,
+				36348C0B29BE37CE00548051 /* DaumMap.framework in Frameworks */,
+				36348C1029BE384B00548051 /* Metal.framework in Frameworks */,
+				36348C1A29BE3A9500548051 /* libxml2.tbd in Frameworks */,
+				36348C1429BE385D00548051 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,19 +171,79 @@
 		3628BC3829A9E11200A59EE8 /* Mozzi */ = {
 			isa = PBXGroup;
 			children = (
-				368AEE2D29ACD47F00E654F4 /* CalendarView.swift */,
+				36348C1529BE387600548051 /* Header.h */,
 				3628BC3929A9E11200A59EE8 /* AppDelegate.swift */,
 				3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */,
-				3628BC3D29A9E11200A59EE8 /* ViewController.swift */,
-				3628BC3F29A9E11200A59EE8 /* Main.storyboard */,
-				36625E6329A9E972002F3E5F /* MainViewController.swift */,
-				368AEE2929ACBA5800E654F4 /* BaseScrollView.swift */,
-				368AEE2B29ACBB6400E654F4 /* HorizontalScrollView.swift */,
 				3628BC4229A9E11F00A59EE8 /* Assets.xcassets */,
 				3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */,
 				3628BC4729A9E11F00A59EE8 /* Info.plist */,
+				368AEE2B29ACBB6400E654F4 /* HorizontalScrollView.swift */,
+				36348BC729BE141E00548051 /* MainTabBarController.swift */,
+				36625E6329A9E972002F3E5F /* MainViewController.swift */,
+				36348BB629B94ABC00548051 /* MapViewController.swift */,
+				36348BC329BDE3B400548051 /* MypageViewController.swift */,
+				36348BC529BE11FB00548051 /* Main.storyboard */,
 			);
 			path = Mozzi;
+			sourceTree = "<group>";
+		};
+		36348BC929BE37CE00548051 /* DaumMap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				36348BCA29BE37CE00548051 /* Resources */,
+				36348BEF29BE37CE00548051 /* DaumMap.framework */,
+			);
+			path = DaumMap.embeddedframework;
+			sourceTree = "<group>";
+		};
+		36348BCA29BE37CE00548051 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36348BCB29BE37CE00548051 /* map_pinup_custom@3x.png */,
+				36348BCC29BE37CE00548051 /* map_pin_custom.png */,
+				36348BCD29BE37CE00548051 /* shadow_balloon.png */,
+				36348BCE29BE37CE00548051 /* map_pinup.png */,
+				36348BCF29BE37CE00548051 /* detail_button.png */,
+				36348BD029BE37CE00548051 /* map_pin_custom@3x.png */,
+				36348BD129BE37CE00548051 /* map_pinup@3x.png */,
+				36348BD229BE37CE00548051 /* map_pin_shadow@3x.png */,
+				36348BD329BE37CE00548051 /* copyright.png */,
+				36348BD429BE37CE00548051 /* th_line.png */,
+				36348BD529BE37CE00548051 /* map_pin_red@3x.png */,
+				36348BD629BE37CE00548051 /* daum_copyright.png */,
+				36348BD729BE37CE00548051 /* map_pin@3x.png */,
+				36348BD829BE37CE00548051 /* map_present_tracking.png */,
+				36348BD929BE37CE00548051 /* map_pin_red.png */,
+				36348BDA29BE37CE00548051 /* Headers */,
+				36348BE329BE37CE00548051 /* info_box.png */,
+				36348BE429BE37CE00548051 /* point_sprite.png */,
+				36348BE529BE37CE00548051 /* map_pinup_custom.png */,
+				36348BE629BE37CE00548051 /* info_box_tail.png */,
+				36348BE729BE37CE00548051 /* noimage256.png */,
+				36348BE829BE37CE00548051 /* map_present_direction.png */,
+				36348BE929BE37CE00548051 /* map_pin.png */,
+				36348BEA29BE37CE00548051 /* map_present.png */,
+				36348BEB29BE37CE00548051 /* noimage.png */,
+				36348BEC29BE37CE00548051 /* map_present_background_update.png */,
+				36348BED29BE37CE00548051 /* daum_th_line.png */,
+				36348BEE29BE37CE00548051 /* map_pin_shadow.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		36348BDA29BE37CE00548051 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				36348BDB29BE37CE00548051 /* MTMapPOIItem.h */,
+				36348BDC29BE37CE00548051 /* MTMapCameraUpdate.h */,
+				36348BDD29BE37CE00548051 /* MTMapReverseGeoCoder.h */,
+				36348BDE29BE37CE00548051 /* MTMapPolyline.h */,
+				36348BDF29BE37CE00548051 /* MTMapLocationMarkerItem.h */,
+				36348BE029BE37CE00548051 /* MTMapView.h */,
+				36348BE129BE37CE00548051 /* MTMapGeometry.h */,
+				36348BE229BE37CE00548051 /* MTMapCircle.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		52EEC224D3D85F472ABFD4CC /* Pods */ = {
@@ -98,7 +258,15 @@
 		D65AA13790B827580C693469 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7A678B1984AD0EF610BC90F2 /* Pods_Mozzi.framework */,
+				36348C2029BE404800548051 /* Pods_Mozzi.framework */,
+				36348C1929BE3A8A00548051 /* libxml2.tbd */,
+				36348C1729BE3A7200548051 /* libsqlite3.tbd */,
+				36348C1329BE385D00548051 /* SystemConfiguration.framework */,
+				36348C1129BE385800548051 /* QuartzCore.framework */,
+				36348C0F29BE384B00548051 /* Metal.framework */,
+				36348C0E29BE384100548051 /* libc++.tbd */,
+				36348C0C29BE383200548051 /* CoreLocation.framework */,
+				36348BC929BE37CE00548051 /* DaumMap.embeddedframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +283,7 @@
 				3628BC3329A9E11200A59EE8 /* Frameworks */,
 				3628BC3429A9E11200A59EE8 /* Resources */,
 				1C450A4B5A163B59936B47D5 /* [CP] Embed Pods Frameworks */,
+				36348C1E29BE3B8900548051 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +318,9 @@
 				Base,
 			);
 			mainGroup = 3628BC2D29A9E11200A59EE8;
+			packageReferences = (
+				36348C1F29BE3F5700548051 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3628BC3729A9E11200A59EE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,9 +335,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36348C0629BE37CE00548051 /* map_present.png in Resources */,
+				36348BFC29BE37CE00548051 /* map_pin@3x.png in Resources */,
+				36348BFA29BE37CE00548051 /* map_pin_red@3x.png in Resources */,
+				36348C0529BE37CE00548051 /* map_pin.png in Resources */,
+				36348BFE29BE37CE00548051 /* map_pin_red.png in Resources */,
+				36348BF029BE37CE00548051 /* map_pinup_custom@3x.png in Resources */,
+				36348BF829BE37CE00548051 /* copyright.png in Resources */,
+				36348BF729BE37CE00548051 /* map_pin_shadow@3x.png in Resources */,
+				36348BC629BE11FB00548051 /* Main.storyboard in Resources */,
+				36348BFB29BE37CE00548051 /* daum_copyright.png in Resources */,
+				36348BFF29BE37CE00548051 /* info_box.png in Resources */,
+				36348BF529BE37CE00548051 /* map_pin_custom@3x.png in Resources */,
+				36348C0A29BE37CE00548051 /* map_pin_shadow.png in Resources */,
+				36348BFD29BE37CE00548051 /* map_present_tracking.png in Resources */,
+				36348BF429BE37CE00548051 /* detail_button.png in Resources */,
+				36348C0729BE37CE00548051 /* noimage.png in Resources */,
+				36348BF929BE37CE00548051 /* th_line.png in Resources */,
+				36348C0229BE37CE00548051 /* info_box_tail.png in Resources */,
+				36348BF129BE37CE00548051 /* map_pin_custom.png in Resources */,
+				36348C0129BE37CE00548051 /* map_pinup_custom.png in Resources */,
+				36348BF629BE37CE00548051 /* map_pinup@3x.png in Resources */,
+				36348C0029BE37CE00548051 /* point_sprite.png in Resources */,
+				36348C0829BE37CE00548051 /* map_present_background_update.png in Resources */,
+				36348C0429BE37CE00548051 /* map_present_direction.png in Resources */,
+				36348C0329BE37CE00548051 /* noimage256.png in Resources */,
+				36348BF229BE37CE00548051 /* shadow_balloon.png in Resources */,
 				3628BC4629A9E11F00A59EE8 /* LaunchScreen.storyboard in Resources */,
 				3628BC4329A9E11F00A59EE8 /* Assets.xcassets in Resources */,
-				3628BC4129A9E11200A59EE8 /* Main.storyboard in Resources */,
+				36348C0929BE37CE00548051 /* daum_th_line.png in Resources */,
+				36348BF329BE37CE00548051 /* map_pinup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,11 +417,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3628BC3E29A9E11200A59EE8 /* ViewController.swift in Sources */,
-				368AEE2E29ACD47F00E654F4 /* CalendarView.swift in Sources */,
 				368AEE2C29ACBB6400E654F4 /* HorizontalScrollView.swift in Sources */,
+				36348BB729B94ABC00548051 /* MapViewController.swift in Sources */,
 				3628BC3A29A9E11200A59EE8 /* AppDelegate.swift in Sources */,
-				368AEE2A29ACBA5800E654F4 /* BaseScrollView.swift in Sources */,
+				36348BC829BE141E00548051 /* MainTabBarController.swift in Sources */,
+				36348BC429BDE3B400548051 /* MypageViewController.swift in Sources */,
 				3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */,
 				36625E6429A9E972002F3E5F /* MainViewController.swift in Sources */,
 			);
@@ -231,14 +430,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3628BC3F29A9E11200A59EE8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3628BC4029A9E11200A59EE8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,14 +561,25 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8D8H8KC6DH;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mozzi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -388,6 +590,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = LJH.Mozzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = Mozzi/Header.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -399,14 +602,25 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8D8H8KC6DH;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mozzi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -417,6 +631,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = LJH.Mozzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = Mozzi/Header.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,6 +659,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36348C1F29BE3F5700548051 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 3628BC2E29A9E11200A59EE8 /* Project object */;
 }
