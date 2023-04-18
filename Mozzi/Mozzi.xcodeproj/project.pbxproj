@@ -9,12 +9,7 @@
 /* Begin PBXBuildFile section */
 		3628BC3A29A9E11200A59EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3929A9E11200A59EE8 /* AppDelegate.swift */; };
 		3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */; };
-		3628BC4329A9E11F00A59EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC4229A9E11F00A59EE8 /* Assets.xcassets */; };
 		3628BC4629A9E11F00A59EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */; };
-		36348BB729B94ABC00548051 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36348BB629B94ABC00548051 /* MapViewController.swift */; };
-		36348BC429BDE3B400548051 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36348BC329BDE3B400548051 /* MypageViewController.swift */; };
-		36348BC629BE11FB00548051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36348BC529BE11FB00548051 /* Main.storyboard */; };
-		36348BC829BE141E00548051 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36348BC729BE141E00548051 /* MainTabBarController.swift */; };
 		36348BF029BE37CE00548051 /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BCB29BE37CE00548051 /* map_pinup_custom@3x.png */; };
 		36348BF129BE37CE00548051 /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BCC29BE37CE00548051 /* map_pin_custom.png */; };
 		36348BF229BE37CE00548051 /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BCD29BE37CE00548051 /* shadow_balloon.png */; };
@@ -51,8 +46,46 @@
 		36348C1829BE3A7F00548051 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C1729BE3A7200548051 /* libsqlite3.tbd */; };
 		36348C1A29BE3A9500548051 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C1929BE3A8A00548051 /* libxml2.tbd */; };
 		36348C2129BE404800548051 /* Pods_Mozzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C2029BE404800548051 /* Pods_Mozzi.framework */; };
-		36625E6429A9E972002F3E5F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36625E6329A9E972002F3E5F /* MainViewController.swift */; };
-		368AEE2C29ACBB6400E654F4 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368AEE2B29ACBB6400E654F4 /* HorizontalScrollView.swift */; };
+		36D3BB6229EE8A5300A82957 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */; };
+		36D3BB6329EE8A5300A82957 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3D29EE8A5200A82957 /* ProfileView.swift */; };
+		36D3BB6429EE8A5300A82957 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3E29EE8A5200A82957 /* PlaceListView.swift */; };
+		36D3BB6529EE8A5300A82957 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3F29EE8A5200A82957 /* MapView.swift */; };
+		36D3BB6629EE8A5300A82957 /* StampImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4029EE8A5200A82957 /* StampImageCell.swift */; };
+		36D3BB6729EE8A5300A82957 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4129EE8A5200A82957 /* UploadView.swift */; };
+		36D3BB6829EE8A5300A82957 /* WritingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4229EE8A5200A82957 /* WritingPageView.swift */; };
+		36D3BB6929EE8A5300A82957 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4329EE8A5200A82957 /* WishListView.swift */; };
+		36D3BB6A29EE8A5300A82957 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4429EE8A5200A82957 /* HeartView.swift */; };
+		36D3BB6B29EE8A5300A82957 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4529EE8A5200A82957 /* NotificationTableViewCell.swift */; };
+		36D3BB6C29EE8A5300A82957 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4629EE8A5200A82957 /* AddButton.swift */; };
+		36D3BB6D29EE8A5300A82957 /* PlaceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4729EE8A5200A82957 /* PlaceListTableViewCell.swift */; };
+		36D3BB6E29EE8A5300A82957 /* WritingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4929EE8A5200A82957 /* WritingPageViewController.swift */; };
+		36D3BB6F29EE8A5300A82957 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4A29EE8A5200A82957 /* MapViewController.swift */; };
+		36D3BB7029EE8A5300A82957 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4B29EE8A5200A82957 /* MainViewController.swift */; };
+		36D3BB7129EE8A5300A82957 /* NotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */; };
+		36D3BB7229EE8A5300A82957 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */; };
+		36D3BB7329EE8A5300A82957 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */; };
+		36D3BB7429EE8A5300A82957 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4F29EE8A5200A82957 /* UploadViewController.swift */; };
+		36D3BB7529EE8A5300A82957 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */; };
+		36D3BB7629EE8A5300A82957 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5129EE8A5200A82957 /* MypageViewController.swift */; };
+		36D3BB7729EE8A5300A82957 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */; };
+		36D3BB7829EE8A5300A82957 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5429EE8A5300A82957 /* Model.swift */; };
+		36D3BB7929EE8A5300A82957 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5629EE8A5300A82957 /* Image.swift */; };
+		36D3BB7A29EE8A5300A82957 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5829EE8A5300A82957 /* SignUpViewController.swift */; };
+		36D3BB7B29EE8A5300A82957 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5929EE8A5300A82957 /* SignInView.swift */; };
+		36D3BB7C29EE8A5300A82957 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5A29EE8A5300A82957 /* UserInfoModel.swift */; };
+		36D3BB7D29EE8A5300A82957 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5B29EE8A5300A82957 /* SignInViewController.swift */; };
+		36D3BB7E29EE8A5300A82957 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5D29EE8A5300A82957 /* UIView+.swift */; };
+		36D3BB7F29EE8A5300A82957 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5E29EE8A5300A82957 /* UIStackView+.swift */; };
+		36D3BB8029EE8A5300A82957 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5F29EE8A5300A82957 /* UIViewController+.swift */; };
+		36D3BB8129EE8A5300A82957 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB6029EE8A5300A82957 /* UIColor+.swift */; };
+		36D3BB8229EE8A5300A82957 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB6129EE8A5300A82957 /* BaseView.swift */; };
+		36D3BB8429EE8B7B00A82957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36D3BB8329EE8B7B00A82957 /* Assets.xcassets */; };
+		36D3BB8729EE935D00A82957 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8629EE935D00A82957 /* PhotoCaptureDelegate.swift */; };
+		36D3BB8929EEC04C00A82957 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8829EEC04C00A82957 /* CameraView.swift */; };
+		36D3BB8D29EEDA2800A82957 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */; };
+		36D3BB8F29EEDC8A00A82957 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8E29EEDC8A00A82957 /* LoadingView.swift */; };
+		36D3BB9529EEECBF00A82957 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB9429EEECBF00A82957 /* CalendarView.swift */; };
+		36D3BB9729EEF9A800A82957 /* OCRImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB9629EEF9A800A82957 /* OCRImportView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,13 +105,8 @@
 		3628BC3629A9E11200A59EE8 /* Mozzi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mozzi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3628BC3929A9E11200A59EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3628BC4229A9E11F00A59EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3628BC4529A9E11F00A59EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3628BC4729A9E11F00A59EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36348BB629B94ABC00548051 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		36348BC329BDE3B400548051 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
-		36348BC529BE11FB00548051 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		36348BC729BE141E00548051 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		36348BCB29BE37CE00548051 /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		36348BCC29BE37CE00548051 /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
 		36348BCD29BE37CE00548051 /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
@@ -124,8 +152,46 @@
 		36348C1729BE3A7200548051 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		36348C1929BE3A8A00548051 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		36348C2029BE404800548051 /* Pods_Mozzi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mozzi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36625E6329A9E972002F3E5F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		368AEE2B29ACBB6400E654F4 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
+		36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
+		36D3BB3D29EE8A5200A82957 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		36D3BB3E29EE8A5200A82957 /* PlaceListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
+		36D3BB3F29EE8A5200A82957 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		36D3BB4029EE8A5200A82957 /* StampImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampImageCell.swift; sourceTree = "<group>"; };
+		36D3BB4129EE8A5200A82957 /* UploadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		36D3BB4229EE8A5200A82957 /* WritingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingPageView.swift; sourceTree = "<group>"; };
+		36D3BB4329EE8A5200A82957 /* WishListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
+		36D3BB4429EE8A5200A82957 /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
+		36D3BB4529EE8A5200A82957 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		36D3BB4629EE8A5200A82957 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		36D3BB4729EE8A5200A82957 /* PlaceListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableViewCell.swift; sourceTree = "<group>"; };
+		36D3BB4929EE8A5200A82957 /* WritingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingPageViewController.swift; sourceTree = "<group>"; };
+		36D3BB4A29EE8A5200A82957 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		36D3BB4B29EE8A5200A82957 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
+		36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
+		36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		36D3BB4F29EE8A5200A82957 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		36D3BB5129EE8A5200A82957 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
+		36D3BB5429EE8A5300A82957 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		36D3BB5629EE8A5300A82957 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		36D3BB5829EE8A5300A82957 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		36D3BB5929EE8A5300A82957 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		36D3BB5A29EE8A5300A82957 /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		36D3BB5B29EE8A5300A82957 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		36D3BB5D29EE8A5300A82957 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		36D3BB5E29EE8A5300A82957 /* UIStackView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		36D3BB5F29EE8A5300A82957 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		36D3BB6029EE8A5300A82957 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		36D3BB6129EE8A5300A82957 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		36D3BB8329EE8B7B00A82957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Mozzi__dev/Mozzi_dev/Mozzi_dev/Assets.xcassets; sourceTree = "<group>"; };
+		36D3BB8629EE935D00A82957 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
+		36D3BB8829EEC04C00A82957 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
+		36D3BB8E29EEDC8A00A82957 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		36D3BB9429EEECBF00A82957 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		36D3BB9629EEF9A800A82957 /* OCRImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OCRImportView.swift; path = ../../../../../../OCRImportView.swift; sourceTree = "<group>"; };
 		A128A11CF04069B1320B97CB /* Pods-Mozzi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mozzi.release.xcconfig"; path = "Target Support Files/Pods-Mozzi/Pods-Mozzi.release.xcconfig"; sourceTree = "<group>"; };
 		DE75F6A2199CEDEB0203D566 /* Pods-Mozzi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mozzi.debug.xcconfig"; path = "Target Support Files/Pods-Mozzi/Pods-Mozzi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,18 +237,17 @@
 		3628BC3829A9E11200A59EE8 /* Mozzi */ = {
 			isa = PBXGroup;
 			children = (
-				36348C1529BE387600548051 /* Header.h */,
 				3628BC3929A9E11200A59EE8 /* AppDelegate.swift */,
 				3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */,
-				3628BC4229A9E11F00A59EE8 /* Assets.xcassets */,
-				3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */,
+				36D3BB8329EE8B7B00A82957 /* Assets.xcassets */,
 				3628BC4729A9E11F00A59EE8 /* Info.plist */,
-				368AEE2B29ACBB6400E654F4 /* HorizontalScrollView.swift */,
-				36348BC729BE141E00548051 /* MainTabBarController.swift */,
-				36625E6329A9E972002F3E5F /* MainViewController.swift */,
-				36348BB629B94ABC00548051 /* MapViewController.swift */,
-				36348BC329BDE3B400548051 /* MypageViewController.swift */,
-				36348BC529BE11FB00548051 /* Main.storyboard */,
+				36348C1529BE387600548051 /* Header.h */,
+				36D3BB5729EE8A5300A82957 /* Auth */,
+				36D3BB5C29EE8A5300A82957 /* Extension */,
+				36D3BB3A29EE8A5200A82957 /* Main */,
+				36D3BB5329EE8A5300A82957 /* Model */,
+				36D3BB5529EE8A5300A82957 /* Structs */,
+				3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */,
 			);
 			path = Mozzi;
 			sourceTree = "<group>";
@@ -244,6 +309,104 @@
 				36348BE229BE37CE00548051 /* MTMapCircle.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		36D3BB3A29EE8A5200A82957 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB8529EE934700A82957 /* delegate */,
+				36D3BB3B29EE8A5200A82957 /* View */,
+				36D3BB4829EE8A5200A82957 /* ViewController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		36D3BB3B29EE8A5200A82957 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */,
+				36D3BB9429EEECBF00A82957 /* CalendarView.swift */,
+				36D3BB3D29EE8A5200A82957 /* ProfileView.swift */,
+				36D3BB3E29EE8A5200A82957 /* PlaceListView.swift */,
+				36D3BB3F29EE8A5200A82957 /* MapView.swift */,
+				36D3BB4029EE8A5200A82957 /* StampImageCell.swift */,
+				36D3BB4129EE8A5200A82957 /* UploadView.swift */,
+				36D3BB4229EE8A5200A82957 /* WritingPageView.swift */,
+				36D3BB4329EE8A5200A82957 /* WishListView.swift */,
+				36D3BB4429EE8A5200A82957 /* HeartView.swift */,
+				36D3BB4529EE8A5200A82957 /* NotificationTableViewCell.swift */,
+				36D3BB4629EE8A5200A82957 /* AddButton.swift */,
+				36D3BB4729EE8A5200A82957 /* PlaceListTableViewCell.swift */,
+				36D3BB8829EEC04C00A82957 /* CameraView.swift */,
+				36D3BB8E29EEDC8A00A82957 /* LoadingView.swift */,
+				36D3BB9629EEF9A800A82957 /* OCRImportView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36D3BB4829EE8A5200A82957 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB4929EE8A5200A82957 /* WritingPageViewController.swift */,
+				36D3BB4A29EE8A5200A82957 /* MapViewController.swift */,
+				36D3BB4B29EE8A5200A82957 /* MainViewController.swift */,
+				36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */,
+				36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */,
+				36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */,
+				36D3BB4F29EE8A5200A82957 /* UploadViewController.swift */,
+				36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */,
+				36D3BB5129EE8A5200A82957 /* MypageViewController.swift */,
+				36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */,
+				36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		36D3BB5329EE8A5300A82957 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB5429EE8A5300A82957 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		36D3BB5529EE8A5300A82957 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB5629EE8A5300A82957 /* Image.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		36D3BB5729EE8A5300A82957 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB5829EE8A5300A82957 /* SignUpViewController.swift */,
+				36D3BB5929EE8A5300A82957 /* SignInView.swift */,
+				36D3BB5A29EE8A5300A82957 /* UserInfoModel.swift */,
+				36D3BB5B29EE8A5300A82957 /* SignInViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		36D3BB5C29EE8A5300A82957 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB5D29EE8A5300A82957 /* UIView+.swift */,
+				36D3BB5E29EE8A5300A82957 /* UIStackView+.swift */,
+				36D3BB5F29EE8A5300A82957 /* UIViewController+.swift */,
+				36D3BB6029EE8A5300A82957 /* UIColor+.swift */,
+				36D3BB6129EE8A5300A82957 /* BaseView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		36D3BB8529EE934700A82957 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB8629EE935D00A82957 /* PhotoCaptureDelegate.swift */,
+			);
+			path = delegate;
 			sourceTree = "<group>";
 		};
 		52EEC224D3D85F472ABFD4CC /* Pods */ = {
@@ -339,11 +502,11 @@
 				36348BFC29BE37CE00548051 /* map_pin@3x.png in Resources */,
 				36348BFA29BE37CE00548051 /* map_pin_red@3x.png in Resources */,
 				36348C0529BE37CE00548051 /* map_pin.png in Resources */,
+				36D3BB8429EE8B7B00A82957 /* Assets.xcassets in Resources */,
 				36348BFE29BE37CE00548051 /* map_pin_red.png in Resources */,
 				36348BF029BE37CE00548051 /* map_pinup_custom@3x.png in Resources */,
 				36348BF829BE37CE00548051 /* copyright.png in Resources */,
 				36348BF729BE37CE00548051 /* map_pin_shadow@3x.png in Resources */,
-				36348BC629BE11FB00548051 /* Main.storyboard in Resources */,
 				36348BFB29BE37CE00548051 /* daum_copyright.png in Resources */,
 				36348BFF29BE37CE00548051 /* info_box.png in Resources */,
 				36348BF529BE37CE00548051 /* map_pin_custom@3x.png in Resources */,
@@ -362,7 +525,6 @@
 				36348C0329BE37CE00548051 /* noimage256.png in Resources */,
 				36348BF229BE37CE00548051 /* shadow_balloon.png in Resources */,
 				3628BC4629A9E11F00A59EE8 /* LaunchScreen.storyboard in Resources */,
-				3628BC4329A9E11F00A59EE8 /* Assets.xcassets in Resources */,
 				36348C0929BE37CE00548051 /* daum_th_line.png in Resources */,
 				36348BF329BE37CE00548051 /* map_pinup.png in Resources */,
 			);
@@ -417,13 +579,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				368AEE2C29ACBB6400E654F4 /* HorizontalScrollView.swift in Sources */,
-				36348BB729B94ABC00548051 /* MapViewController.swift in Sources */,
+				36D3BB7029EE8A5300A82957 /* MainViewController.swift in Sources */,
+				36D3BB7929EE8A5300A82957 /* Image.swift in Sources */,
+				36D3BB9729EEF9A800A82957 /* OCRImportView.swift in Sources */,
+				36D3BB6229EE8A5300A82957 /* HorizontalScrollView.swift in Sources */,
+				36D3BB7C29EE8A5300A82957 /* UserInfoModel.swift in Sources */,
+				36D3BB6429EE8A5300A82957 /* PlaceListView.swift in Sources */,
+				36D3BB6D29EE8A5300A82957 /* PlaceListTableViewCell.swift in Sources */,
+				36D3BB8729EE935D00A82957 /* PhotoCaptureDelegate.swift in Sources */,
+				36D3BB8D29EEDA2800A82957 /* OCRViewController.swift in Sources */,
+				36D3BB8229EE8A5300A82957 /* BaseView.swift in Sources */,
+				36D3BB6C29EE8A5300A82957 /* AddButton.swift in Sources */,
+				36D3BB9529EEECBF00A82957 /* CalendarView.swift in Sources */,
+				36D3BB7F29EE8A5300A82957 /* UIStackView+.swift in Sources */,
+				36D3BB8929EEC04C00A82957 /* CameraView.swift in Sources */,
+				36D3BB7229EE8A5300A82957 /* NotificationTableViewController.swift in Sources */,
+				36D3BB6529EE8A5300A82957 /* MapView.swift in Sources */,
+				36D3BB7B29EE8A5300A82957 /* SignInView.swift in Sources */,
+				36D3BB6E29EE8A5300A82957 /* WritingPageViewController.swift in Sources */,
+				36D3BB7A29EE8A5300A82957 /* SignUpViewController.swift in Sources */,
+				36D3BB6829EE8A5300A82957 /* WritingPageView.swift in Sources */,
+				36D3BB8F29EEDC8A00A82957 /* LoadingView.swift in Sources */,
+				36D3BB6929EE8A5300A82957 /* WishListView.swift in Sources */,
+				36D3BB7129EE8A5300A82957 /* NotificationSettingViewController.swift in Sources */,
+				36D3BB7429EE8A5300A82957 /* UploadViewController.swift in Sources */,
+				36D3BB6B29EE8A5300A82957 /* NotificationTableViewCell.swift in Sources */,
+				36D3BB7829EE8A5300A82957 /* Model.swift in Sources */,
 				3628BC3A29A9E11200A59EE8 /* AppDelegate.swift in Sources */,
-				36348BC829BE141E00548051 /* MainTabBarController.swift in Sources */,
-				36348BC429BDE3B400548051 /* MypageViewController.swift in Sources */,
+				36D3BB8129EE8A5300A82957 /* UIColor+.swift in Sources */,
+				36D3BB7329EE8A5300A82957 /* CameraViewController.swift in Sources */,
+				36D3BB6F29EE8A5300A82957 /* MapViewController.swift in Sources */,
+				36D3BB7E29EE8A5300A82957 /* UIView+.swift in Sources */,
+				36D3BB6A29EE8A5300A82957 /* HeartView.swift in Sources */,
+				36D3BB7529EE8A5300A82957 /* MainTabBarController.swift in Sources */,
 				3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */,
-				36625E6429A9E972002F3E5F /* MainViewController.swift in Sources */,
+				36D3BB7D29EE8A5300A82957 /* SignInViewController.swift in Sources */,
+				36D3BB7629EE8A5300A82957 /* MypageViewController.swift in Sources */,
+				36D3BB7729EE8A5300A82957 /* PlaceListViewController.swift in Sources */,
+				36D3BB6729EE8A5300A82957 /* UploadView.swift in Sources */,
+				36D3BB6329EE8A5300A82957 /* ProfileView.swift in Sources */,
+				36D3BB8029EE8A5300A82957 /* UIViewController+.swift in Sources */,
+				36D3BB6629EE8A5300A82957 /* StampImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
