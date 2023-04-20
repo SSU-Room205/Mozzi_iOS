@@ -20,6 +20,10 @@ class OCRViewController: UIViewController {
         setLayout()
     }
     
+    func updateImage(_ image: UIImage){
+        importView.ocrImageView.image = image
+    }
+    
     private func setLayout(){
         importView.snp.makeConstraints {
             $0.edges.equalToSuperview()

@@ -11,22 +11,6 @@ import UIKit
 import SnapKit
 
 
-class BaseScrollView: UIScrollView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configure()
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("Not implemented xib init")
-    }
-
-    func configure() {}
-    func bind() {}
-}
-
 
 class HorizontalScrollView: BaseScrollView {
     
@@ -56,21 +40,22 @@ class HorizontalScrollView: BaseScrollView {
         }
     override func bind() {
         super.bind()
-
+ //       let VC = MainViewController()
         dataSource?.forEach { data in
-            let button = UIButton()
-            button.makeCornerRound(radius: 40)
-            button.makeShadow(radius: 0, offset: CGSize(width: 3, height: 3), opacity: 0.8)
-            button.layer.shadowColor = UIColor.mozziDark.cgColor
-            button.setTitleColor(.darkGray, for: .normal)
-            button.setTitle(data.name, for: .normal)
-            button.backgroundColor = .mozziMain
-
-            stackView.addArrangedSubview(button)
-            button.snp.makeConstraints { make in
-                make.width.equalTo(150)
-                make.height.equalTo(80)
+            let view = UIView()
+            view.backgroundColor = .mozziMain
+            stackView.addArrangedSubview(view)
+            view.makeCornerRound(radius: 40)
+            view.makeShadow(radius: 0, offset: CGSize(width: 3, height: 3), opacity: 0.8)
+            view.layer.shadowColor = UIColor.mozziDark.cgColor
+  //          view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(VC.viewTapped)))
+            view.snp.makeConstraints{
+                $0.width.equalTo(150)
+                $0.height.equalTo(80)
             }
         }
+        
+        
+        
     }
 }

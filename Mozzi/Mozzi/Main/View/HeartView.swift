@@ -25,7 +25,7 @@ class HeartView: BaseView {
     }()
     
     var buttonIsSelected: Bool = false
-    
+    lazy var heartButtons = [heartOneButton,heartTwoButton,heartThreeButton,heartFourButton,heartFiveButton]
     
     func setViewHierarchy() {
         self.addSubviews(heartStackView)
@@ -47,6 +47,27 @@ class HeartView: BaseView {
     
     @objc func heartButtonDidTap(_ sender: UIButton){
         buttonIsSelected = !buttonIsSelected
-        sender.isSelected = buttonIsSelected
+        switch sender{
+        case heartOneButton:
+            sender.isSelected = buttonIsSelected
+        case heartTwoButton:
+            for i in 0...1{
+                heartButtons[i].isSelected = buttonIsSelected
+            }
+        case heartThreeButton:
+            for i in 0...2{
+                heartButtons[i].isSelected = buttonIsSelected
+            }
+        case heartFourButton:
+            for i in 0...3{
+                heartButtons[i].isSelected = buttonIsSelected
+            }
+        case heartFiveButton:
+            for i in 0...4{
+                heartButtons[i].isSelected = buttonIsSelected
+            }
+        default:
+            return
+        }
     }
 }

@@ -8,7 +8,8 @@
 import UIKit
 import SnapKit
 import FSCalendar
-
+import Alamofire
+import SDWebImage
 
 
 class MainViewController: UITabBarController {
@@ -30,9 +31,15 @@ class MainViewController: UITabBarController {
         return camera
     }()
     
+    let picker: UIImagePickerController = {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        return picker
+    }()
+    
     let backBarButtonItem = UIBarButtonItem(title: "이전", style: .plain, target: MainViewController.self, action: nil)
     
-    let fsCalendar = FSCalendar(frame: CGRect(x: 30, y: 150, width: 340, height: 400))
+    let fsCalendar = FSCalendar(frame: .zero)
     
     lazy var profileButton: UIButton = UIButton()
     lazy var recentLabel: UILabel = UILabel()
@@ -60,6 +67,7 @@ class MainViewController: UITabBarController {
     lazy var fileButton: UIButton = {
         let button = UIButton()
         button.setImage(Images.fileButtonImage, for: .normal)
+        button.addTarget(self, action: #selector(fileButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -84,9 +92,9 @@ class MainViewController: UITabBarController {
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
         view.alpha = 0
         view.isHidden = true
-
+        
         self.view.insertSubview(view, belowSubview: self.addButton)
-
+        
         return view
     }()
     
@@ -96,6 +104,7 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         camera.delegate = self
+        picker.delegate = self
         view.backgroundColor = .white
         configure()
         insertDataSource()
@@ -103,10 +112,12 @@ class MainViewController: UITabBarController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.backgroundColor = .none
         addButton.isSelected = false
         buttonIsHidden = true
+        floatingDimView.alpha = 0
         buttonStack.isHidden = buttonIsHidden
     }
     
@@ -152,36 +163,15 @@ class MainViewController: UITabBarController {
                     self?.view.layoutIfNeeded()
                 }
             }
-            self.floatingDimView.isHidden = false
-
+            floatingDimView.isHidden = false
+            
             UIView.animate(withDuration: 0.5) {
                 self.floatingDimView.alpha = 1
             }
             
-            
-            
-
         }
         
     }
-    
-    private func hideDimView(){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.floatingDimView.alpha = 0
-        }) 
-    }
-    
-    private func viewDimView(){
-        self.floatingDimView.alpha = 1
-
-    }
-    
-    private func addDelegate(){
-        // delegate, dataSource
-        
-    }
-    
-    
     
     private func configure() {
         
@@ -191,30 +181,24 @@ class MainViewController: UITabBarController {
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
         
-        view.addSubview(recentLabel)
-        view.addSubview(fsCalendar)
-        view.addSubview(horizontalScrollView)
-        view.addSubview(addButton)
-        view.addSubview(buttonStack)
-        
+        view.addSubviews(recentLabel,fsCalendar,horizontalScrollView,addButton,buttonStack)
         
         fsCalendar.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(120)
-            make.width.equalTo(340)
-            make.height.equalTo(400)
+            make.top.equalToSuperview().offset(125)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(420)
         }
         
         recentLabel.text = "Daily Use"
         recentLabel.snp.makeConstraints{ make in
             make.top.equalTo(fsCalendar.snp.bottom).offset(25)
-            make.left.equalTo(30)
+            make.leading.equalTo(30)
         }
         
         horizontalScrollView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.height.equalTo(100)
-            make.top.equalTo(recentLabel.snp.bottom).offset(10)
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(recentLabel.snp.bottom).offset(20)
         }
         addButton.snp.makeConstraints{ make in
             make.trailing.equalToSuperview().inset(30)
@@ -230,6 +214,7 @@ class MainViewController: UITabBarController {
     
     private func insertDataSource() {
         horizontalScrollView.dataSource = Mocks.getDataSource()
+        
     }
     
     @objc func tapButton(_ button: UIBarButtonItem){
@@ -237,33 +222,25 @@ class MainViewController: UITabBarController {
         self.navigationController?.pushViewController(notificationVC, animated: true)
     }
     
-    @objc func cameraButtonDidTap (){
+    @objc func cameraButtonDidTap(){
         present(camera, animated: true, completion: nil)
     }
     
-    @objc func writeButtonDidTap (){
+    @objc func fileButtonDidTap(){
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+    
+    @objc func writeButtonDidTap(){
         let nextVC = WritingPageViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    @objc func viewTapped(_ sender: UITapGestureRecognizer) {
+        print("버튼 클릭됨")
+    }
 }
 
-extension MainViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            let nextVC = OCRViewController()
-            self.navigationController?.pushViewController(nextVC, animated: true)
-        }
-        
-        picker.dismiss(animated: true, completion: nil)
-        
-    }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-        
-    }
-    
-}
 
 extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
     private func setCalendar(){
@@ -278,8 +255,6 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
         fsCalendar.appearance.headerMinimumDissolvedAlpha = 0.0
         fsCalendar.appearance.weekdayTextColor = UIColor(named: "main Color")
         fsCalendar.appearance.selectionColor = .mozziMain
-        fsCalendar.appearance.eventDefaultColor = .mozziMain
-        fsCalendar.appearance.eventSelectionColor = .mozziMain
         
         
         fsCalendar.layer.borderWidth = 3
@@ -289,7 +264,7 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
         fsCalendar.layer.shadowRadius = 0
         fsCalendar.layer.shadowColor = UIColor(named: "Dark Color")?.cgColor
         
-
+        
         
         fsCalendar.locale = Locale(identifier: "ko_KR")
         
@@ -303,8 +278,28 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
         fsCalendar.calendarWeekdayView.weekdayLabels[6].text = "토"
     }
     
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    func
+    calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(date)
-
+        
     }
+}
+
+extension MainViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //guard let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage else { return }
+        guard let image: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
+    
+        picker.dismiss(animated: true, completion: nil)
+        let nextVC = OCRViewController()
+        nextVC.updateImage(image)
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
 }

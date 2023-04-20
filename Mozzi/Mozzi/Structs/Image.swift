@@ -21,4 +21,5 @@ struct Images {
     static let emptyHeartImage = UIImage(named: "heart_empty")
     static let fillHeartImage = UIImage(named: "heart_fill")
     static let loadingHamImage = UIImage(named: "loadingHam")
+    static let addImageButtonImage = UIImage(named: "addImage")
 }

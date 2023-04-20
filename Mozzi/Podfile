@@ -7,6 +7,9 @@ target 'Mozzi' do
 
       pod 'FSCalendar'
       pod 'SnapKit', '~> 5.6.0'
+      pod 'Alamofire'
+      pod 'SwiftyJSON'
+      pod 'SDWebImage'
   # Pods for Mozzi
 
 end

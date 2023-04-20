@@ -10,17 +10,20 @@ import SnapKit
 
 final class WritingPageView: BaseView {
     
-    //MARK: UIComponents
+    //MARK: Property
     private let textViewPlaceHolder = "기억에 남는 순간을 기록으로 남겨 보세요 :)"
+    private var isSelected: Bool = false
     
-    private lazy var addPhotoButton: UIButton = {
+    
+    //MARK: UIComponents
+    lazy var addPhotoButton: UIButton = {
         let button = UIButton()
-        button.setImage(Images.cameraButtonImage?.withTintColor(.mozziMain), for: .normal)
-        button.addTarget(self, action: #selector(addPhotoButtonDidTap), for: .touchUpInside)
+        button.setImage(Images.addImageButtonImage?.withTintColor(.mozziMain), for: .normal)
+       // button.addTarget(self, action: #selector(addPhotoButtonDidTap), for: .touchUpInside)
         return button
     }()
     
-    private let placeImageView: UIImageView = {
+    private lazy var placeImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemGray5
         imageView.makeBorder(width: 1, color: .mozziDark)
@@ -96,8 +99,9 @@ final class WritingPageView: BaseView {
         button.setTitle("식사", for: .normal)
         button.setTitleColor(.mozziMain, for: .normal)
         button.makeBorder(width: 2, color: .mozziMain)
-        button.makeCornerRound(radius: 10)
+        button.makeCornerRound(radius: 12.5)
         button.backgroundColor = .white
+        button.addTarget(self, action: #selector(categoryButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -106,8 +110,9 @@ final class WritingPageView: BaseView {
         button.setTitle("쇼핑", for: .normal)
         button.setTitleColor(.mozziMain, for: .normal)
         button.makeBorder(width: 2, color: .mozziMain)
-        button.makeCornerRound(radius: 10)
+        button.makeCornerRound(radius: 12.5)
         button.backgroundColor = .white
+        button.addTarget(self, action: #selector(categoryButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -116,8 +121,9 @@ final class WritingPageView: BaseView {
         button.setTitle("카페", for: .normal)
         button.setTitleColor(.mozziMain, for: .normal)
         button.makeBorder(width: 2, color: .mozziMain)
-        button.makeCornerRound(radius: 10)
+        button.makeCornerRound(radius: 12.5)
         button.backgroundColor = .white
+        button.addTarget(self, action: #selector(categoryButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -172,9 +178,19 @@ final class WritingPageView: BaseView {
         return textView
     }()
     
+    //MARK: Action
     
-    @objc func addPhotoButtonDidTap(){
-        print("성공!✅✅✅✅✅✅✅")
+    
+    @objc func categoryButtonDidTap(_ sender: UIButton){
+        isSelected = !isSelected
+        
+        if isSelected == true {
+            sender.backgroundColor = .mozziMain
+            sender.setTitleColor(.white, for: .normal)
+        } else{
+            sender.backgroundColor = .white
+            sender.setTitleColor(.mozziMain, for: .normal)
+        }
     }
     
     
@@ -190,6 +206,7 @@ final class WritingPageView: BaseView {
         }
         
         addPhotoButton.snp.makeConstraints{
+            $0.size.equalTo(30)
             $0.center.equalToSuperview()
         }
         
