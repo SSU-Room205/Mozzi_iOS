@@ -47,6 +47,7 @@
 		36348C1A29BE3A9500548051 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C1929BE3A8A00548051 /* libxml2.tbd */; };
 		36348C2129BE404800548051 /* Pods_Mozzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C2029BE404800548051 /* Pods_Mozzi.framework */; };
 		3651571129F3436300598391 /* OCRImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3651571029F3436300598391 /* OCRImportView.swift */; };
+		3651571E29F3AECA00598391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3651571D29F3AEC900598391 /* Assets.xcassets */; };
 		36AB67C829EF266000C60C59 /* UploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB67C729EF266000C60C59 /* UploadResponse.swift */; };
 		36AB67CA29EF4CB300C60C59 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB67C929EF4CB300C60C59 /* BaseScrollView.swift */; };
 		36D3BB6229EE8A5300A82957 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */; };
@@ -82,7 +83,6 @@
 		36D3BB8029EE8A5300A82957 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5F29EE8A5300A82957 /* UIViewController+.swift */; };
 		36D3BB8129EE8A5300A82957 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB6029EE8A5300A82957 /* UIColor+.swift */; };
 		36D3BB8229EE8A5300A82957 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB6129EE8A5300A82957 /* BaseView.swift */; };
-		36D3BB8429EE8B7B00A82957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36D3BB8329EE8B7B00A82957 /* Assets.xcassets */; };
 		36D3BB8729EE935D00A82957 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8629EE935D00A82957 /* PhotoCaptureDelegate.swift */; };
 		36D3BB8929EEC04C00A82957 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8829EEC04C00A82957 /* CameraView.swift */; };
 		36D3BB8D29EEDA2800A82957 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */; };
@@ -155,6 +155,7 @@
 		36348C1929BE3A8A00548051 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		36348C2029BE404800548051 /* Pods_Mozzi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Mozzi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3651571029F3436300598391 /* OCRImportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRImportView.swift; sourceTree = "<group>"; };
+		3651571D29F3AEC900598391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36AB67C729EF266000C60C59 /* UploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResponse.swift; sourceTree = "<group>"; };
 		36AB67C929EF4CB300C60C59 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
 		36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
@@ -190,7 +191,6 @@
 		36D3BB5F29EE8A5300A82957 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		36D3BB6029EE8A5300A82957 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		36D3BB6129EE8A5300A82957 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		36D3BB8329EE8B7B00A82957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Mozzi__dev/Mozzi_dev/Mozzi_dev/Assets.xcassets; sourceTree = "<group>"; };
 		36D3BB8629EE935D00A82957 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		36D3BB8829EEC04C00A82957 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 			children = (
 				3628BC3929A9E11200A59EE8 /* AppDelegate.swift */,
 				3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */,
-				36D3BB8329EE8B7B00A82957 /* Assets.xcassets */,
+				3651571D29F3AEC900598391 /* Assets.xcassets */,
 				3628BC4729A9E11F00A59EE8 /* Info.plist */,
 				36348C1529BE387600548051 /* Header.h */,
 				36D3BB5729EE8A5300A82957 /* Auth */,
@@ -508,7 +508,7 @@
 				36348BFC29BE37CE00548051 /* map_pin@3x.png in Resources */,
 				36348BFA29BE37CE00548051 /* map_pin_red@3x.png in Resources */,
 				36348C0529BE37CE00548051 /* map_pin.png in Resources */,
-				36D3BB8429EE8B7B00A82957 /* Assets.xcassets in Resources */,
+				3651571E29F3AECA00598391 /* Assets.xcassets in Resources */,
 				36348BFE29BE37CE00548051 /* map_pin_red.png in Resources */,
 				36348BF029BE37CE00548051 /* map_pinup_custom@3x.png in Resources */,
 				36348BF829BE37CE00548051 /* copyright.png in Resources */,
