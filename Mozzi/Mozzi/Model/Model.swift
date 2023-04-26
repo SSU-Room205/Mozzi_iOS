@@ -26,40 +26,17 @@ struct SomeDataModel {
         return type.rawValue
     }
     
-   
+   //솔트커피 , 4500원, 11시 25분
+    //로제찜닭, 10000원, 7시 05분
+    //바닐라가나슈마들렌, 3300원, 7시 15분
     
 }
 
 struct Mocks {
-    static func getDataSource() -> [SomeDataModel] {
-        return [SomeDataModel(type: .one),
-                SomeDataModel(type: .two),
-                SomeDataModel(type: .three),
-                SomeDataModel(type: .four),
-                SomeDataModel(type: .five),
-                SomeDataModel(type: .six)]
+    static func getDataSource() -> [Consum] {
+        return []
     }
 }
 
-struct notificationData{
-    
-    enum NotificationType {
-        case normal
-        case review
-        case increase
-        case decrease
-    }
-    
-    let notiType: NotificationType
-    
-    var image: UIImage{
-        switch notiType{
-        case .increase: return UIImage(named: "increase")!
-        case .decrease: return UIImage(named: "decrease")!
-        case .review: return UIImage(named: "review")!
-        default: return UIImage(named: "normal")!
-        }
-    
-    }
-    
-}
+
+

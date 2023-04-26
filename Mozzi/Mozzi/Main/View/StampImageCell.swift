@@ -18,11 +18,6 @@ class StampingImageCell : UICollectionViewCell {
         return imageView
     }()
     
-    var label: UILabel = {
-        let label = UILabel()
-        label.text = "먹기!"
-        return label
-    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,15 +30,11 @@ class StampingImageCell : UICollectionViewCell {
     
     func cellSetting() {
         self.backgroundColor = .gray
-        addSubviews(img,label)
+        addSubviews(img)
         img.contentMode = .scaleToFill
         img.snp.makeConstraints {
             $0.leading.top.trailing.equalTo(0)
             $0.bottom.equalTo(-20)
-        }
-        label.snp.makeConstraints {
-            $0.leading.bottom.trailing.equalTo(0)
-            $0.top.equalTo(img.snp.bottom)
         }
     }
 }

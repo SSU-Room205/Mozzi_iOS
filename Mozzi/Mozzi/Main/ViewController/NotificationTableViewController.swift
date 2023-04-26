@@ -25,9 +25,32 @@ class NotificationTableViewController: UIViewController, UITableViewDelegate, UI
     }()
     
     
+    let emptyNotificationImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Images.emptyNotificationImage
+        return imageView
+    }()
+    let emptyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "아직 알림이 없어요!"
+        label.font = .pretendardBold(ofSize: 22)
+        return label
+    }()
     
-    lazy var emptyLabel = UILabel()
-    lazy var emptyLabel2 = UILabel()
+    let emptyLabel2: UILabel = {
+        let label = UILabel()
+        label.text = "알림설정을 통해 더 많은 알림을 받아보세요!"
+        label.font = .pretendardMedium(ofSize: 14)
+        return label
+    }()
+    
+    lazy var emptyNotificationStackView: UIStackView = {
+       let stackView = UIStackView()
+        stackView.addArrangeSubViews(emptyNotificationImageView,emptyLabel,emptyLabel2)
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        return stackView
+    }()
     lazy var notificationCell = NotificationTableViewCell()
     
     override func viewDidLoad() {
@@ -52,6 +75,7 @@ class NotificationTableViewController: UIViewController, UITableViewDelegate, UI
     
     
     private func setLayout(){
+        
         notificationTableView.snp.makeConstraints{
             $0.top.leading.bottom.trailing.equalToSuperview()
         }
@@ -60,29 +84,17 @@ class NotificationTableViewController: UIViewController, UITableViewDelegate, UI
     private func setViewHierarchy(){
         self.navigationItem.title = "알림 목록"
         self.navigationItem.setRightBarButton(settingBarButton, animated: true)
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.pretendardBold(ofSize: 16)]
         self.tabBarController?.tabBar.isHidden = true
         
         notificationTableView.delegate = self
         notificationTableView.dataSource = self
         
         notificationTableView.backgroundColor = .white
-        notificationTableView.tintColor = UIColor(named: "Dark Color")
+        notificationTableView.tintColor = .mozziDark
+        
         if titles.isEmpty {
-            view.addSubview(emptyLabel)
-            view.addSubview(emptyLabel2)
-            view.backgroundColor = .white
-            emptyLabel.text = "아직 알림이 없어요"
-            emptyLabel.font = UIFont.boldSystemFont(ofSize: 16).withSize(22)
-            emptyLabel.snp.makeConstraints{ make in
-                make.top.equalToSuperview().offset(125)
-                make.centerX.equalToSuperview()
-            }
-            emptyLabel2.text = "알림설정을 통해 더 많은 알림을 받아보세요!"
-            emptyLabel2.snp.makeConstraints{ make in
-                make.top.equalTo(emptyLabel.snp.bottom).offset(10)
-                make.centerX.equalToSuperview()
-            }
+            setEmptyView()
         }
         else{
             attribute()
@@ -92,6 +104,16 @@ class NotificationTableViewController: UIViewController, UITableViewDelegate, UI
         }
     }
     
+    private func setEmptyView(){
+        view.addSubview(emptyNotificationStackView)
+        view.backgroundColor = .white
+        emptyNotificationStackView.snp.makeConstraints{
+            $0.center.equalToSuperview()
+        }
+        emptyNotificationImageView.snp.makeConstraints{
+            $0.size.equalTo(108)
+        }
+    }
     
     private func attribute(){
         notificationTableView.register(NotificationTableViewCell.self, forCellReuseIdentifier: "cell" )

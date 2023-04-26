@@ -22,9 +22,11 @@ class HorizontalScrollView: BaseScrollView {
         return view
     }()
     
-    var dataSource: [SomeDataModel]? {
+    var dataSource: [Consum]? {
          didSet { bind() }
      }
+    
+    
     
     override func configure() {
             super.configure()
@@ -35,23 +37,20 @@ class HorizontalScrollView: BaseScrollView {
             addSubview(stackView)
             stackView.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview() /// 이 값이 없으면 scroll 안되는 것 주의
-                make.height.equalToSuperview()
+                make.height.equalTo(80)
             }
         }
     override func bind() {
         super.bind()
  //       let VC = MainViewController()
         dataSource?.forEach { data in
-            let view = UIView()
-            view.backgroundColor = .mozziMain
+            let view = DaliyUseView()
             stackView.addArrangedSubview(view)
-            view.makeCornerRound(radius: 40)
-            view.makeShadow(radius: 0, offset: CGSize(width: 3, height: 3), opacity: 0.8)
-            view.layer.shadowColor = UIColor.mozziDark.cgColor
+            
   //          view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(VC.viewTapped)))
             view.snp.makeConstraints{
                 $0.width.equalTo(150)
-                $0.height.equalTo(80)
+                $0.height.equalTo(72)
             }
         }
         

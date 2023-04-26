@@ -17,6 +17,7 @@ class MainViewController: UITabBarController {
     var selectedDate: Date = Date()
     
     let notificaiotnImage = UIImage(named: "notification")
+    
     lazy var horizontalScrollView: HorizontalScrollView = {
         let view = HorizontalScrollView()
         return view
@@ -37,12 +38,18 @@ class MainViewController: UITabBarController {
         return picker
     }()
     
-    let backBarButtonItem = UIBarButtonItem(title: "이전", style: .plain, target: MainViewController.self, action: nil)
+    let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: MainViewController.self, action: nil)
     
     let fsCalendar = FSCalendar(frame: .zero)
     
     lazy var profileButton: UIButton = UIButton()
-    lazy var recentLabel: UILabel = UILabel()
+    
+    lazy var recentLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Daily Use"
+        label.font = .pretendardMedium(ofSize: 14)
+        return label
+    }()
     lazy var notificationButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(tapButton(_:)))
         button.setBackgroundImage(notificaiotnImage, for: .normal, barMetrics: .default)
@@ -177,7 +184,7 @@ class MainViewController: UITabBarController {
         
         setCalendar()
         self.navigationItem.setRightBarButton(notificationButton, animated: false)
-        backBarButtonItem.tintColor = darkColor
+        backBarButtonItem.tintColor = .mozziDark
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
         
@@ -190,7 +197,6 @@ class MainViewController: UITabBarController {
             make.height.equalTo(420)
         }
         
-        recentLabel.text = "Daily Use"
         recentLabel.snp.makeConstraints{ make in
             make.top.equalTo(fsCalendar.snp.bottom).offset(25)
             make.leading.equalTo(30)
@@ -199,6 +205,7 @@ class MainViewController: UITabBarController {
         horizontalScrollView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(recentLabel.snp.bottom).offset(20)
+            make.height.equalTo(90)
         }
         addButton.snp.makeConstraints{ make in
             make.trailing.equalToSuperview().inset(30)
@@ -241,9 +248,14 @@ class MainViewController: UITabBarController {
     }
 }
 
-
+//MARK: FSCalendar
 extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
     private func setCalendar(){
+        
+        fsCalendar.appearance.headerTitleFont = .pretendardBold(ofSize: 16)
+        fsCalendar.appearance.titleFont = .pretendardMedium(ofSize: 14)
+        fsCalendar.appearance.weekdayFont = .pretendardBold(ofSize: 14)
+        
         
         fsCalendar.delegate = self
         fsCalendar.dataSource = self
@@ -280,7 +292,7 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
     
     func
     calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        print(date.toString())
         
     }
 }

@@ -15,6 +15,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         
         self.tabBar.backgroundColor = UIColor.white
+        self.tabBar.makeCornerRound(radius: 10)
         
         let mapNC = UINavigationController.init(rootViewController: MapViewController())
         let mainNC = UINavigationController.init(rootViewController: MainViewController())
@@ -57,16 +58,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.frame = tabFrame
 
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+
 

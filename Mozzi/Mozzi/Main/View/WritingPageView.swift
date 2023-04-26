@@ -19,44 +19,52 @@ final class WritingPageView: BaseView {
     lazy var addPhotoButton: UIButton = {
         let button = UIButton()
         button.setImage(Images.addImageButtonImage?.withTintColor(.mozziMain), for: .normal)
-       // button.addTarget(self, action: #selector(addPhotoButtonDidTap), for: .touchUpInside)
         return button
     }()
     
-    private lazy var placeImageView: UIImageView = {
+   lazy var placeImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemGray5
         imageView.makeBorder(width: 1, color: .mozziDark)
         imageView.makeCornerRound(radius: 10)
+       imageView.isUserInteractionEnabled = true
+       imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    private lazy var itemTitleTextField: UITextField = {
+    lazy var itemTitleTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "품목 이름을 입력해주세요"
-        textField.font = .systemFont(ofSize: 18)
+        textField.placeholder = "품목을 입력해주세요"
+        textField.font = .pretendardBold(ofSize: 20)
         return textField
     }()
     
-    private lazy var placeTextField: UITextField = {
+    lazy var placeTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "장소를 입력해주세요"
-        textField.font = .systemFont(ofSize: 14)
+        textField.placeholder = "장소 이름을 입력해주세요"
+        textField.font = .pretendardMedium(ofSize: 16)
+        return textField
+    }()
+    
+    lazy var addressTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "주소를 입력해주세요"
+        textField.font = .pretendardMedium(ofSize: 14)
         return textField
     }()
     
     private let wonLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
         label.text = "₩ "
-        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.font = .pretendardBold(ofSize: 16)
         return label
     }()
     
-    private lazy var priceTextField: UITextField = {
+    lazy var priceTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "가격을 입력해주세요"
         textField.keyboardType = .numberPad
-        textField.font = .systemFont(ofSize: 16)
+        textField.font = .pretendardMedium(ofSize: 16)
         textField.leftView = wonLabel
         textField.leftViewMode = .always
         return textField
@@ -64,7 +72,7 @@ final class WritingPageView: BaseView {
     
     private lazy var infomationStackView : UIStackView = {
         let stackView = UIStackView()
-        stackView.addArrangeSubViews(itemTitleTextField,placeTextField,priceTextField)
+        stackView.addArrangeSubViews(itemTitleTextField,placeTextField,addressTextField,priceTextField)
         stackView.axis = .vertical
         stackView.spacing = 10
         return stackView
@@ -83,6 +91,7 @@ final class WritingPageView: BaseView {
     private let categoryLabel: UILabel = {
         let label = UILabel()
         label.text = "카테고리"
+        label.font = .pretendardBold(ofSize: 16)
         return label
     }()
     
@@ -98,6 +107,7 @@ final class WritingPageView: BaseView {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 65, height: 25))
         button.setTitle("식사", for: .normal)
         button.setTitleColor(.mozziMain, for: .normal)
+        button.titleLabel?.font = .pretendardMedium(ofSize: 14)
         button.makeBorder(width: 2, color: .mozziMain)
         button.makeCornerRound(radius: 12.5)
         button.backgroundColor = .white
@@ -109,6 +119,7 @@ final class WritingPageView: BaseView {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 65, height: 25))
         button.setTitle("쇼핑", for: .normal)
         button.setTitleColor(.mozziMain, for: .normal)
+        button.titleLabel?.font = .pretendardMedium(ofSize: 14)
         button.makeBorder(width: 2, color: .mozziMain)
         button.makeCornerRound(radius: 12.5)
         button.backgroundColor = .white
@@ -120,6 +131,7 @@ final class WritingPageView: BaseView {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 65, height: 25))
         button.setTitle("카페", for: .normal)
         button.setTitleColor(.mozziMain, for: .normal)
+        button.titleLabel?.font = .pretendardMedium(ofSize: 14)
         button.makeBorder(width: 2, color: .mozziMain)
         button.makeCornerRound(radius: 12.5)
         button.backgroundColor = .white
@@ -145,6 +157,7 @@ final class WritingPageView: BaseView {
     private let heartLabel: UILabel = {
         let label = UILabel()
         label.text = "만족도"
+        label.font = .pretendardBold(ofSize: 16)
         return label
     }()
     
@@ -173,7 +186,7 @@ final class WritingPageView: BaseView {
     
     private lazy var textView: UITextView = {
         let textView = UITextView()
-        textView.font = .systemFont(ofSize: 14)
+        textView.font = .pretendardMedium(ofSize: 14)
         textView.text = textViewPlaceHolder
         return textView
     }()
@@ -193,10 +206,14 @@ final class WritingPageView: BaseView {
         }
     }
     
+    func setPlaceImage(image: UIImage){
+        addPhotoButton.isHidden = true
+        placeImageView.image = image
+    }
+    
     
     func setViewHierarchy() {
-        self.addSubviews(WritingPageStackView,divideView, textView)
-        placeImageView.addSubview(addPhotoButton)
+        self.addSubviews(WritingPageStackView,divideView, textView,addPhotoButton)
     }
     
     func setConstraints() {
@@ -207,7 +224,7 @@ final class WritingPageView: BaseView {
         
         addPhotoButton.snp.makeConstraints{
             $0.size.equalTo(30)
-            $0.center.equalToSuperview()
+            $0.center.equalTo(placeImageView.snp.center )
         }
         
         WritingPageStackView.snp.makeConstraints{

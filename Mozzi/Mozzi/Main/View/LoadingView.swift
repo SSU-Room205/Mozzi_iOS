@@ -10,9 +10,18 @@ import SnapKit
 
 class LoadingView: BaseView {
     
+    private let backgroundView: UIView = {
+       let view = UIView()
+        view.backgroundColor = .white
+        view.makeCornerRound(radius: 20)
+        view.alpha = 0.5
+        return view
+    }()
+    
     private let loadingLabel: UILabel = {
         let label = UILabel()
-        label.text = "영수증 읽는 중"
+        label.text = "영수증 읽는 중..."
+        label.font = .pretendardThin(ofSize: 14)
         return label
     }()
     
@@ -31,19 +40,27 @@ class LoadingView: BaseView {
         return stackView
     }()
     
-    
+    func viewIsHideen() {
+        self.backgroundView.isHidden = true
+    }
     
     func setViewHierarchy() {
-        self.addSubviews(loadingStackView)
+        self.addSubviews(backgroundView,loadingStackView)
     }
     
     func setConstraints() {
+        backgroundView.snp.makeConstraints{
+            $0.width.equalTo(270)
+            $0.height.equalTo(300)
+            $0.edges.equalToSuperview()
+        }
+        
         loadingImageView.snp.makeConstraints{
             $0.height.width.equalTo(200)
         }
         
         loadingStackView.snp.makeConstraints{
-            $0.center.equalToSuperview()
+            $0.center.equalTo(backgroundView.snp.center)
         }
     }
     
