@@ -40,7 +40,6 @@
 		36348C0829BE37CE00548051 /* map_present_background_update.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BEC29BE37CE00548051 /* map_present_background_update.png */; };
 		36348C0929BE37CE00548051 /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BED29BE37CE00548051 /* daum_th_line.png */; };
 		36348C0A29BE37CE00548051 /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 36348BEE29BE37CE00548051 /* map_pin_shadow.png */; };
-		36348C0B29BE37CE00548051 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348BEF29BE37CE00548051 /* DaumMap.framework */; };
 		36348C0D29BE383200548051 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C0C29BE383200548051 /* CoreLocation.framework */; };
 		36348C1029BE384B00548051 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C0F29BE384B00548051 /* Metal.framework */; };
 		36348C1229BE385800548051 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348C1129BE385800548051 /* QuartzCore.framework */; };
@@ -55,8 +54,10 @@
 		36571ADB29F9629700576EF3 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571ADA29F9629700576EF3 /* String+.swift */; };
 		36571ADD29F9635800576EF3 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571ADC29F9635800576EF3 /* Date+.swift */; };
 		36571AE029F989B300576EF3 /* Consum.json in Resources */ = {isa = PBXBuildFile; fileRef = 36571ADF29F989B300576EF3 /* Consum.json */; };
-		36571AE329F98C1D00576EF3 /* MockParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571AE229F98C1D00576EF3 /* MockParser.swift */; };
-		36571AE629F98C8800576EF3 /* ConsumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571AE529F98C8800576EF3 /* ConsumManager.swift */; };
+		36571AE929F9979100576EF3 /* MockParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571AE829F9979100576EF3 /* MockParser.swift */; };
+		36571AEC29F997B600576EF3 /* ConsumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571AEB29F997B600576EF3 /* ConsumManager.swift */; };
+		36571AEE29F9A4E300576EF3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571AED29F9A4E300576EF3 /* LocationService.swift */; };
+		36571AEF29F9B12800576EF3 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348BEF29BE37CE00548051 /* DaumMap.framework */; };
 		36AB67C829EF266000C60C59 /* UploadRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB67C729EF266000C60C59 /* UploadRes.swift */; };
 		36AB67CA29EF4CB300C60C59 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB67C929EF4CB300C60C59 /* BaseScrollView.swift */; };
 		36D3BB6229EE8A5300A82957 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */; };
@@ -107,19 +108,6 @@
 		36F0320829F7EC650038998A /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36F031FF29F7EC650038998A /* Pretendard-Medium.otf */; };
 		36F0320929F7EC650038998A /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36F0320029F7EC650038998A /* Pretendard-Thin.otf */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		36348C1E29BE3B8900548051 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3628BC3629A9E11200A59EE8 /* Mozzi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mozzi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,8 +169,9 @@
 		36571ADA29F9629700576EF3 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		36571ADC29F9635800576EF3 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		36571ADF29F989B300576EF3 /* Consum.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Consum.json; sourceTree = "<group>"; };
-		36571AE229F98C1D00576EF3 /* MockParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockParser.swift; sourceTree = "<group>"; };
-		36571AE529F98C8800576EF3 /* ConsumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumManager.swift; sourceTree = "<group>"; };
+		36571AE829F9979100576EF3 /* MockParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockParser.swift; sourceTree = "<group>"; };
+		36571AEB29F997B600576EF3 /* ConsumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumManager.swift; sourceTree = "<group>"; };
+		36571AED29F9A4E300576EF3 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		36AB67C729EF266000C60C59 /* UploadRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRes.swift; sourceTree = "<group>"; };
 		36AB67C929EF4CB300C60C59 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
 		36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
@@ -246,9 +235,9 @@
 				36348C1629BE3A6500548051 /* libc++.tbd in Frameworks */,
 				36348C1829BE3A7F00548051 /* libsqlite3.tbd in Frameworks */,
 				36348C0D29BE383200548051 /* CoreLocation.framework in Frameworks */,
-				36348C0B29BE37CE00548051 /* DaumMap.framework in Frameworks */,
 				36348C1029BE384B00548051 /* Metal.framework in Frameworks */,
 				36348C1A29BE3A9500548051 /* libxml2.tbd in Frameworks */,
+				36571AEF29F9B12800576EF3 /* DaumMap.framework in Frameworks */,
 				36348C1429BE385D00548051 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,18 +266,18 @@
 		3628BC3829A9E11200A59EE8 /* Mozzi */ = {
 			isa = PBXGroup;
 			children = (
-				36571AE429F98C7000576EF3 /* Service */,
+				36571AEA29F997A600576EF3 /* Service */,
+				36571AE729F9976100576EF3 /* NetWork */,
 				36F031EC29F7E70B0038998A /* Font */,
 				3628BC3929A9E11200A59EE8 /* AppDelegate.swift */,
 				3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */,
 				3651571D29F3AEC900598391 /* Assets.xcassets */,
 				3628BC4729A9E11F00A59EE8 /* Info.plist */,
 				36348C1529BE387600548051 /* Header.h */,
-				36D3BB5729EE8A5300A82957 /* Auth */,
 				36571ADE29F9891600576EF3 /* Mock */,
 				36D3BB5C29EE8A5300A82957 /* Extension */,
+				36D3BB5729EE8A5300A82957 /* Auth */,
 				36D3BB3A29EE8A5200A82957 /* Main */,
-				36571AE129F98BE600576EF3 /* Network */,
 				36D3BB5329EE8A5300A82957 /* Model */,
 				36D3BB5529EE8A5300A82957 /* Structs */,
 				3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */,
@@ -363,18 +352,18 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		36571AE129F98BE600576EF3 /* Network */ = {
+		36571AE729F9976100576EF3 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				36571AE229F98C1D00576EF3 /* MockParser.swift */,
+				36571AE829F9979100576EF3 /* MockParser.swift */,
 			);
-			path = Network;
+			path = NetWork;
 			sourceTree = "<group>";
 		};
-		36571AE429F98C7000576EF3 /* Service */ = {
+		36571AEA29F997A600576EF3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				36571AE529F98C8800576EF3 /* ConsumManager.swift */,
+				36571AEB29F997B600576EF3 /* ConsumManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -395,7 +384,6 @@
 				36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */,
 				36D3BB9429EEECBF00A82957 /* CalendarView.swift */,
 				36D3BB3D29EE8A5200A82957 /* ProfileView.swift */,
-				36D3BB3E29EE8A5200A82957 /* PlaceListView.swift */,
 				36D3BB3F29EE8A5200A82957 /* MapView.swift */,
 				36D3BB4029EE8A5200A82957 /* StampImageCell.swift */,
 				36D3BB4129EE8A5200A82957 /* UploadView.swift */,
@@ -404,6 +392,7 @@
 				36D3BB4429EE8A5200A82957 /* HeartView.swift */,
 				36D3BB4529EE8A5200A82957 /* NotificationTableViewCell.swift */,
 				36D3BB4629EE8A5200A82957 /* AddButton.swift */,
+				36D3BB3E29EE8A5200A82957 /* PlaceListView.swift */,
 				36D3BB4729EE8A5200A82957 /* PlaceListTableViewCell.swift */,
 				36D3BB8E29EEDC8A00A82957 /* LoadingView.swift */,
 				3651571029F3436300598391 /* OCRImportView.swift */,
@@ -435,6 +424,7 @@
 			children = (
 				36571AD829F94A4100576EF3 /* Consum.swift */,
 				36D3BB5429EE8A5300A82957 /* Model.swift */,
+				36571AED29F9A4E300576EF3 /* LocationService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -538,7 +528,6 @@
 				3628BC3329A9E11200A59EE8 /* Frameworks */,
 				3628BC3429A9E11200A59EE8 /* Resources */,
 				1C450A4B5A163B59936B47D5 /* [CP] Embed Pods Frameworks */,
-				36348C1E29BE3B8900548051 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -691,7 +680,7 @@
 				36D3BB6D29EE8A5300A82957 /* PlaceListTableViewCell.swift in Sources */,
 				36D3BB8729EE935D00A82957 /* PhotoCaptureDelegate.swift in Sources */,
 				362ECDFE29F806AA00A05322 /* Notification.swift in Sources */,
-				36571AE629F98C8800576EF3 /* ConsumManager.swift in Sources */,
+				36571AEC29F997B600576EF3 /* ConsumManager.swift in Sources */,
 				36D3BB8D29EEDA2800A82957 /* OCRViewController.swift in Sources */,
 				36571ADB29F9629700576EF3 /* String+.swift in Sources */,
 				36D3BB8229EE8A5300A82957 /* BaseView.swift in Sources */,
@@ -703,6 +692,7 @@
 				3651571129F3436300598391 /* OCRImportView.swift in Sources */,
 				36D3BB7B29EE8A5300A82957 /* SignInView.swift in Sources */,
 				36F031F729F7E8CB0038998A /* UIFont+.swift in Sources */,
+				36571AEE29F9A4E300576EF3 /* LocationService.swift in Sources */,
 				36D3BB6E29EE8A5300A82957 /* WritingPageViewController.swift in Sources */,
 				36AB67CA29EF4CB300C60C59 /* BaseScrollView.swift in Sources */,
 				36D3BB7A29EE8A5300A82957 /* SignUpViewController.swift in Sources */,
@@ -720,7 +710,7 @@
 				36D3BB6F29EE8A5300A82957 /* MapViewController.swift in Sources */,
 				36D3BB7E29EE8A5300A82957 /* UIView+.swift in Sources */,
 				36D3BB6A29EE8A5300A82957 /* HeartView.swift in Sources */,
-				36571AE329F98C1D00576EF3 /* MockParser.swift in Sources */,
+				36571AE929F9979100576EF3 /* MockParser.swift in Sources */,
 				36D3BB7529EE8A5300A82957 /* MainTabBarController.swift in Sources */,
 				3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */,
 				36D3BB7D29EE8A5300A82957 /* SignInViewController.swift in Sources */,
@@ -799,7 +789,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -853,7 +843,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -890,6 +880,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -931,6 +922,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

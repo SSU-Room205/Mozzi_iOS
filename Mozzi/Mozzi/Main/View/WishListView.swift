@@ -22,7 +22,7 @@ class WishListView: UIView {
     
     private let wishImage = UIImage(named:"wishImage")
     
-    private let wishImageView: UIImageView = {
+     let wishImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named:"wishImage")
         return imageView

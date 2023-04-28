@@ -9,9 +9,6 @@ import UIKit
 import SnapKit
 
 
-protocol DataBindProtocol: AnyObject {
-    func dataBind(text: String)
-}
 
 class MypageViewController: UITabBarController {
     

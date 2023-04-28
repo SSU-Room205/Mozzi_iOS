@@ -14,8 +14,8 @@
 		<string>Pretendard-Thin.otf</string>
 		<string>Pretendard-Light.otf</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>위치를 받아오고자 합니다. </string>
 	<key>NSCameraUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>

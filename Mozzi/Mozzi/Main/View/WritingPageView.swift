@@ -184,10 +184,11 @@ final class WritingPageView: BaseView {
         return view
     }()
     
-    private lazy var textView: UITextView = {
+    lazy var textView: UITextView = {
         let textView = UITextView()
         textView.font = .pretendardMedium(ofSize: 14)
         textView.text = textViewPlaceHolder
+        textView.textColor = .placeholderText
         return textView
     }()
     

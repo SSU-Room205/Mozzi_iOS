@@ -10,9 +10,13 @@ import SnapKit
 class PlaceListViewController: UIViewController {
 
     
+  //  let dataArray = MockParser.load(Consum.self, from: "Consum")
+    var tableViewCount: Int = 0
     
     private lazy var placeTableView: UITableView = {
        let tableView = UITableView()
+        tableView.register(PlaceListTableViewCell.self, forCellReuseIdentifier: PlaceListTableViewCell.identifier)
+        tableView.rowHeight = 130
         return tableView
     }()
     
@@ -31,30 +35,40 @@ class PlaceListViewController: UIViewController {
     }
     
     private func setViewHierarchy(){
-      //  placeTableView.dataSource = self
-       // placeTableView.delegate = self
+        placeTableView.dataSource = self
+        placeTableView.delegate = self
         view.backgroundColor = .white
-        //view.addSubview(collectionView)
+      //  printContent(dataArray)
     }
     
     private func setLayout(){
+        view.addSubview(placeTableView)
+        
+        placeTableView.snp.makeConstraints{
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
     }
     
-/*
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }*/
+
+    
     
 }
 
-extension PlaceListViewController {
-    private func createLayout(){
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(400))
+extension PlaceListViewController: UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = placeTableView.dequeueReusableCell(withIdentifier: PlaceListTableViewCell.identifier, for: indexPath) as? PlaceListTableViewCell else { return UITableViewCell() }
+                
+      //  cell.configureCell(dataArray!)
+                
+                return cell
+    }
+    
+    
 }

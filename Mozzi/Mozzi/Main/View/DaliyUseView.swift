@@ -50,9 +50,9 @@ class DaliyUseView : BaseView {
         }
     }
     
-    func configure(_ Use: Consum) {
-        self.itemLabel.text = Use.itemName
-        self.priceLabel.text = Use.price + "₩"
+    func configure(_ Consum1: Consum1) {
+        self.itemLabel.text = Consum1.itemName
+        self.priceLabel.text = Consum1.price + "₩"
     }
     
     

@@ -12,6 +12,20 @@ class PlaceListView: UIView {
     private var viewTranslation: CGPoint = .init(x: 0, y: 0)
     private var viewVelocity: CGPoint = .init(x: 0, y: 0)
     
+    let dataArray = MockParser.load(Consum.self, from: "Consum")
+    var tableViewCount: Int = 0
+    
+    lazy var placeTableView: UITableView = {
+       let tableView = UITableView()
+        tableView.register(PlaceListTableViewCell.self, forCellReuseIdentifier: PlaceListTableViewCell.identifier)
+        tableView.rowHeight = 130
+        return tableView
+    }()
+    
+    private var placeListTableViewCell = PlaceListTableViewCell()
+    
+    private(set) lazy var refreshControl = UIRefreshControl()
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -32,7 +46,7 @@ class PlaceListView: UIView {
        
         viewTranslation = sender.translation(in: self)
         viewVelocity = sender.translation(in: self)
-        print(self.viewVelocity)
+       // print(self.viewVelocity)
         switch sender.state {
         case .changed:
             if viewTranslation.y > 0 {
@@ -45,7 +59,7 @@ class PlaceListView: UIView {
                 }
             } else {
                 UIView.animate(withDuration: 0.5, delay: 0) {
-                    self.transform = CGAffineTransform(translationX: 0, y: self.frame.height)
+                    self.transform = CGAffineTransform(translationX: 0, y: self.frame.height * 0.7)
                 }
             }
         default:
@@ -56,13 +70,12 @@ class PlaceListView: UIView {
     
     
     private func setLayout() {
-        print("setLayout")
         self.backgroundColor = .white
+        self.makeCornerRound(radius: 20)
+        self.makeShadow(radius: 20, offset: CGSize(width: 2, height: 2), opacity: 0.5)
+        
+        // dint 생성
         self.addSubview(handleView)
-        
-        
-        
-        
         handleView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
             $0.centerX.equalToSuperview()
@@ -71,8 +84,16 @@ class PlaceListView: UIView {
         }
         handleView.layer.cornerRadius = 5
         handleView.clipsToBounds = true
+        
+        self.addSubview(placeTableView)
+        
+        placeTableView.snp.makeConstraints{
+            $0.top.equalTo(handleView.snp.bottom).offset(20)
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
     }
     
+    // dint
     private var handleView: UIView =  {
         let view = UIView()
         view.backgroundColor = .gray

@@ -140,7 +140,7 @@ final class OCRImportView: BaseView{
     
     private lazy var dataStackView : UIStackView = {
         let stackView = UIStackView()
-        stackView.addArrangeSubViews(dateLabel, datetextField)
+        stackView.addArrangeSubViews(dateLabel, dateTextField)
         stackView.spacing = 20
         return stackView
     }()
@@ -152,7 +152,7 @@ final class OCRImportView: BaseView{
         return label
     }()
     
-    private lazy var datetextField : UITextField = {
+    lazy var dateTextField : UITextField = {
         let textField = UITextField()
         textField.font = .pretendardMedium(ofSize: 14)
         return textField
@@ -198,7 +198,7 @@ final class OCRImportView: BaseView{
         amounttextField.text = appendString(amount)
         pricetextField.text = appendString(price)
         totalPricetextField.text = totalPrice
-        datetextField.text = date
+        dateTextField.text = date
     }
     
     func appendString(_ array: [String])->String{

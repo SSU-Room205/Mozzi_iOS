@@ -9,29 +9,48 @@ import UIKit
 
 class PlaceListTableViewCell: UITableViewCell {
     
+    static let identifier = "placeListTableViewCell"
+    
     private lazy var placeImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10
+        imageView.makeCornerRound(radius: 10)
+        imageView.contentMode = .scaleAspectFill
         return imageView
+    }()
+    
+    private let itemLabel: UILabel = {
+        let label = UILabel()
+        label.font = .pretendardMedium(ofSize: 16)
+        return label
     }()
     
     private let placeTitleLabel: UILabel = {
         let label = UILabel()
-        label.font.withSize(20)
+        label.font = .pretendardBold(ofSize: 14)
         return label
     }()
     
     private let placeSubTitleLabel: UILabel = {
         let label = UILabel()
-        label.font.withSize(15)
+        label.font = .pretendardThin(ofSize: 12)
+        label.tintColor = .lightGray
         return label
     }()
     
-    private let placeLocationLabel: UILabel = {
+    private let priceLabel: UILabel = {
         let label = UILabel()
-        label.font.withSize(15)
+        label.font = .pretendardThin(ofSize: 16)
         return label
     }()
+    
+    private lazy var infomationStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 5
+        stackView.addArrangeSubViews(itemLabel,placeTitleLabel,placeSubTitleLabel,priceLabel)
+        return stackView
+    }()
+    
     
 
 
@@ -53,9 +72,30 @@ class PlaceListTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setLayout()
     }
     
     private func setLayout(){
+        contentView.addSubviews(placeImageView,infomationStackView)
         
+        placeImageView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(10)
+            $0.leading.equalToSuperview().offset(20)
+            $0.width.equalTo(180)
+            $0.height.equalTo(100)
+        }
+        infomationStackView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(30)
+            $0.leading.equalTo(placeImageView.snp.trailing).offset(20)
+        }
     }
+    
+    func configureCell(_ Consum: Consum1) {
+        placeImageView.image = Consum.image
+        itemLabel.text = Consum.itemName
+        placeTitleLabel.text = Consum.name
+        placeSubTitleLabel.text = Consum.address
+        priceLabel.text = Consum.price
+           
+        }
 }

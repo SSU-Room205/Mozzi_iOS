@@ -23,6 +23,7 @@ struct Images {
     static let loadingHamImage = UIImage(named: "loadingHam")
     static let addImageButtonImage = UIImage(named: "addImage")
     static let emptyNotificationImage = UIImage(named: "AlarmImage")
+    static let emptyImage = UIImage(named: "emptyRect")
 }
 
 struct StampImages {
@@ -38,19 +39,19 @@ struct StampImages {
 }
 
 struct dummyDataImage {
-    static let dummyDataImage1 = UIImage(named: "cheesebuger")!
-    static let dummyDataImage2 = UIImage(named: "coffee")!
-    static let dummyDataImage3 = UIImage(named: "dalcuam")!
-    static let dummyDataImage4 = UIImage(named: "eea")!
-    static let dummyDataImage5 = UIImage(named: "fishbread")!
-    static let dummyDataImage6 = UIImage(named: "mc")!
-    static let dummyDataImage7 = UIImage(named: "omph")!
-    static let dummyDataImage8 = UIImage(named: "omph2")!
-    static let dummyDataImage9 = UIImage(named: "pho")!
-    static let dummyDataImage10 = UIImage(named: "pig")!
-    static let dummyDataImage11 = UIImage(named: "roseChicken")!
-    static let dummyDataImage12 = UIImage(named: "sam")!
-    static let dummyDataImage13 = UIImage(named: "tasku")!
-    static let dummyDataImage14 = UIImage(named: "ttokbbokee")!
-    static let dummyDataImage15 = UIImage(named: "waffle")!
+    static let dummyDataImage1 = UIImage(named: "01")!
+    static let dummyDataImage2 = UIImage(named: "02")!
+    static let dummyDataImage3 = UIImage(named: "03")!
+    static let dummyDataImage4 = UIImage(named: "04")!
+    static let dummyDataImage5 = UIImage(named: "05")!
+    static let dummyDataImage6 = UIImage(named: "06")!
+    static let dummyDataImage7 = UIImage(named: "07")!
+    static let dummyDataImage8 = UIImage(named: "08")!
+    static let dummyDataImage9 = UIImage(named: "09")!
+    static let dummyDataImage10 = UIImage(named: "10")!
+    static let dummyDataImage11 = UIImage(named: "11")!
+    static let dummyDataImage12 = UIImage(named: "12")!
+    static let dummyDataImage13 = UIImage(named: "13")!
+    static let dummyDataImage14 = UIImage(named: "14")!
+    static let dummyDataImage15 = UIImage(named: "15")!
 }

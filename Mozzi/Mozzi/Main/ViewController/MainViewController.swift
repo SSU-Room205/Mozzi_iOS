@@ -12,6 +12,8 @@ import Alamofire
 import SDWebImage
 
 
+
+
 class MainViewController: UITabBarController {
     
     var selectedDate: Date = Date()
@@ -60,6 +62,7 @@ class MainViewController: UITabBarController {
         let button = UIButton()
         button.setImage(Images.plusButtonImage, for: .normal)
         button.setImage(Images.plusButtonTapImage, for: .selected)
+        button.makeShadow(radius: 10, offset: CGSize(width: 2, height: 2), opacity: 0.3)
         button.addTarget(self, action: #selector(addButtonDidTap), for: .touchUpInside)
         return button
     }()
@@ -114,12 +117,12 @@ class MainViewController: UITabBarController {
         picker.delegate = self
         view.backgroundColor = .white
         configure()
-        insertDataSource()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.view.layoutIfNeeded()
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.backgroundColor = .none
         addButton.isSelected = false
@@ -180,6 +183,7 @@ class MainViewController: UITabBarController {
         
     }
     
+    
     private func configure() {
         
         setCalendar()
@@ -216,11 +220,6 @@ class MainViewController: UITabBarController {
             $0.trailing.equalToSuperview().inset(30)
             $0.bottom.equalTo(addButton.snp.top).offset(-20)
         }
-        
-    }
-    
-    private func insertDataSource() {
-        horizontalScrollView.dataSource = Mocks.getDataSource()
         
     }
     
@@ -278,8 +277,6 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
         
         
         
-        fsCalendar.locale = Locale(identifier: "ko_KR")
-        
         // 상단 요일을 한글로 변경
         fsCalendar.calendarWeekdayView.weekdayLabels[0].text = "일"
         fsCalendar.calendarWeekdayView.weekdayLabels[1].text = "월"
@@ -292,7 +289,10 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
     
     func
     calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    
         print(date.toString())
+        horizontalScrollView.stackView.clearSubViews()
+       horizontalScrollView.bind(date.toString())
         
     }
 }

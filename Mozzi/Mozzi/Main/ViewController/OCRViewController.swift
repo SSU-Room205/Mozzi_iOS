@@ -12,6 +12,8 @@ import Alamofire
 
 class OCRViewController: UIViewController {
     
+    private var image: UIImage?
+    
     private var data: UploadRes?
   
     private let loadingView = LoadingView()
@@ -22,6 +24,22 @@ class OCRViewController: UIViewController {
         tabBarController?.tabBar.isHidden = true
         setUI()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        // 옵져버를 등록
+        // 옵저버 대상 self
+        // 옵져버 감지시 실행 함수
+        // 옵져버가 감지할 것
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardUp), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDown), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+        
+     
+
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
     
     func updateImage(_ image: UIImage){
         
@@ -36,6 +54,7 @@ class OCRViewController: UIViewController {
         }, to: "https://port-0-server-mozzi-e9btb72blgv08nbr.sel3.cloudtype.app/upload").responseDecodable(of: UploadRes.self) { response in
             switch response.result {
             case .success(let uploadRes):
+                self.image = image
                 self.data = UploadRes(name: uploadRes.name, price: uploadRes.price, date: uploadRes.date, address: uploadRes.address, itemName: uploadRes.itemName, itemCount: uploadRes.itemCount, itemPrice: uploadRes.itemPrice)
                 self.loadingView.isHidden = true
                 print(uploadRes.itemName)
@@ -80,9 +99,28 @@ class OCRViewController: UIViewController {
     @objc func nextButtonDidTap() {
         let nextVC = WritingPageViewController()
         print("클릭됨")
+        guard let image else { return }
         guard let data else { return }
-        nextVC.updateInfomation(item: data.itemName[0] , place: data.name, address: data.address, price: data.itemPrice[0], date: data.date)
+        nextVC.updateInfomation(image: image, item: importView.itemtextField.text! , place: importView.placetextField.text!, address: importView.addresstextField.text! , price: importView.pricetextField.text!, date: importView.dateTextField.text!)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    @objc func keyboardUp(notification:NSNotification) {
+        if let keyboardFrame:NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+           let keyboardRectangle = keyboardFrame.cgRectValue
+       
+            UIView.animate(
+                withDuration: 0.3
+                , animations: {
+                    self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardRectangle.height)
+                }
+            )
+        }
+    }
+    
+    @objc func keyboardDown() {
+        self.view.transform = .identity
+    }
+
 
 }

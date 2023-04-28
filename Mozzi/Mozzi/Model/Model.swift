@@ -4,7 +4,7 @@
 //
 //  Created by 지희의 MAC on 2023/03/27.
 //
-
+/*
 import Foundation
 import UIKit
 
@@ -38,5 +38,5 @@ struct Mocks {
     }
 }
 
-
+*/
 

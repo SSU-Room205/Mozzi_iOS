@@ -6,15 +6,16 @@
 //
 
 import Foundation
-//
-//final class TodoManager {
-//    // service code
-//    static let shared = TodoManager()
-//    private init() {}
-//}
-//
-//extension TodoManager {
-//    func getTodoMock() -> [Consum] {
-//        return MockParser.load([Consum].self, from: "Counsum")!
-//    }
-//}
+
+final class ConsumManager {
+    // service code
+    static let shared = ConsumManager()
+    private init() {}
+}
+
+extension ConsumManager {
+    func getTodoMock() -> [Consum] {
+        return MockParser.load([Consum].self, from: "Consum")!
+    }
+}
+ 
