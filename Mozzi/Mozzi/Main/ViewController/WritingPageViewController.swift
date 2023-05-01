@@ -114,5 +114,6 @@ extension WritingPageViewController: UITextViewDelegate {
             textView.textColor = .placeholderText
         }
     }
+    
         
 }
