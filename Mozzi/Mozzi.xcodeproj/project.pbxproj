@@ -10,6 +10,7 @@
 		3628BC3A29A9E11200A59EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3929A9E11200A59EE8 /* AppDelegate.swift */; };
 		3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */; };
 		3628BC4629A9E11F00A59EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */; };
+		362AC2D42A0D298500262E23 /* StampImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC2D32A0D298500262E23 /* StampImages.swift */; };
 		362ECDFC29F7F62700A05322 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFB29F7F62700A05322 /* UIImage+.swift */; };
 		362ECDFE29F806AA00A05322 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFD29F806AA00A05322 /* Notification.swift */; };
 		362ECE0029F93B7D00A05322 /* DaliyUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFF29F93B7D00A05322 /* DaliyUseView.swift */; };
@@ -115,6 +116,7 @@
 		3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3628BC4529A9E11F00A59EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3628BC4729A9E11F00A59EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		362AC2D32A0D298500262E23 /* StampImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampImages.swift; sourceTree = "<group>"; };
 		362ECDFB29F7F62700A05322 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		362ECDFD29F806AA00A05322 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		362ECDFF29F93B7D00A05322 /* DaliyUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaliyUseView.swift; sourceTree = "<group>"; };
@@ -404,14 +406,14 @@
 		36D3BB4829EE8A5200A82957 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */,
+				36D3BB4B29EE8A5200A82957 /* MainViewController.swift */,
 				36D3BB4929EE8A5200A82957 /* WritingPageViewController.swift */,
 				36D3BB4A29EE8A5200A82957 /* MapViewController.swift */,
-				36D3BB4B29EE8A5200A82957 /* MainViewController.swift */,
 				36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */,
 				36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */,
 				36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */,
 				36D3BB4F29EE8A5200A82957 /* UploadViewController.swift */,
-				36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */,
 				36D3BB5129EE8A5200A82957 /* MypageViewController.swift */,
 				36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */,
 				36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */,
@@ -435,6 +437,7 @@
 				36D3BB5629EE8A5300A82957 /* Image.swift */,
 				36AB67C729EF266000C60C59 /* UploadRes.swift */,
 				362ECDFD29F806AA00A05322 /* Notification.swift */,
+				362AC2D32A0D298500262E23 /* StampImages.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				36571AD929F94A4100576EF3 /* Consum.swift in Sources */,
 				36D3BB6929EE8A5300A82957 /* WishListView.swift in Sources */,
 				36D3BB7129EE8A5300A82957 /* NotificationSettingViewController.swift in Sources */,
+				362AC2D42A0D298500262E23 /* StampImages.swift in Sources */,
 				36D3BB7429EE8A5300A82957 /* UploadViewController.swift in Sources */,
 				36D3BB6B29EE8A5300A82957 /* NotificationTableViewCell.swift in Sources */,
 				36D3BB7829EE8A5300A82957 /* Model.swift in Sources */,

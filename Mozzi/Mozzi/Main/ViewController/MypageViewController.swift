@@ -9,32 +9,48 @@ import UIKit
 import SnapKit
 
 
+protocol DataBindProtocol: AnyObject {
+    func dataBind(text: String)
+}
 
 class MypageViewController: UITabBarController {
     
-    let mypageBackgroundImage = UIImage(named: "profileBackground")
+//    lazy var mainScrollView: UIScrollView = {
+//        let scrollView = UIScrollView()
+//       return scrollView
+//    }()
+    let mypageBackgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .mozziGreen
+        view.makeCornerRound(radius: 530)
+        return view
+    }()
     
-    lazy var mypageBackgroundImageView = UIImageView(image: mypageBackgroundImage)
+    let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    
+    var stampImages = StampImages.dummy(){
+        didSet{
+            self.stampcollectionView.reloadData()
+        }
+    }
     lazy var profileView = ProfileView()
     lazy var wishLishView = WishListView()
-    var collectionView : UICollectionView = {
+    var stampcollectionView : UICollectionView = {
         var layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 10
+        layout.itemSize = CGSize(width: 98, height: 98)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 30)
         layout.scrollDirection = .vertical
-        layout.sectionInset = .zero
-        
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .green
         return cv
     }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
         configureCollectionView()
-        // Do any additional setup after loading the view.
+        setView()
     }
+    
     private func setView(){
         setViewHierarchy()
         setLayout()
@@ -43,63 +59,69 @@ class MypageViewController: UITabBarController {
     
     private func setViewHierarchy(){
         view.backgroundColor = .white
-        view.addSubview(mypageBackgroundImageView)
-        view.addSubview(profileView)
-        view.addSubview(wishLishView)
-        view.addSubview(collectionView)
+        view.addSubviews(mypageBackgroundView,profileView,wishLishView,stampcollectionView)
+//        view.addSubview(mainScrollView)
+//        mainScrollView.addSubviews(mypageBackgroundView,profileView,wishLishView,stampcollectionView)
+//        mainScrollView.backgroundColor = .blue
         
     }
     
     private func setLayout(){
-        mypageBackgroundImageView.snp.makeConstraints{make in
-            make.top.leading.trailing.equalToSuperview()
+//        mypageBackgroundImageView.snp.makeConstraints{
+//            $0.top.leading.trailing.equalToSuperview()
+//        }
+//        mainScrollView.snp.makeConstraints{
+//            $0.edges.equalToSuperview()
+//        }
+        mypageBackgroundView.snp.makeConstraints{
+            $0.size.equalTo(1060)
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(-850)
         }
-        profileView.snp.makeConstraints{make in
-            make.top.equalToSuperview().offset(60)
-            make.centerX.equalToSuperview()
+        profileView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(60)
+            $0.centerX.equalToSuperview()
         }
-        wishLishView.snp.makeConstraints{make in
-            make.top.equalTo(profileView.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        collectionView.snp.makeConstraints{
-            $0.top.equalTo(wishLishView.snp.bottom).offset(20)
+        wishLishView.snp.makeConstraints{
+            $0.top.equalTo(profileView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(220)
+        }
+        stampcollectionView.snp.makeConstraints{
+            $0.top.equalTo(wishLishView.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.bottom.leading.trailing.equalToSuperview()
         }
         
     }
     
 }
 
-extension MypageViewController : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+extension MypageViewController : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+{
     
     func configureCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(StampingImageCell.self, forCellWithReuseIdentifier: StampingImageCell.identifier)
+        stampcollectionView.delegate = self
+        stampcollectionView.dataSource = self
+        stampcollectionView.register(StampingImageCell.self, forCellWithReuseIdentifier: StampingImageCell.identifier)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return stampImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StampingImageCell.identifier, for: indexPath) as? StampingImageCell else {
+        guard let cell = stampcollectionView.dequeueReusableCell(withReuseIdentifier: StampingImageCell.identifier, for: indexPath) as? StampingImageCell else {
+            
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .none
-        cell.img.image = UIImage(named: "eatting")
+        cell.configureCell(stampImages[indexPath.item])
         return cell
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemSpacing : CGFloat = 10
-        
-        let myWidth : CGFloat = (collectionView.bounds.width - itemSpacing * 2) / 3
-        
-        
-        return CGSize(width: myWidth, height: myWidth)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 98, height: 98)
+//    }
 }

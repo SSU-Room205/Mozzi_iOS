@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 import FSCalendar
 import Alamofire
-import SDWebImage
 
 
 
@@ -292,7 +291,7 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
     
         print(date.toString())
         horizontalScrollView.stackView.clearSubViews()
-       horizontalScrollView.bind(date.toString())
+        horizontalScrollView.bind(date.toString())
         
     }
 }

@@ -26,18 +26,6 @@ struct Images {
     static let emptyImage = UIImage(named: "emptyRect")
 }
 
-struct StampImages {
-    static let stamp1 = UIImage(named: "Stamp1")
-    static let stamp2 = UIImage(named: "Stamp2")
-    static let stamp3 = UIImage(named: "Stamp3")
-    static let stamp4 = UIImage(named: "Stamp4")
-    static let stamp5 = UIImage(named: "Stamp5")
-    static let stamp6 = UIImage(named: "Stamp6")
-    static let stamp7 = UIImage(named: "Stamp7")
-    static let stamp8 = UIImage(named: "Stamp8")
-    static let stamp9 = UIImage(named: "Stamp9")
-}
-
 struct dummyDataImage {
     static let dummyDataImage1 = UIImage(named: "01")!
     static let dummyDataImage2 = UIImage(named: "02")!
