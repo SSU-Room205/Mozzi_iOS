@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.6.4)
   - FSCalendar (2.8.4)
+  - Gifu (3.3.1)
   - SDWebImage (5.15.5):
     - SDWebImage/Core (= 5.15.5)
   - SDWebImage/Core (5.15.5)
@@ -10,6 +11,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - FSCalendar
+  - Gifu
   - SDWebImage
   - SnapKit (~> 5.6.0)
   - SwiftyJSON
@@ -18,6 +20,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - FSCalendar
+    - Gifu
     - SDWebImage
     - SnapKit
     - SwiftyJSON
@@ -25,10 +28,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: e87a1ca49f627ebffba624ac720b3e8093db0648
+PODFILE CHECKSUM: 97e98f7eefa0d4516a320ff6e03625838146bfd2
 
 COCOAPODS: 1.12.0

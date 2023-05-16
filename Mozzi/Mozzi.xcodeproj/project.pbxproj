@@ -59,6 +59,7 @@
 		36571AEC29F997B600576EF3 /* ConsumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571AEB29F997B600576EF3 /* ConsumManager.swift */; };
 		36571AEE29F9A4E300576EF3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36571AED29F9A4E300576EF3 /* LocationService.swift */; };
 		36571AEF29F9B12800576EF3 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36348BEF29BE37CE00548051 /* DaumMap.framework */; };
+		36A76D1D2A13616D00342AC3 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 36A76D1C2A13616C00342AC3 /* loading.gif */; };
 		36AB67C829EF266000C60C59 /* UploadRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB67C729EF266000C60C59 /* UploadRes.swift */; };
 		36AB67CA29EF4CB300C60C59 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB67C929EF4CB300C60C59 /* BaseScrollView.swift */; };
 		36D3BB6229EE8A5300A82957 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */; };
@@ -174,6 +175,7 @@
 		36571AE829F9979100576EF3 /* MockParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockParser.swift; sourceTree = "<group>"; };
 		36571AEB29F997B600576EF3 /* ConsumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumManager.swift; sourceTree = "<group>"; };
 		36571AED29F9A4E300576EF3 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		36A76D1C2A13616C00342AC3 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		36AB67C729EF266000C60C59 /* UploadRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRes.swift; sourceTree = "<group>"; };
 		36AB67C929EF4CB300C60C59 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
 		36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 		3628BC3829A9E11200A59EE8 /* Mozzi */ = {
 			isa = PBXGroup;
 			children = (
+				36A76D1C2A13616C00342AC3 /* loading.gif */,
 				36571AEA29F997A600576EF3 /* Service */,
 				36571AE729F9976100576EF3 /* NetWork */,
 				36F031EC29F7E70B0038998A /* Font */,
@@ -588,6 +591,7 @@
 				36348C0529BE37CE00548051 /* map_pin.png in Resources */,
 				36F0320229F7EC650038998A /* Pretendard-ExtraBold.otf in Resources */,
 				3651571E29F3AECA00598391 /* Assets.xcassets in Resources */,
+				36A76D1D2A13616D00342AC3 /* loading.gif in Resources */,
 				36348BFE29BE37CE00548051 /* map_pin_red.png in Resources */,
 				36348BF029BE37CE00548051 /* map_pinup_custom@3x.png in Resources */,
 				36348BF829BE37CE00548051 /* copyright.png in Resources */,

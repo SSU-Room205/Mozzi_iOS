@@ -10,6 +10,7 @@ target 'Mozzi' do
       pod 'Alamofire'
       pod 'SwiftyJSON'
       pod 'SDWebImage'
+      pod 'Gifu'
   # Pods for Mozzi
 
 end
