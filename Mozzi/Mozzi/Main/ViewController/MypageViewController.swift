@@ -21,8 +21,11 @@ class MypageViewController: UITabBarController {
 //    }()
     let mypageBackgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = .mozziGreen
+        view.backgroundColor = .mozziMain
         view.makeCornerRound(radius: 530)
+        view.makeBorder(width: 3, color: .white)
+        view.makeShadow(radius: 0, offset: CGSize(width: 3, height: 3), opacity: 1)
+        view.layer.shadowColor = UIColor.mozziMain.cgColor
         return view
     }()
     
@@ -41,6 +44,7 @@ class MypageViewController: UITabBarController {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 30)
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .white
         return cv
     }()
     
