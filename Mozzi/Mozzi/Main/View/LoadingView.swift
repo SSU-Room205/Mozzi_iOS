@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Gifu
 
 class LoadingView: BaseView {
     
@@ -14,7 +15,7 @@ class LoadingView: BaseView {
        let view = UIView()
         view.backgroundColor = .white
         view.makeCornerRound(radius: 20)
-        view.alpha = 0.5
+        view.alpha = 0.8
         return view
     }()
     
@@ -31,20 +32,27 @@ class LoadingView: BaseView {
         return imageView
     }()
     
+    let gifImageView = GIFImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    
     private lazy var loadingStackView : UIStackView = {
         let stackView = UIStackView()
-        stackView.addArrangeSubViews(loadingImageView,loadingLabel)
+        stackView.addArrangeSubViews(gifImageView,loadingLabel)
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = 10
         return stackView
     }()
     
+    
     func viewIsHideen() {
         self.backgroundView.isHidden = true
     }
     
     func setViewHierarchy() {
+        
+        gifImageView.animate(withGIFNamed: "loading") {
+            print("It's animating!")
+        }
         self.addSubviews(backgroundView,loadingStackView)
     }
     
@@ -55,7 +63,7 @@ class LoadingView: BaseView {
             $0.edges.equalToSuperview()
         }
         
-        loadingImageView.snp.makeConstraints{
+        gifImageView.snp.makeConstraints{
             $0.height.width.equalTo(200)
         }
         

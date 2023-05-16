@@ -17,6 +17,7 @@ public typealias BaseView = BaseViewClass & Layout
 open class BaseViewClass: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .white
         setLayouts()
     }
 

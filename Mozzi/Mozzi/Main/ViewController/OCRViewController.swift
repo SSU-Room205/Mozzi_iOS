@@ -70,6 +70,7 @@ class OCRViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubviews(loadingView, importView)
         view.bringSubviewToFront(loadingView)
+        loadingView.backgroundColor = .clear
         navigationController?.navigationBar.tintColor = .mozziDark
         navigationItem.backButtonTitle = "이전"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "등록", style: .plain, target: self, action: #selector(nextButtonDidTap))

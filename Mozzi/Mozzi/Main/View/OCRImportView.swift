@@ -17,6 +17,7 @@ final class OCRImportView: BaseView{
         return imageView
     }()
     
+    
     private lazy var placeStackView : UIStackView = {
         let stackView = UIStackView()
         stackView.addArrangeSubViews(placeItemView, placetextField)
