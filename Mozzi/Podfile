@@ -11,6 +11,7 @@ target 'Mozzi' do
       pod 'SwiftyJSON'
       pod 'SDWebImage'
       pod 'Gifu'
+      pod 'NMapsMap'
   # Pods for Mozzi
 
 end
