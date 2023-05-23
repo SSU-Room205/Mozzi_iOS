@@ -24,6 +24,7 @@ struct Images {
     static let addImageButtonImage = UIImage(named: "addImage")
     static let emptyNotificationImage = UIImage(named: "AlarmImage")
     static let emptyImage = UIImage(named: "emptyRect")
+    static let profileRabbit = UIImage(named: "7edb72b1f5786dc6b8375dff02001d30")
 }
 
 struct dummyDataImage {

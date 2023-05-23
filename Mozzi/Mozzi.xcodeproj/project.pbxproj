@@ -73,6 +73,10 @@
 		36A6D3572A1A505D00D71840 /* GetGeocode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3562A1A505D00D71840 /* GetGeocode.swift */; };
 		36A6D3592A1B119B00D71840 /* LocationGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3582A1B119B00D71840 /* LocationGet.swift */; };
 		36A6D35B2A1B11D700D71840 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D35A2A1B11D600D71840 /* DataResponse.swift */; };
+		36A6D3692A1BDAB600D71840 /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3682A1BDAB600D71840 /* MypageView.swift */; };
+		36A6D36B2A1BDD5C00D71840 /* WishListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D36A2A1BDD5C00D71840 /* WishListCollectionViewCell.swift */; };
+		36A6D36D2A1BEE0200D71840 /* StampHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D36C2A1BEE0200D71840 /* StampHeaderView.swift */; };
+		36A6D36F2A1CDC7E00D71840 /* StampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D36E2A1CDC7E00D71840 /* StampViewController.swift */; };
 		36A76D1D2A13616D00342AC3 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 36A76D1C2A13616C00342AC3 /* loading.gif */; };
 		36AB67C829EF266000C60C59 /* UploadRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB67C729EF266000C60C59 /* UploadRes.swift */; };
 		36AB67CA29EF4CB300C60C59 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB67C929EF4CB300C60C59 /* BaseScrollView.swift */; };
@@ -81,9 +85,7 @@
 		36D3BB6429EE8A5300A82957 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3E29EE8A5200A82957 /* PlaceListView.swift */; };
 		36D3BB6529EE8A5300A82957 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB3F29EE8A5200A82957 /* MapView.swift */; };
 		36D3BB6629EE8A5300A82957 /* StampImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4029EE8A5200A82957 /* StampImageCell.swift */; };
-		36D3BB6729EE8A5300A82957 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4129EE8A5200A82957 /* UploadView.swift */; };
 		36D3BB6829EE8A5300A82957 /* WritingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4229EE8A5200A82957 /* WritingPageView.swift */; };
-		36D3BB6929EE8A5300A82957 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4329EE8A5200A82957 /* WishListView.swift */; };
 		36D3BB6A29EE8A5300A82957 /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4429EE8A5200A82957 /* HeartView.swift */; };
 		36D3BB6B29EE8A5300A82957 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4529EE8A5200A82957 /* NotificationTableViewCell.swift */; };
 		36D3BB6C29EE8A5300A82957 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4629EE8A5200A82957 /* AddButton.swift */; };
@@ -94,7 +96,6 @@
 		36D3BB7129EE8A5300A82957 /* NotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */; };
 		36D3BB7229EE8A5300A82957 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */; };
 		36D3BB7329EE8A5300A82957 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */; };
-		36D3BB7429EE8A5300A82957 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4F29EE8A5200A82957 /* UploadViewController.swift */; };
 		36D3BB7529EE8A5300A82957 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */; };
 		36D3BB7629EE8A5300A82957 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5129EE8A5200A82957 /* MypageViewController.swift */; };
 		36D3BB7729EE8A5300A82957 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */; };
@@ -111,7 +112,6 @@
 		36D3BB8729EE935D00A82957 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8629EE935D00A82957 /* PhotoCaptureDelegate.swift */; };
 		36D3BB8D29EEDA2800A82957 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */; };
 		36D3BB8F29EEDC8A00A82957 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB8E29EEDC8A00A82957 /* LoadingView.swift */; };
-		36D3BB9529EEECBF00A82957 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB9429EEECBF00A82957 /* CalendarView.swift */; };
 		36F031F729F7E8CB0038998A /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F031F629F7E8CB0038998A /* UIFont+.swift */; };
 		36F0320129F7EC650038998A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36F031F829F7EC640038998A /* Pretendard-SemiBold.otf */; };
 		36F0320229F7EC650038998A /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36F031F929F7EC640038998A /* Pretendard-ExtraBold.otf */; };
@@ -202,6 +202,10 @@
 		36A6D3562A1A505D00D71840 /* GetGeocode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGeocode.swift; sourceTree = "<group>"; };
 		36A6D3582A1B119B00D71840 /* LocationGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationGet.swift; sourceTree = "<group>"; };
 		36A6D35A2A1B11D600D71840 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
+		36A6D3682A1BDAB600D71840 /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
+		36A6D36A2A1BDD5C00D71840 /* WishListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCollectionViewCell.swift; sourceTree = "<group>"; };
+		36A6D36C2A1BEE0200D71840 /* StampHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampHeaderView.swift; sourceTree = "<group>"; };
+		36A6D36E2A1CDC7E00D71840 /* StampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampViewController.swift; sourceTree = "<group>"; };
 		36A76D1C2A13616C00342AC3 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		36AB67C729EF266000C60C59 /* UploadRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRes.swift; sourceTree = "<group>"; };
 		36AB67C929EF4CB300C60C59 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
@@ -210,9 +214,7 @@
 		36D3BB3E29EE8A5200A82957 /* PlaceListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		36D3BB3F29EE8A5200A82957 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		36D3BB4029EE8A5200A82957 /* StampImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampImageCell.swift; sourceTree = "<group>"; };
-		36D3BB4129EE8A5200A82957 /* UploadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		36D3BB4229EE8A5200A82957 /* WritingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingPageView.swift; sourceTree = "<group>"; };
-		36D3BB4329EE8A5200A82957 /* WishListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		36D3BB4429EE8A5200A82957 /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
 		36D3BB4529EE8A5200A82957 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		36D3BB4629EE8A5200A82957 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
@@ -223,7 +225,6 @@
 		36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
 		36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		36D3BB4F29EE8A5200A82957 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		36D3BB5129EE8A5200A82957 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +241,6 @@
 		36D3BB8629EE935D00A82957 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
 		36D3BB8E29EEDC8A00A82957 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		36D3BB9429EEECBF00A82957 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		36F031F629F7E8CB0038998A /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		36F031F829F7EC640038998A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		36F031F929F7EC640038998A /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -384,12 +384,9 @@
 		369E1B352A1514FE00E46841 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
-				369E1B362A1514FE00E46841 /* DetailView.swift */,
-				369E1B372A1514FE00E46841 /* ProfileHeaderView.swift */,
-				369E1B382A1514FE00E46841 /* InfoUnitCollectionViewCell.swift */,
-				369E1B392A1514FE00E46841 /* MapUnitCollectionViewCell.swift */,
-				369E1B3A2A1514FE00E46841 /* DetailUnitCollectionViewCell.swift */,
-				369E1B422A154F2F00E46841 /* LineView.swift */,
+				36A6D35F2A1B9D4800D71840 /* VCs */,
+				36A6D35E2A1B9D4200D71840 /* Cells */,
+				36A6D35D2A1B9D3700D71840 /* Views */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -408,57 +405,148 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		36D3BB3A29EE8A5200A82957 /* Main */ = {
+		36A6D35C2A1B9D1800D71840 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				36D3BB8529EE934700A82957 /* delegate */,
-				36D3BB3B29EE8A5200A82957 /* View */,
-				36D3BB4829EE8A5200A82957 /* ViewController */,
+				36A6D3622A1B9DA900D71840 /* Cells */,
+				36A6D3612A1B9DA300D71840 /* Views */,
+				36A6D3602A1B9D9000D71840 /* VCs */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		36A6D35D2A1B9D3700D71840 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				369E1B362A1514FE00E46841 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		36A6D35E2A1B9D4200D71840 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				369E1B372A1514FE00E46841 /* ProfileHeaderView.swift */,
+				369E1B382A1514FE00E46841 /* InfoUnitCollectionViewCell.swift */,
+				369E1B392A1514FE00E46841 /* MapUnitCollectionViewCell.swift */,
+				369E1B3A2A1514FE00E46841 /* DetailUnitCollectionViewCell.swift */,
+				369E1B422A154F2F00E46841 /* LineView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		36A6D35F2A1B9D4800D71840 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				369E1B332A1514DD00E46841 /* DetailViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		36A6D3602A1B9D9000D71840 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB5129EE8A5200A82957 /* MypageViewController.swift */,
+				36A6D36E2A1CDC7E00D71840 /* StampViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		36A6D3612A1B9DA300D71840 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36A6D3682A1BDAB600D71840 /* MypageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		36A6D3622A1B9DA900D71840 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB3D29EE8A5200A82957 /* ProfileView.swift */,
+				36A6D36C2A1BEE0200D71840 /* StampHeaderView.swift */,
+				36D3BB4029EE8A5200A82957 /* StampImageCell.swift */,
+				36A6D36A2A1BDD5C00D71840 /* WishListCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		36A6D3632A1B9DF300D71840 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */,
+				362ECDFF29F93B7D00A05322 /* DaliyUseView.swift */,
+				36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */,
+				36D3BB4B29EE8A5200A82957 /* MainViewController.swift */,
+				36A6D3672A1B9E3200D71840 /* Notification */,
+				36A6D3662A1B9E2400D71840 /* OCR */,
+				36A6D3652A1B9E1D00D71840 /* Writing */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		36D3BB3B29EE8A5200A82957 /* View */ = {
+		36A6D3642A1B9DF900D71840 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				369E1B352A1514FE00E46841 /* DetailView */,
-				36D3BB3C29EE8A5200A82957 /* HorizontalScrollView.swift */,
-				36D3BB9429EEECBF00A82957 /* CalendarView.swift */,
-				36D3BB3D29EE8A5200A82957 /* ProfileView.swift */,
 				36D3BB3F29EE8A5200A82957 /* MapView.swift */,
-				36D3BB4029EE8A5200A82957 /* StampImageCell.swift */,
-				36D3BB4129EE8A5200A82957 /* UploadView.swift */,
-				36D3BB4229EE8A5200A82957 /* WritingPageView.swift */,
-				36D3BB4329EE8A5200A82957 /* WishListView.swift */,
-				36D3BB4429EE8A5200A82957 /* HeartView.swift */,
-				36D3BB4529EE8A5200A82957 /* NotificationTableViewCell.swift */,
-				36D3BB4629EE8A5200A82957 /* AddButton.swift */,
 				36D3BB3E29EE8A5200A82957 /* PlaceListView.swift */,
 				36D3BB4729EE8A5200A82957 /* PlaceListTableViewCell.swift */,
-				36D3BB8E29EEDC8A00A82957 /* LoadingView.swift */,
-				3651571029F3436300598391 /* OCRImportView.swift */,
-				362ECDFF29F93B7D00A05322 /* DaliyUseView.swift */,
+				36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */,
+				36D3BB4A29EE8A5200A82957 /* MapViewController.swift */,
 			);
-			path = View;
+			path = Map;
 			sourceTree = "<group>";
 		};
-		36D3BB4829EE8A5200A82957 /* ViewController */ = {
+		36A6D3652A1B9E1D00D71840 /* Writing */ = {
 			isa = PBXGroup;
 			children = (
-				36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */,
-				36D3BB4B29EE8A5200A82957 /* MainViewController.swift */,
+				36D3BB4229EE8A5200A82957 /* WritingPageView.swift */,
+				36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */,
 				36D3BB4929EE8A5200A82957 /* WritingPageViewController.swift */,
-				36D3BB4A29EE8A5200A82957 /* MapViewController.swift */,
+				36D3BB4429EE8A5200A82957 /* HeartView.swift */,
+				36D3BB4629EE8A5200A82957 /* AddButton.swift */,
+			);
+			path = Writing;
+			sourceTree = "<group>";
+		};
+		36A6D3662A1B9E2400D71840 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB8E29EEDC8A00A82957 /* LoadingView.swift */,
+				3651571029F3436300598391 /* OCRImportView.swift */,
+				36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
+		36A6D3672A1B9E3200D71840 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB4529EE8A5200A82957 /* NotificationTableViewCell.swift */,
 				36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */,
 				36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */,
-				36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */,
-				36D3BB4F29EE8A5200A82957 /* UploadViewController.swift */,
-				36D3BB5129EE8A5200A82957 /* MypageViewController.swift */,
-				36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */,
-				36D3BB8C29EEDA2800A82957 /* OCRViewController.swift */,
-				369E1B332A1514DD00E46841 /* DetailViewController.swift */,
 			);
-			path = ViewController;
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		36D3BB3A29EE8A5200A82957 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				36D3BB8529EE934700A82957 /* delegate */,
+				36D3BB3B29EE8A5200A82957 /* Scenes */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		36D3BB3B29EE8A5200A82957 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				36A6D3642A1B9DF900D71840 /* Map */,
+				36A6D3632A1B9DF300D71840 /* Main */,
+				36A6D35C2A1B9D1800D71840 /* MyPage */,
+				369E1B352A1514FE00E46841 /* DetailView */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		36D3BB5329EE8A5300A82957 /* Model */ = {
@@ -729,13 +817,13 @@
 				36A6D3512A1A380E00D71840 /* PatchService.swift in Sources */,
 				36D3BB8729EE935D00A82957 /* PhotoCaptureDelegate.swift in Sources */,
 				369E1B342A1514DD00E46841 /* DetailViewController.swift in Sources */,
+				36A6D3692A1BDAB600D71840 /* MypageView.swift in Sources */,
 				362ECDFE29F806AA00A05322 /* Notification.swift in Sources */,
 				36D3BB8D29EEDA2800A82957 /* OCRViewController.swift in Sources */,
 				36571ADB29F9629700576EF3 /* String+.swift in Sources */,
 				36D3BB8229EE8A5300A82957 /* BaseView.swift in Sources */,
 				36D3BB6C29EE8A5300A82957 /* AddButton.swift in Sources */,
 				36A6D3532A1A380E00D71840 /* DeleteService.swift in Sources */,
-				36D3BB9529EEECBF00A82957 /* CalendarView.swift in Sources */,
 				36D3BB7F29EE8A5300A82957 /* UIStackView+.swift in Sources */,
 				36D3BB7229EE8A5300A82957 /* NotificationTableViewController.swift in Sources */,
 				36D3BB6529EE8A5300A82957 /* MapView.swift in Sources */,
@@ -754,10 +842,9 @@
 				36571AD929F94A4100576EF3 /* Consum.swift in Sources */,
 				369E1B3D2A1514FE00E46841 /* InfoUnitCollectionViewCell.swift in Sources */,
 				369E1B432A154F2F00E46841 /* LineView.swift in Sources */,
-				36D3BB6929EE8A5300A82957 /* WishListView.swift in Sources */,
 				36D3BB7129EE8A5300A82957 /* NotificationSettingViewController.swift in Sources */,
+				36A6D36F2A1CDC7E00D71840 /* StampViewController.swift in Sources */,
 				362AC2D42A0D298500262E23 /* StampImages.swift in Sources */,
-				36D3BB7429EE8A5300A82957 /* UploadViewController.swift in Sources */,
 				36D3BB6B29EE8A5300A82957 /* NotificationTableViewCell.swift in Sources */,
 				3628BC3A29A9E11200A59EE8 /* AppDelegate.swift in Sources */,
 				36D3BB8129EE8A5300A82957 /* UIColor+.swift in Sources */,
@@ -768,18 +855,19 @@
 				36D3BB7E29EE8A5300A82957 /* UIView+.swift in Sources */,
 				36A6D3522A1A380E00D71840 /* NetworkResult.swift in Sources */,
 				36D3BB6A29EE8A5300A82957 /* HeartView.swift in Sources */,
+				36A6D36B2A1BDD5C00D71840 /* WishListCollectionViewCell.swift in Sources */,
 				36D3BB7529EE8A5300A82957 /* MainTabBarController.swift in Sources */,
 				3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */,
 				36D3BB7D29EE8A5300A82957 /* SignInViewController.swift in Sources */,
 				36D3BB7629EE8A5300A82957 /* MypageViewController.swift in Sources */,
 				36D3BB7729EE8A5300A82957 /* PlaceListViewController.swift in Sources */,
 				36AB67C829EF266000C60C59 /* UploadRes.swift in Sources */,
-				36D3BB6729EE8A5300A82957 /* UploadView.swift in Sources */,
 				369E1B3E2A1514FE00E46841 /* MapUnitCollectionViewCell.swift in Sources */,
 				36A6D34F2A1A380E00D71840 /* PostService.swift in Sources */,
 				36D3BB6329EE8A5300A82957 /* ProfileView.swift in Sources */,
 				362ECDFC29F7F62700A05322 /* UIImage+.swift in Sources */,
 				36D3BB8029EE8A5300A82957 /* UIViewController+.swift in Sources */,
+				36A6D36D2A1BEE0200D71840 /* StampHeaderView.swift in Sources */,
 				36D3BB6629EE8A5300A82957 /* StampImageCell.swift in Sources */,
 				36A6D35B2A1B11D700D71840 /* DataResponse.swift in Sources */,
 			);
@@ -930,6 +1018,7 @@
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8D8H8KC6DH;
@@ -942,6 +1031,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mozzi/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치를 받아오고자 합니다. ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -953,8 +1045,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = LJH.Mozzi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mozzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = Mozzi/Header.h;
 				SWIFT_VERSION = 5.0;
@@ -973,6 +1066,7 @@
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8D8H8KC6DH;
@@ -985,6 +1079,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mozzi/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치를 받아오고자 합니다. ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -996,8 +1093,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = LJH.Mozzi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mozzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = Mozzi/Header.h;
 				SWIFT_VERSION = 5.0;
