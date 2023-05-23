@@ -16,3 +16,14 @@ struct UploadRes: Decodable {
     var itemCount: Array<String>
     var itemPrice: Array<String>
 }
+
+
+// MARK: - AddRequest
+struct AddRequest: Codable {
+    let storeName, address: String
+    let price: Int
+    let item, itemPrice, date, category: String
+    let point: Int
+    let memo: String
+}
+

@@ -12,3 +12,8 @@ class LocationService {
     var longitude:Double!
     var latitude:Double!
 }
+
+struct Geocode {
+    var longitude:Double
+    var latitude:Double
+}
