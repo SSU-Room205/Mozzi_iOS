@@ -14,6 +14,7 @@ class PlaceListTableViewCell: UITableViewCell {
     private lazy var placeImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.makeCornerRound(radius: 10)
+        imageView.backgroundColor = .gray
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -21,12 +22,14 @@ class PlaceListTableViewCell: UITableViewCell {
     private let itemLabel: UILabel = {
         let label = UILabel()
         label.font = .pretendardMedium(ofSize: 16)
+        label.numberOfLines = 0
         return label
     }()
     
     private let placeTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .pretendardBold(ofSize: 14)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -43,7 +46,7 @@ class PlaceListTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var infomationStackView: UIStackView = {
+    lazy var infomationStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 5
@@ -79,15 +82,23 @@ class PlaceListTableViewCell: UITableViewCell {
         contentView.addSubviews(placeImageView,infomationStackView)
         
         placeImageView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(10)
+            $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(20)
-            $0.width.equalTo(180)
-            $0.height.equalTo(100)
+            $0.width.equalTo(150)
+            $0.height.equalTo(120)
         }
         infomationStackView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(30)
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(18)
             $0.leading.equalTo(placeImageView.snp.trailing).offset(20)
         }
+    }
+    
+    func configureCellData(_ dataElement: DataResponseElement){
+        itemLabel.text = dataElement.item[0]
+        placeTitleLabel.text = dataElement.storeName
+        placeSubTitleLabel.text = dataElement.address
+        priceLabel.text = String(dataElement.price)
     }
     
     func configureCell(_ Consum: Consum1) {

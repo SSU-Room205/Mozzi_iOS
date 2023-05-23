@@ -13,8 +13,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tabBar.backgroundColor = UIColor.white
+        self.tabBarController?.tabBar.isTranslucent = false
+        self.tabBar.tintColor = UIColor.mozziMain
         self.tabBar.makeCornerRound(radius: 10)
         
         let mapNC = UINavigationController.init(rootViewController: MapViewController())

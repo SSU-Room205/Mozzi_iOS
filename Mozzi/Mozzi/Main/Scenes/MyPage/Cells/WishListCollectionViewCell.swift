@@ -1,24 +1,16 @@
 //
-//  WishListView.swift
-//  Mozzi_dev
+//  WishListCollectionViewCell.swift
+//  Mozzi
 //
-//  Created by 지희의 MAC on 2023/03/31.
+//  Created by 지희의 MAC on 2023/05/23.
 //
 
 import UIKit
-import SnapKit
 
-class WishListView: UIView {
-    //UIComponent
+class WishListCollectionViewCell: UICollectionViewCell,CollectionViewCellReuseProtocol {
+   //MARK: - UI Components
     private let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     
-    private let wishLabel: UILabel = {
-        let label = UILabel()
-        label.text = "위시리스트"
-        label.font = .systemFont(ofSize: 20)
-        label.textColor = .mozziMain
-        return label
-    }()
     
      let wishImageView: UIImageView = {
         let imageView = UIImageView()
@@ -54,6 +46,7 @@ class WishListView: UIView {
         button.backgroundColor = .white
         button.makeBorder(width: 1, color: .mozziMain)
         button.setTitle("-", for: .normal)
+        button.setTitleColor(.mozziMain, for: .normal)
         button.titleLabel?.font = .pretendardBold(ofSize: 36)
         return button
     }()
@@ -99,7 +92,7 @@ class WishListView: UIView {
     private lazy var wishStackView:UIStackView  = {
         let stackView = UIStackView()
         stackView.addArrangeSubViews(wishImageView,newButtonStack,valButtonStack)
-        stackView.spacing = 28
+        stackView.spacing = 10
         stackView.axis = .horizontal
         return stackView
     }()
@@ -111,22 +104,22 @@ class WishListView: UIView {
         slider.maximumValue = 100000
         return slider
     }()
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setLayout()
-    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 
-private extension WishListView {
+private extension WishListCollectionViewCell {
     func setLayout() {
         wishImageView.addSubview(appendButton)
-        addSubviews(wishLabel,wishStackView,valSlider)
+        addSubviews(wishStackView,valSlider)
         
         wishImageView.snp.makeConstraints{
             $0.width.equalTo(180)
@@ -142,13 +135,8 @@ private extension WishListView {
             $0.center.equalToSuperview()
         }
         
-        wishLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(10)
-            $0.leading.equalToSuperview().offset(15)
-        }
         wishStackView.snp.makeConstraints{
-            $0.top.equalTo(wishLabel.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.center.equalToSuperview()
         }
         valSlider.snp.makeConstraints{
             $0.top.equalTo(wishStackView.snp.bottom).offset(20)

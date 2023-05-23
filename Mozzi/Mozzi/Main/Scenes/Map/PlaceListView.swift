@@ -12,7 +12,6 @@ class PlaceListView: UIView {
     private var viewTranslation: CGPoint = .init(x: 0, y: 0)
     private var viewVelocity: CGPoint = .init(x: 0, y: 0)
     
-    let dataArray = MockParser.load(Consum.self, from: "Consum")
     var tableViewCount: Int = 0
     
     lazy var placeTableView: UITableView = {
@@ -23,6 +22,24 @@ class PlaceListView: UIView {
     }()
     
     private var placeListTableViewCell = PlaceListTableViewCell()
+    
+    private let netWorkErrorImageView = UIImageView(image: UIImage(systemName: "antenna.radiowaves.left.and.right.slash"))
+    private let netWorkErrorLabel: UILabel = {
+        let label = UILabel()
+        label.font = .pretendardMedium(ofSize: 14)
+        label.numberOfLines = 0
+        label.textColor = .gray
+        return label
+    }()
+    
+    private lazy var netWorkErrorStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.addArrangeSubViews(netWorkErrorImageView,netWorkErrorLabel)
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        return stackView
+    }()
+    
     
     private(set) lazy var refreshControl = UIRefreshControl()
     
@@ -36,7 +53,6 @@ class PlaceListView: UIView {
     }
     
     private func addGesture(){
-        print("addGesture")
         let gesture = UIPanGestureRecognizer(target: self,
                                              action: #selector(didMove(_:)))
         self.addGestureRecognizer(gesture)
@@ -100,6 +116,15 @@ class PlaceListView: UIView {
         return view
     }()
     
+    func setNetWorkErrorView() {
+        print("뷰 생성")
+        self.addSubviews(netWorkErrorStackView)
+        netWorkErrorStackView.bringSubviewToFront(placeTableView)
+        netWorkErrorStackView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalTo(200)
+        }
+    }
     
 }
 

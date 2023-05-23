@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class StampingImageCell : UICollectionViewCell {
+class StampingImageCell : UICollectionViewCell,CollectionViewCellReuseProtocol {
     
     static let identifier = "cell"
     

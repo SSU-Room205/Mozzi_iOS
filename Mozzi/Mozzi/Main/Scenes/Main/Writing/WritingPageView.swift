@@ -13,7 +13,8 @@ final class WritingPageView: BaseView {
     //MARK: Property
     private let textViewPlaceHolder = "기억에 남는 순간을 기록으로 남겨 보세요 :)"
     private var isSelected: Bool = false
-    
+    var requestItem: AddRequest?
+    var category: String?
     
     //MARK: UIComponents
     lazy var addPhotoButton: UIButton = {
@@ -205,6 +206,7 @@ final class WritingPageView: BaseView {
             sender.backgroundColor = .white
             sender.setTitleColor(.mozziMain, for: .normal)
         }
+        category = sender.titleLabel?.text
     }
     
     func setPlaceImage(image: UIImage){

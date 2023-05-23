@@ -101,7 +101,7 @@ class OCRViewController: UIViewController {
         let nextVC = WritingPageViewController()
         print("클릭됨")
         guard let image else { return }
-        guard let data else { return }
+        guard data != nil else { return }
         nextVC.updateInfomation(image: image, item: importView.itemtextField.text! , place: importView.placetextField.text!, address: importView.addresstextField.text! , price: importView.pricetextField.text!, date: importView.dateTextField.text!)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

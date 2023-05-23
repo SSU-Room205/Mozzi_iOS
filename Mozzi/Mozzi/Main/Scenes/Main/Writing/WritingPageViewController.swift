@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 
 class WritingPageViewController: UIViewController {
@@ -84,8 +85,26 @@ private extension WritingPageViewController {
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "등록", style: .plain, target: self, action: #selector(nextButtonDidTap))
+        navigationController?.navigationBar.tintColor = .mozziMain
         
-        
+    }
+    
+    private func postInfomation(){
+        let param: Parameters = [
+            "storeName" : "진푸중화요리",
+            "address" : "서울 동작구 상도로 372-3 지하1층",
+            "price" : 18000,
+            "item" : "",
+            "itemPrice" : "14000 / 4000",
+            "date" : "2023-05-19",
+            "category" : "식사",
+            "point" : 5,
+            "memo" : "마라샹궈 마라향 강하고 너무 맛있어요. 숭실대 찐 맛집이야 여기"
+        ]
+        PostService.shared.postService(with: param, from: Config.baseURL+"add2", isTokenUse: false) {
+            (data: AddRequest?, error) in
+            
+        }
     }
 }
 extension WritingPageViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
