@@ -12,6 +12,7 @@ target 'Mozzi' do
       pod 'SDWebImage'
       pod 'Gifu'
       pod 'NMapsMap'
+      pod 'Kingfisher'
   # Pods for Mozzi
 
 end

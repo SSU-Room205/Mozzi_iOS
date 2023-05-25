@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.6.4)
   - FSCalendar (2.8.4)
   - Gifu (3.3.1)
+  - Kingfisher (7.7.0)
   - NMapsGeometry (1.0.1)
   - NMapsMap (3.16.2):
     - NMapsGeometry
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - Alamofire
   - FSCalendar
   - Gifu
+  - Kingfisher
   - NMapsMap
   - SDWebImage
   - SnapKit (~> 5.6.0)
@@ -25,6 +27,7 @@ SPEC REPOS:
     - Alamofire
     - FSCalendar
     - Gifu
+    - Kingfisher
     - NMapsGeometry
     - NMapsMap
     - SDWebImage
@@ -35,12 +38,13 @@ SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
+  Kingfisher: f043ac666dfc96c1f37604f93effb45a7ee3a3e1
   NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
   NMapsMap: aaa64717249b06ae82c3a3addb3a01f0e33100ab
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 029fa02df89d0e1f09207e93045e99fc8812f025
+PODFILE CHECKSUM: 5ddc112739d5c17ab1233a3d7543db66f3eb7ced
 
 COCOAPODS: 1.12.0
