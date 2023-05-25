@@ -11,6 +11,11 @@ class WishListCollectionViewCell: UICollectionViewCell,CollectionViewCellReusePr
    //MARK: - UI Components
     private let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     
+    let wishTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .pretendardMedium(ofSize: 14)
+        return label
+    }()
     
      let wishImageView: UIImageView = {
         let imageView = UIImageView()
@@ -33,7 +38,7 @@ class WishListCollectionViewCell: UICollectionViewCell,CollectionViewCellReusePr
         button.setTitleColor(UIColor(named: "main Color"), for: .normal)
         button.setTitle("New", for: .normal)
         button.titleLabel?.font = .pretendardMedium(ofSize: 14)
-        button.makeCornerRound(radius: 12.5 )
+        button.makeCornerRound(radius: 10 )
         button.backgroundColor = .white
         button.makeBorder(width: 1, color: .mozziMain)
         return button
@@ -56,7 +61,7 @@ class WishListCollectionViewCell: UICollectionViewCell,CollectionViewCellReusePr
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Val", for: .normal)
         button.backgroundColor = .mozziMain
-        button.makeCornerRound(radius: 12.5 )
+        button.makeCornerRound(radius: 10 )
         button.titleLabel?.font = .pretendardMedium(ofSize: 14)
         return button
     }()
@@ -114,12 +119,23 @@ class WishListCollectionViewCell: UICollectionViewCell,CollectionViewCellReusePr
         fatalError("init(coder:) has not been implemented")
     }
     
+    func cellConfigure(image: UIImage, title: String){
+        appendButton.setTitle("", for: .normal)
+        wishImageView.image = image
+        wishTitleLabel.text = title
+    }
+    
 }
 
 private extension WishListCollectionViewCell {
     func setLayout() {
         wishImageView.addSubview(appendButton)
-        addSubviews(wishStackView,valSlider)
+        addSubviews(wishTitleLabel,wishStackView,valSlider)
+        
+        wishTitleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(30)
+            $0.leading.equalToSuperview().inset(18)
+        }
         
         wishImageView.snp.makeConstraints{
             $0.width.equalTo(180)
@@ -128,6 +144,12 @@ private extension WishListCollectionViewCell {
         [plusButton,minusButton].forEach {
             $0.snp.makeConstraints{
                 $0.size.equalTo(50)
+            }
+        }
+        
+        [newButton,valButton].forEach { button in
+            button.snp.makeConstraints {
+                $0.height.equalTo(20)
             }
         }
         

@@ -20,10 +20,14 @@ struct UploadRes: Decodable {
 
 // MARK: - AddRequest
 struct AddRequest: Codable {
-    let storeName, address: String
-    let price: Int
-    let item, itemPrice, date, category: String
+    let date: String
+    let item: [String]
+    let address, price, memo, storeName: String
+    let itemPrice: [String]
+    let category: String
     let point: Int
-    let memo: String
 }
 
+struct Post: Codable {
+    
+}

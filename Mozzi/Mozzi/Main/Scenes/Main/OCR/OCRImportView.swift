@@ -192,14 +192,14 @@ final class OCRImportView: BaseView{
         
     }
     
-    func setInformation(_ place : String, _ address : String,_ item: [String], _ amount: [String],_ price: [String], _ totalPrice: String, _ date: String ){
-        placetextField.text = place
-        addresstextField.text = address
-        itemtextField.text = appendString(item)
-        amounttextField.text = appendString(amount)
-        pricetextField.text = appendString(price)
-        totalPricetextField.text = totalPrice
-        dateTextField.text = date
+    func setInformation(data: UploadRes){
+        placetextField.text = data.name
+        addresstextField.text = data.address
+        itemtextField.text = appendString(data.itemName)
+        amounttextField.text = appendString(data.itemCount)
+        pricetextField.text = appendString(data.itemPrice)
+        totalPricetextField.text = data.price
+        dateTextField.text = data.date
     }
     
     func appendString(_ array: [String])->String{

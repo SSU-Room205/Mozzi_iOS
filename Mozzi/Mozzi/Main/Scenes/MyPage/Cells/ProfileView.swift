@@ -11,6 +11,12 @@ import SnapKit
 class ProfileView: UICollectionReusableView {
     
     static let identifier = "ProfileView"
+    let profileJong: profile = .init(name: "JongHyun", profileImage: Images.profileJong!, job: "Actor")
+    let profileHee: profile = .init(name: "희", profileImage: Images.profileRabbit!, job: "iOS개발자")
+    let profileHam: profile = .init(name: "햄", profileImage: Images.profileCat!, job: "먹방유튜버")
+    lazy var addProfileImage = self.profileHam.profileImage
+    lazy var name: String = self.profileHam.name
+    lazy var job: String = self.profileHam.job
     
     let mypageBackgroundView: UIView = {
         let view = UIView()
@@ -22,9 +28,7 @@ class ProfileView: UICollectionReusableView {
         return view
     }()
     
-    let addProfileImage = Images.profileRabbit
-    var name: String = "희"
-    var job: String = "iOS 개발자"
+
     
     private lazy var mainStackView: UIStackView = {
        let stackView = UIStackView()
@@ -46,8 +50,8 @@ class ProfileView: UICollectionReusableView {
     private let wishLabel: UILabel = {
         let label = UILabel()
         label.text = "위시리스트"
-        label.font = .pretendardBold(ofSize: 18)
-        label.textColor = .mozziMain
+        label.font = .pretendardBold(ofSize: 20)
+        label.textColor = .mozziDark
         return label
     }()
     

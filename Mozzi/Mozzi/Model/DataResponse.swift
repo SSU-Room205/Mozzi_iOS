@@ -6,45 +6,14 @@
 //
 
 import Foundation
-
 // MARK: - DataResponseElement
 struct DataResponseElement: Codable {
-    let date: String
-    let item: [String]
-    let address: String
-    let price: Int
-    let memo, storeName: String
-    let itemPrice: [Int]
+    let date, address, memo, storeName: String
     let category: String
     let point: Int
-}
-
-enum ItemPrice: Codable {
-    case integer(Int)
-    case string(String)
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if let x = try? container.decode(Int.self) {
-            self = .integer(x)
-            return
-        }
-        if let x = try? container.decode(String.self) {
-            self = .string(x)
-            return
-        }
-        throw DecodingError.typeMismatch(ItemPrice.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for ItemPrice"))
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        switch self {
-        case .integer(let x):
-            try container.encode(x)
-        case .string(let x):
-            try container.encode(x)
-        }
-    }
+    let item, itemPrice: [String]
+    let price: String
+    let imagePath: String?
 }
 
 typealias DataResponse = [DataResponseElement]

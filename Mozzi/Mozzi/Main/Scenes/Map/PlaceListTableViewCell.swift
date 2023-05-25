@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import SnapKit
+import Kingfisher
 
 class PlaceListTableViewCell: UITableViewCell {
     
     static let identifier = "placeListTableViewCell"
     
-    private lazy var placeImageView: UIImageView = {
-       let imageView = UIImageView()
+    lazy var placeImageView: UIImageView = {
+        let imageView = UIImageView()
         imageView.makeCornerRound(radius: 10)
         imageView.backgroundColor = .gray
         imageView.contentMode = .scaleAspectFill
@@ -55,16 +57,16 @@ class PlaceListTableViewCell: UITableViewCell {
     }()
     
     
-
-
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -72,7 +74,7 @@ class PlaceListTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setLayout()
@@ -94,12 +96,19 @@ class PlaceListTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCellData(_ dataElement: DataResponseElement){
-        itemLabel.text = dataElement.item[0]
+    func configureCellData(_ dataElement: DataResponseElement) {
+
+        itemLabel.text = dataElement.item.first
         placeTitleLabel.text = dataElement.storeName
         placeSubTitleLabel.text = dataElement.address
-        priceLabel.text = String(dataElement.price)
+        priceLabel.text = "💰 \(String(dataElement.price))"
+        if let imagePath = dataElement.imagePath, let url = URL(string: "\(Config.baseURL)image/\(imagePath)") {
+            placeImageView.kf.setImage(with: url)
+        }
+
+        
     }
+    
     
     func configureCell(_ Consum: Consum1) {
         placeImageView.image = Consum.image
@@ -107,6 +116,6 @@ class PlaceListTableViewCell: UITableViewCell {
         placeTitleLabel.text = Consum.name
         placeSubTitleLabel.text = Consum.address
         priceLabel.text = Consum.price
-           
-        }
+        
+    }
 }

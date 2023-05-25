@@ -15,6 +15,8 @@ import SnapKit
 class HorizontalScrollView: BaseScrollView {
     
     private let dummy = Consum1.dummy()
+    var data: DataResponse?
+    var countData = 0
     
     lazy var stackView: UIStackView = {
         let view = UIStackView()
@@ -24,39 +26,30 @@ class HorizontalScrollView: BaseScrollView {
         return view
     }()
     
-    var dataSource: [Consum]? {
-        didSet { bind() }
-    }
-    
-    
     
     override func configure() {
         super.configure()
         showsHorizontalScrollIndicator = false
         bounces = false
-        
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview() /// 이 값이 없으면 scroll 안되는 것 주의
             make.height.equalTo(80)
         }
     }
-    func bind(_ date: String){
+    func bind(_ date: String) {
         super.bind()
-        //       let VC = MainViewController()
-        dummy.forEach { data in
-            
+        guard let data = data else { return }
+        data.forEach { data in
             if(data.date == date ){
-                let view = DaliyUseView()
-                stackView.addArrangedSubview(view)
-                view.configure(data)
-                view.snp.makeConstraints{
-                    $0.width.equalTo(150)
-                    $0.height.equalTo(72)
+                for i in 0..<data.item.count{
+                    let view = DaliyUseView()
+                    stackView.addArrangedSubview(view)
+                    view.configureCell(item: data.item[i], price: data.itemPrice[i])
+                    view.setConstraints()
+                    self.countData += 1
                 }
             }
-            //          view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(VC.viewTapped)))
-            
         }
         
         func removeAllView() {
@@ -65,20 +58,13 @@ class HorizontalScrollView: BaseScrollView {
         
         func bind() {
             super.bind()
-            //       let VC = MainViewController()
-            dummy.forEach { data in
+            data.forEach { dataElement in
                 let view = DaliyUseView()
                 stackView.addArrangedSubview(view)
-                view.configure(data)
-                //          view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(VC.viewTapped)))
-                view.snp.makeConstraints{
-                    $0.width.equalTo(150)
-                    $0.height.equalTo(72)
-                }
+                view.configureCell(item: dataElement.item[0], price: dataElement.itemPrice[0])
             }
             
-            
-            
         }
+        
     }
 }

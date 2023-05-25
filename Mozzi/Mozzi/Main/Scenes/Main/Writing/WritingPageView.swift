@@ -13,8 +13,8 @@ final class WritingPageView: BaseView {
     //MARK: Property
     private let textViewPlaceHolder = "기억에 남는 순간을 기록으로 남겨 보세요 :)"
     private var isSelected: Bool = false
-    var requestItem: AddRequest?
     var category: String?
+    
     
     //MARK: UIComponents
     lazy var addPhotoButton: UIButton = {
@@ -196,16 +196,28 @@ final class WritingPageView: BaseView {
     //MARK: Action
     
     
-    @objc func categoryButtonDidTap(_ sender: UIButton){
+    @objc func categoryButtonDidTap(_ sender: UIButton) {
+        let buttons = [cafeButton, shoppingButton, eattingButton] // 버튼들의 배열
+        let selectedButton = buttons.filter { $0.isSelected }.first // 현재 선택된 버튼
+        
+        // 선택된 버튼이 이미 있다면 선택 해제
+        if let selectedButton = selectedButton {
+            selectedButton.isSelected = false
+            selectedButton.backgroundColor = .white
+            selectedButton.setTitleColor(.mozziMain, for: .normal)
+        }
+        
         isSelected = !isSelected
         
         if isSelected == true {
+            sender.isSelected = true
             sender.backgroundColor = .mozziMain
             sender.setTitleColor(.white, for: .normal)
-        } else{
+        } else {
             sender.backgroundColor = .white
             sender.setTitleColor(.mozziMain, for: .normal)
         }
+        
         category = sender.titleLabel?.text
     }
     

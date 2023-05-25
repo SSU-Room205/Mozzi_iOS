@@ -11,6 +11,8 @@
 		3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628BC3B29A9E11200A59EE8 /* SceneDelegate.swift */; };
 		3628BC4629A9E11F00A59EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3628BC4429A9E11F00A59EE8 /* LaunchScreen.storyboard */; };
 		362AC2D42A0D298500262E23 /* StampImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC2D32A0D298500262E23 /* StampImages.swift */; };
+		362D08372A1E0E51002A8076 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D08362A1E0E51002A8076 /* Profile.swift */; };
+		362D08392A1E4D42002A8076 /* StampInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D08382A1E4D42002A8076 /* StampInfo.swift */; };
 		362ECDFC29F7F62700A05322 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFB29F7F62700A05322 /* UIImage+.swift */; };
 		362ECDFE29F806AA00A05322 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFD29F806AA00A05322 /* Notification.swift */; };
 		362ECE0029F93B7D00A05322 /* DaliyUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFF29F93B7D00A05322 /* DaliyUseView.swift */; };
@@ -95,7 +97,6 @@
 		36D3BB7029EE8A5300A82957 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4B29EE8A5200A82957 /* MainViewController.swift */; };
 		36D3BB7129EE8A5300A82957 /* NotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */; };
 		36D3BB7229EE8A5300A82957 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */; };
-		36D3BB7329EE8A5300A82957 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */; };
 		36D3BB7529EE8A5300A82957 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */; };
 		36D3BB7629EE8A5300A82957 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5129EE8A5200A82957 /* MypageViewController.swift */; };
 		36D3BB7729EE8A5300A82957 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */; };
@@ -131,6 +132,8 @@
 		3628BC4529A9E11F00A59EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3628BC4729A9E11F00A59EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		362AC2D32A0D298500262E23 /* StampImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampImages.swift; sourceTree = "<group>"; };
+		362D08362A1E0E51002A8076 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		362D08382A1E4D42002A8076 /* StampInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampInfo.swift; sourceTree = "<group>"; };
 		362ECDFB29F7F62700A05322 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		362ECDFD29F806AA00A05322 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		362ECDFF29F93B7D00A05322 /* DaliyUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaliyUseView.swift; sourceTree = "<group>"; };
@@ -224,7 +227,6 @@
 		36D3BB4B29EE8A5200A82957 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		36D3BB4C29EE8A5200A82957 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
 		36D3BB4D29EE8A5200A82957 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
-		36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		36D3BB5029EE8A5200A82957 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		36D3BB5129EE8A5200A82957 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		36D3BB5229EE8A5200A82957 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
@@ -501,7 +503,6 @@
 			isa = PBXGroup;
 			children = (
 				36D3BB4229EE8A5200A82957 /* WritingPageView.swift */,
-				36D3BB4E29EE8A5200A82957 /* CameraViewController.swift */,
 				36D3BB4929EE8A5200A82957 /* WritingPageViewController.swift */,
 				36D3BB4429EE8A5200A82957 /* HeartView.swift */,
 				36D3BB4629EE8A5200A82957 /* AddButton.swift */,
@@ -557,6 +558,8 @@
 				36AB67C729EF266000C60C59 /* UploadRes.swift */,
 				36A6D3582A1B119B00D71840 /* LocationGet.swift */,
 				36A6D35A2A1B11D600D71840 /* DataResponse.swift */,
+				362D08362A1E0E51002A8076 /* Profile.swift */,
+				362D08382A1E4D42002A8076 /* StampInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -850,11 +853,11 @@
 				36D3BB8129EE8A5300A82957 /* UIColor+.swift in Sources */,
 				369E1B3B2A1514FE00E46841 /* DetailView.swift in Sources */,
 				369E1B3C2A1514FE00E46841 /* ProfileHeaderView.swift in Sources */,
-				36D3BB7329EE8A5300A82957 /* CameraViewController.swift in Sources */,
 				36D3BB6F29EE8A5300A82957 /* MapViewController.swift in Sources */,
 				36D3BB7E29EE8A5300A82957 /* UIView+.swift in Sources */,
 				36A6D3522A1A380E00D71840 /* NetworkResult.swift in Sources */,
 				36D3BB6A29EE8A5300A82957 /* HeartView.swift in Sources */,
+				362D08392A1E4D42002A8076 /* StampInfo.swift in Sources */,
 				36A6D36B2A1BDD5C00D71840 /* WishListCollectionViewCell.swift in Sources */,
 				36D3BB7529EE8A5300A82957 /* MainTabBarController.swift in Sources */,
 				3628BC3C29A9E11200A59EE8 /* SceneDelegate.swift in Sources */,
@@ -862,6 +865,7 @@
 				36D3BB7629EE8A5300A82957 /* MypageViewController.swift in Sources */,
 				36D3BB7729EE8A5300A82957 /* PlaceListViewController.swift in Sources */,
 				36AB67C829EF266000C60C59 /* UploadRes.swift in Sources */,
+				362D08372A1E0E51002A8076 /* Profile.swift in Sources */,
 				369E1B3E2A1514FE00E46841 /* MapUnitCollectionViewCell.swift in Sources */,
 				36A6D34F2A1A380E00D71840 /* PostService.swift in Sources */,
 				36D3BB6329EE8A5300A82957 /* ProfileView.swift in Sources */,
@@ -1039,7 +1043,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1087,7 +1091,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

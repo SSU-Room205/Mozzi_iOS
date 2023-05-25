@@ -11,27 +11,33 @@ import SnapKit
 final class ProfileHeaderView: UICollectionReusableView {
     
     static let identifier = "profileHeaderView"
+    let profileJong: profile = .init(name: "JongHyun", profileImage: Images.profileJong!, job: "Actor")
+    let profileHee: profile = .init(name: "희", profileImage: Images.profileRabbit!, job: "iOS개발자")
+    let profileHam: profile = .init(name: "햄", profileImage: Images.profileCat!, job: "먹방유튜버")
+    lazy var addProfileImage = self.profileHam.profileImage
+    lazy var name: String = self.profileHam.name
+    lazy var job: String = self.profileHam.job
     
-    private let profileImageView: UIImageView = {
+    private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         imageView.makeCornerRound(radius: 17.5)
-        imageView.image = Images.profileRabbit
+        imageView.image = profileHam.profileImage
         imageView.backgroundColor = .gray
         return imageView
     }()
     
-    private let nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .pretendardMedium(ofSize: 14)
-        label.text = "김나비"
+        label.text = profileHam.name
         return label
     }()
     
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.font = .pretendardThin(ofSize: 10)
-        label.text = "2023년 3월 14일 3:45 PM"
+        
         return label
     }()
     
@@ -46,6 +52,7 @@ final class ProfileHeaderView: UICollectionReusableView {
         let stackView = UIStackView()
         stackView.addArrangeSubViews(profileImageView,labelStackView)
         stackView.spacing = 10
+
         return stackView
     }()
     
@@ -67,6 +74,8 @@ final class ProfileHeaderView: UICollectionReusableView {
             $0.size.equalTo(35)
         }
     }
-    
+    func setDate(date: String) {
+        dateLabel.text = date
+    }
     
 }

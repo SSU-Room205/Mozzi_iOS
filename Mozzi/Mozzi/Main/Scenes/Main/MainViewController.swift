@@ -11,11 +11,10 @@ import FSCalendar
 import Alamofire
 
 
-
-
 class MainViewController: UITabBarController {
     
     var selectedDate: Date = Date()
+    var data: DataResponse?
     
     let notificaiotnImage = UIImage(named: "notification")
     
@@ -110,31 +109,32 @@ class MainViewController: UITabBarController {
     lazy var buttons: [UIButton] = [self.cameraButton, self.fileButton, self.writeButton]
     var buttonIsHidden: Bool = true
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        camera.delegate = self
-        picker.delegate = self
-        view.backgroundColor = .white
-        configure()
-    }
     
-    
+    //MARK: - LifeCycles
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.view.layoutIfNeeded()
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.backgroundColor = .none
+        setDelegate()
+        fsCalendar.reloadData()
         addButton.isSelected = false
         buttonIsHidden = true
         floatingDimView.alpha = 0
         buttonStack.isHidden = buttonIsHidden
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fsCalendar.reloadData()
+        configure()
+    }
+    
+    
+    
+    
     private var flag: Bool = false
     @objc func addButtonDidTap(_ sender: UIButton){
-        //        let image = self.buttonIsHidden ? Images.plusButtonImage : Images.plusButtonTapImage
-        
-        //        sender.setImage(image, for: .normal)
         sender.isSelected = !sender.isSelected
         UIView.animate(withDuration: 0.5) {
             if self.buttonIsHidden {
@@ -182,9 +182,18 @@ class MainViewController: UITabBarController {
         
     }
     
+    private func setDelegate() {
+        fsCalendar.delegate = self
+        fsCalendar.dataSource = self
+        camera.delegate = self
+        picker.delegate = self
+        
+        let mainTabVC = MapViewController()
+        mainTabVC.dataDelegate = self
+    }
     
     private func configure() {
-        
+        view.backgroundColor = .white
         setCalendar()
         self.navigationItem.setRightBarButton(notificationButton, animated: false)
         backBarButtonItem.tintColor = .mozziDark
@@ -206,7 +215,7 @@ class MainViewController: UITabBarController {
         }
         
         horizontalScrollView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(10)
             make.top.equalTo(recentLabel.snp.bottom).offset(20)
             make.height.equalTo(90)
         }
@@ -254,10 +263,6 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
         fsCalendar.appearance.titleFont = .pretendardMedium(ofSize: 14)
         fsCalendar.appearance.weekdayFont = .pretendardBold(ofSize: 14)
         
-        
-        fsCalendar.delegate = self
-        fsCalendar.dataSource = self
-        
         fsCalendar.backgroundColor = .white
         fsCalendar.layer.cornerRadius = 30
         
@@ -284,15 +289,32 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
         fsCalendar.calendarWeekdayView.weekdayLabels[4].text = "목"
         fsCalendar.calendarWeekdayView.weekdayLabels[5].text = "금"
         fsCalendar.calendarWeekdayView.weekdayLabels[6].text = "토"
+        
+        fsCalendar.locale = Locale(identifier: "ko_KR")
     }
     
-    func
-    calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-    
-        print(date.toString())
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        var newDate = Calendar.current.date(byAdding: .day, value: 1, to: date)
+        print(newDate!.toString())
         horizontalScrollView.stackView.clearSubViews()
-        horizontalScrollView.bind(date.toString())
+        horizontalScrollView.bind(newDate!.toString())
         
+    }
+    
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        var newDate = Calendar.current.date(byAdding: .day, value: 1, to: date)
+        let dateString = newDate!.toString()
+        
+        // 데이터 배열을 순회하면서 해당 날짜와 일치하는 데이터를 찾습니다.
+        guard let data = data else { return nil }
+        for item in data {
+            if item.date == dateString {
+                // 원하는 Substring을 추가합니다.
+                return "🌱"
+            }
+        }
+        
+        return nil
     }
 }
 
@@ -300,7 +322,7 @@ extension MainViewController: UIImagePickerControllerDelegate & UINavigationCont
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         //guard let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage else { return }
         guard let image: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
-    
+        
         picker.dismiss(animated: true, completion: nil)
         let nextVC = OCRViewController()
         nextVC.updateImage(image)
@@ -313,4 +335,11 @@ extension MainViewController: UIImagePickerControllerDelegate & UINavigationCont
         
     }
     
+}
+
+extension MainViewController : MapDataDelegate {
+    func didReceiveData(dataList: DataResponse) {
+        self.data = dataList
+        horizontalScrollView.data = data
+    }
 }

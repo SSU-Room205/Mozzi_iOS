@@ -7,14 +7,17 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 
 class WritingPageViewController: UIViewController {
     
     var dummyData = Consum1.dummy()
-    var data: Consum1 = Consum1(image: Images.photoAddButtonImage!, name: "", itemName: "", address: "", price: "", date: "", category: "", point: 0, note: "")
-
-
+    var data: UploadRes?
+    var addData: AddRequest?
+    var sendImage: UIImage?
+    var memo: String?
+    
     let picker = UIImagePickerController()
     private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
     
@@ -42,14 +45,16 @@ class WritingPageViewController: UIViewController {
         
     }
     
-    func updateInfomation(image:UIImage, item: String, place: String,address:String, price: String, date: String){
-        data = Consum1(image: image, name: place, itemName: item, address: address, price: price, date: date, category: "", point: 0, note: "")
-        writingPageView.itemTitleTextField.text = item
-        writingPageView.placeTextField.text = place
-        writingPageView.addressTextField.text = address
-        writingPageView.priceTextField.text = price
-        self.navigationController?.title = date
+    func updateInfomation(data: UploadRes){
         
+        writingPageView.itemTitleTextField.text = data.itemName[0]
+        writingPageView.placeTextField.text = data.name
+        writingPageView.addressTextField.text = data.address
+        writingPageView.priceTextField.text = data.itemPrice[0]
+        self.navigationController?.title = data.date
+        
+        
+        addData = AddRequest(date: data.date, item: data.itemName, address: data.address, price: data.price, memo: writingPageView.textView.text, storeName: data.name, itemPrice: data.itemPrice, category: writingPageView.category ?? "", point: 3)
     }
     
     @objc func photoButtonDidTap(){
@@ -67,9 +72,11 @@ class WritingPageViewController: UIViewController {
     }
     @objc func nextButtonDidTap() {
         print("클릭됨")
-        dummyData.append(data)
-        print(dummyData)
-        
+        memo = writingPageView.textView.text
+        postInfomation()
+        if let image = writingPageView.placeImageView.image {
+            uploadImage(image, user: "imageUpload3")
+        }
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -90,20 +97,26 @@ private extension WritingPageViewController {
     }
     
     private func postInfomation(){
+        guard let addData = addData else { return }
         let param: Parameters = [
-            "storeName" : "진푸중화요리",
-            "address" : "서울 동작구 상도로 372-3 지하1층",
-            "price" : 18000,
-            "item" : "",
-            "itemPrice" : "14000 / 4000",
-            "date" : "2023-05-19",
-            "category" : "식사",
-            "point" : 5,
-            "memo" : "마라샹궈 마라향 강하고 너무 맛있어요. 숭실대 찐 맛집이야 여기"
+            "storeName" : addData.storeName,
+            "address" : addData.address,
+            "price" : addData.price,
+            "item" : addData.item,
+            "itemPrice" : addData.itemPrice,
+            "date" : addData.date,
+            "category" : writingPageView.category,
+            "point" : addData.point,
+            "memo" : memo
         ]
-        PostService.shared.postService(with: param, from: Config.baseURL+"add2", isTokenUse: false) {
-            (data: AddRequest?, error) in
-            
+        
+        PostService.shared.postService(with: param, from: Config.baseURL+"add3", isTokenUse: false) {
+            (data: Post?, error) in
+            guard let data = data else {
+                print("error: \(String(describing: error?.debugDescription))")
+                return
+            }
+            print(data)
         }
     }
 }
@@ -112,6 +125,7 @@ extension WritingPageViewController: UIImagePickerControllerDelegate & UINavigat
         //guard let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage else { return }
         guard let image: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
         writingPageView.setPlaceImage(image: image)
+        sendImage = image
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -133,6 +147,33 @@ extension WritingPageViewController: UITextViewDelegate {
             textView.textColor = .placeholderText
         }
     }
-    
+}
+
+extension WritingPageViewController {
+    func uploadImage(_ image: UIImage, user: String) {
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else {
+            print("Failed to convert image to JPEG data")
+            return
+        }
         
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imageData, withName: "image", fileName: "image.jpeg", mimeType: "image/jpeg")
+        }, to: "\(Config.baseURL)\(user)").responseString { response in
+            switch response.result {
+            case .success(let value):
+                print("Image upload success:", value)
+                // Handle success response
+                    
+            case .failure(let error):
+                print("Image upload failure:", error.localizedDescription)
+                // Handle failure response
+            }
+        }
+    }
+
+    struct ImageUploadResponse: Decodable {
+        // Define your response structure here
+        // Match the structure with the actual server response
+    }
+
 }

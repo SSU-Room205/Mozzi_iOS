@@ -12,6 +12,10 @@ import NMapsMap
 import Alamofire
 import SwiftyJSON
 
+protocol MapDataDelegate: AnyObject {
+    func didReceiveData(dataList: DataResponse)
+}
+
 class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
     
     var dataList: DataResponse = [] {
@@ -20,20 +24,49 @@ class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
         }
     }
     
-    var addressList: [String] = []
-    var geocodeList: [Geocode] = []
+    var addressList: [String] = [] {
+        didSet {
+            placeListView.placeTableView.reloadData()
+        }
+    }
     
+    var geocodeList: [Geocode] = [] {
+        didSet {
+            placeListView.placeTableView.reloadData()
+        }
+    }
+    
+    var socialList1: DataResponse = [] {
+        didSet{
+            placeListView.placeTableView.reloadData()
+        }
+    }
+    
+    
+    var socialMarkers: [NMFMarker] = []
+    
+    var socialAddressList: [String] = []
     
     let baseURL = Config.baseURL
     
     let subViewImage = UIImage(named: "back")
-    private let dummy = Consum1.dummy()
+    let searchBarImage = UIImage(named: "searchBar")
+    let areaImage = UIImage(named: "topArea")
+    let socialImage = UIImage(named: "social")?.withRenderingMode(.alwaysOriginal)
+    
+    weak var dataDelegate: MapDataDelegate?
     
     lazy var topAreaView = UIImageView()
     lazy var SearchView = UIImageView()
     lazy var SearchTextField = UITextField()
     lazy var SearchButton = UIButton()
-    lazy var SocialButton = UIBarButtonItem()
+    lazy var socialButton: UIButton = {
+       let button = UIButton()
+        button.setImage(Images.iconPrivate, for: .normal)
+        button.addTarget(self, action: #selector(socialButtonDidTap), for: .touchUpInside)
+        button.setImage(Images.iconPrivate, for: .selected)
+        return button
+    }()
     lazy var searchBar = UISearchBar()
     lazy var placeListView = PlaceListView()
     let naverMaps = NMFNaverMapView()
@@ -60,7 +93,7 @@ class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
         super.viewDidLoad()
         requestAuthorization()
         configure()
-        getData(dataString: "data2")
+        getData(dataString: "data3")
     }
     
     private func configure(){
@@ -75,9 +108,6 @@ class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
         
         searchBar.searchTextField.delegate = self
         
-        let searchBarImage = UIImage(named: "searchBar")
-        let areaImage = UIImage(named: "topArea")
-        let socialImage = UIImage(named: "social")?.withRenderingMode(.alwaysOriginal)
         
         view.addSubview(topAreaView)
         navigationItem.backButtonTitle = ""
@@ -88,8 +118,9 @@ class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
             make.width.equalToSuperview()
         }
         
-        SocialButton.image = socialImage
-        self.navigationItem.rightBarButtonItem = SocialButton
+        let barButton = UIBarButtonItem(customView: socialButton)
+        self.navigationItem.rightBarButtonItem = barButton
+        
         
         searchBar.placeholder = "검색어를 입력해주세요."
         searchBar.backgroundImage = searchBarImage
@@ -136,6 +167,9 @@ class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
                 return
             }
             self.dataList = data
+            if !(self.addressList.isEmpty) {
+                self.addressList.removeAll()
+            }
             data.forEach { dataElement in
                 self.addressList.append(dataElement.address)
             }
@@ -144,7 +178,6 @@ class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
             
             for i in 0..<self.addressList.count {
                 dispatchGroup.enter()
-                
                 self.reverseGeocode(address: self.addressList[i]) { geocode in
                     DispatchQueue.main.async {
                         let marker = NMFMarker(position: NMGLatLng(lat: geocode.latitude, lng: geocode.longitude))
@@ -165,22 +198,24 @@ class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
                 // 예: 필요한 UI 업데이트 등
                 print("모든 마커가 추가되었습니다.")
             }
+            self.dataDelegate?.didReceiveData(dataList: data)
+        }
+        
+    }
+    //MARK: -Action
+    @objc func socialButtonDidTap(){
+        //소셜 버튼 On/Off
+        socialButton.isSelected = !(socialButton.isSelected)
+        
+        if socialButton.isSelected {
+            //버튼이 select일 때
+            
+        } else {
+            //버튼이 해제됐을 때
             
         }
         
     }
-    
-    private func setPlaceListView() {
-        print("modal init")
-        let placeListViewController = PlaceListViewController()
-        if let sheet = placeListViewController.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.prefersGrabberVisible = true
-        }
-        present(placeListViewController, animated: true)
-        print("modal init")
-    }
-    
 }
 
 extension MapViewController:CLLocationManagerDelegate {
@@ -233,13 +268,25 @@ extension MapViewController:CLLocationManagerDelegate {
 
 extension MapViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("cell seleted")
+        print("cell selected")
         let nextViewController = DetailViewController()
         nextViewController.data = dataList[indexPath.row]
-        nextViewController.geocode = geocodeList[indexPath.row]
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+        
+        // reverseGeocode 함수를 호출하여 geocode 값을 가져온 후, nextViewController에 할당
+        reverseGeocode(address: dataList[indexPath.row].address) { geocode in
+            DispatchQueue.main.async {
+                nextViewController.geocode = geocode
+                
+                // 이미지 전달
+                if let cell = tableView.cellForRow(at: indexPath) as? PlaceListTableViewCell {
+                    nextViewController.image = cell.placeImageView.image
+                }
+                
+                self.navigationController?.pushViewController(nextViewController, animated: true)
+            }
+        }
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // 셀의 높이를 계산하는 로직을 구현합니다.
         return calculateCellHeight(for: indexPath)
@@ -276,8 +323,8 @@ extension MapViewController: UITableViewDelegate {
                     marker.captionTextSize = 13
                     marker.captionColor = .blue
                     // 라벨을 표시하기 위해 마커의 좌표와 라벨의 위치를 맞춤
-    //                let label = marker.iconView as? UILabel
-    //                markerLabel?.frame.origin.y = -70
+                    //                let label = marker.iconView as? UILabel
+                    //                markerLabel?.frame.origin.y = -70
                     
                     // 선택된 마커를 저장
                     self.selectedMarker = marker
@@ -292,7 +339,7 @@ extension MapViewController: UITableViewDelegate {
 
 extension MapViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataList.count
+        return dataList.count + socialList1.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -300,8 +347,6 @@ extension MapViewController: UITableViewDataSource {
         else { return UITableViewCell() }
         
         cell.configureCellData(dataList[indexPath.row])
-        //        cell.configureCell(dummy[indexPath.row])
-        //        print(dummy[indexPath.row].itemName)
         
         return cell
     }
@@ -315,3 +360,10 @@ extension MapViewController: UITextFieldDelegate {
     }
 }
 
+extension MapViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        getData(dataString: "data3")
+        print("reload")
+      //  placeListView.placeTableView.reloadData()
+    }
+}

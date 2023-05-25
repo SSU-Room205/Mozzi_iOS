@@ -8,7 +8,6 @@ import UIKit
 import SnapKit
 
 class MypageView : BaseView {
-   
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: createLayout())
@@ -74,7 +73,7 @@ extension MypageView {
                 section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
                 section.boundarySupplementaryItems = [header,footer]
-
+                
             case 1: // Map unit section
                 let headerSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
@@ -95,7 +94,7 @@ extension MypageView {
                                                        heightDimension: .estimated(98))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
                 
-
+                
                 section = NSCollectionLayoutSection(group: group)
                 section.interGroupSpacing = 16
                 section.boundarySupplementaryItems = [header]

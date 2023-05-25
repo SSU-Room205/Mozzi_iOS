@@ -11,6 +11,7 @@ class DetailViewController: UIViewController {
     let detailView = DetailView()
     var data: DataResponseElement?
     var geocode: Geocode?
+    var image: UIImage?
     
     override func loadView() {
         self.view = detailView
@@ -44,7 +45,9 @@ extension DetailViewController: UICollectionViewDataSource {
         guard let data = data else { return UICollectionViewCell() }
         if indexPath.section == 0 {
             let cell = InfoUnitCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.cellConfigure(info: data)
+            guard let image else { return cell }
+            cell.cellConfigure(info: data, image: image)
+            
             return cell
             
         } else if indexPath.section == 1 {
@@ -70,6 +73,8 @@ extension DetailViewController: UICollectionViewDataSource {
             ) as? ProfileHeaderView else {
                 return UICollectionReusableView()
             }
+            guard let date = data?.date else { return header }
+            header.setDate(date: date)
             return header
         } else if kind == UICollectionView.elementKindSectionFooter {
             // Dequeue reusable supplementary view for footer

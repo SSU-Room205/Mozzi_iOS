@@ -25,6 +25,9 @@ extension UIColor {
     class var mozziGreen: UIColor {
         return UIColor(hex: "#17A479")
     }
+    class var mozziBackGround: UIColor{
+        return UIColor(hex: "#ABD8B2")
+    }
         //위와 같은형식으로 원하는 색상 추가 가능
 }
 

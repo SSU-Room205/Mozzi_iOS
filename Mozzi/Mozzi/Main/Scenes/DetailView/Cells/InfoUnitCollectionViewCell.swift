@@ -22,6 +22,7 @@ final class InfoUnitCollectionViewCell: UICollectionViewCell, CollectionViewCell
         let imageView = UIImageView()
         imageView.makeCornerRound(radius: 10)
         imageView.backgroundColor = .gray
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -98,25 +99,21 @@ final class InfoUnitCollectionViewCell: UICollectionViewCell, CollectionViewCell
         
         mainImageView.snp.makeConstraints {
             $0.width.equalTo(340)
-            $0.height.equalTo(170)
+            $0.height.equalTo(240)
             $0.centerX.equalToSuperview()
         }
     }
     
-    func cellConfigure(info: DataResponseElement){
+    func cellConfigure(info: DataResponseElement, image: UIImage) {
         categoryLabel.text = info.category
-        itemTitleLabel.text = info.item[0]
-        locationLabel.text = info.address
-        priceLabel.text = "\(String(info.price))원"
-        if info.item.count > 1 {
-            remainItemLabel.text = "함께 구매한 항목: "
-        } else {
-            remainItemLabel.text = " "
-        }
-        for i in 1..<info.item.count {
-            remainItemLabel.text?.append("\(info.item[i]) ")
-        }
         
+        
+        itemTitleLabel.text = info.item.first ?? ""
+        let remainItems = info.item.dropFirst().joined(separator: " ")
+        remainItemLabel.text = remainItems.isEmpty ? " " : "함께 구매한 항목: " + remainItems
+        locationLabel.text = info.address
+        priceLabel.text = "￦ \(info.price)원"
+        mainImageView.image = image
     }
     
 }

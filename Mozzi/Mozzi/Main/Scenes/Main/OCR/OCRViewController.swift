@@ -24,6 +24,7 @@ class OCRViewController: UIViewController {
         tabBarController?.tabBar.isHidden = true
         setUI()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         // 옵져버를 등록
         // 옵저버 대상 self
@@ -90,7 +91,7 @@ class OCRViewController: UIViewController {
     
     private func setInfomation(){
         guard let data else { return }
-        importView.setInformation(data.name, data.address, data.itemName, data.itemCount, data.itemPrice, data.price, data.date)
+        importView.setInformation(data: data)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -101,8 +102,8 @@ class OCRViewController: UIViewController {
         let nextVC = WritingPageViewController()
         print("클릭됨")
         guard let image else { return }
-        guard data != nil else { return }
-        nextVC.updateInfomation(image: image, item: importView.itemtextField.text! , place: importView.placetextField.text!, address: importView.addresstextField.text! , price: importView.pricetextField.text!, date: importView.dateTextField.text!)
+        guard let data else { return }
+        nextVC.updateInfomation(data: data)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

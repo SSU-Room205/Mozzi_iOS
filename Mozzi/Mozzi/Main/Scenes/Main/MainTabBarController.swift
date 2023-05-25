@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-    
-
-    
+class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tabBarController?.tabBar.isTranslucent = false
         self.tabBar.tintColor = UIColor.mozziMain
         self.tabBar.makeCornerRound(radius: 10)
@@ -45,10 +45,34 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         mypageNC.tabBarItem = mypageTabBarItem
         
         self.selectedIndex = 1 // 원하는 인덱스
-        self.tabBar.backgroundColor = .mozziMain
-        
-        
+        updateTabBarAppearance()
     }
+    
+    //탭바 색상 문제 해결
+    @available(iOS 15.0, *)
+    private func updateTabBarAppearance() {
+        let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        
+        let barTintColor: UIColor = .white
+        tabBarAppearance.backgroundColor = .mozziMain
+        
+        updateTabBarItemAppearance(appearance: tabBarAppearance.compactInlineLayoutAppearance)
+        updateTabBarItemAppearance(appearance: tabBarAppearance.inlineLayoutAppearance)
+        updateTabBarItemAppearance(appearance: tabBarAppearance.stackedLayoutAppearance)
+        
+        self.tabBar.standardAppearance = tabBarAppearance
+        self.tabBar.scrollEdgeAppearance = tabBarAppearance
+    }
+    @available(iOS 13.0, *)
+    private func updateTabBarItemAppearance(appearance: UITabBarItemAppearance) {
+        let tintColor: UIColor = .mozziMain
+        
+        appearance.selected.iconColor = tintColor
+    }
+
+}
+extension MainTabBarController: UITabBarControllerDelegate {
     //탭바 높이 변경
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -59,5 +83,3 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     }
 }
-
-
