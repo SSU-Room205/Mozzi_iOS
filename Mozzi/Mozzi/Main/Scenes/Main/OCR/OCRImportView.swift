@@ -10,6 +10,9 @@ import SnapKit
 
 final class OCRImportView: BaseView{
     
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+    
     lazy var ocrImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .white
@@ -17,7 +20,13 @@ final class OCRImportView: BaseView{
         return imageView
     }()
     
-    
+    private lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.addArrangeSubViews(ocrImageView,informationStackView)
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        return stackView
+    }()
     private lazy var placeStackView : UIStackView = {
         let stackView = UIStackView()
         stackView.addArrangeSubViews(placeItemView, placetextField)
@@ -61,7 +70,7 @@ final class OCRImportView: BaseView{
     
     private lazy var itemStackView : UIStackView = {
         let stackView = UIStackView()
-        stackView.addArrangeSubViews(itemLabel, itemtextField)
+        stackView.addArrangeSubViews(itemLabel, itemTextView)
         stackView.spacing = 20
         return stackView
     }()
@@ -73,10 +82,10 @@ final class OCRImportView: BaseView{
         return label
     }()
     
-    lazy var itemtextField : UITextField = {
-        let textField = UITextField()
-        textField.font = .pretendardMedium(ofSize: 14)
-        return textField
+    lazy var itemTextView : UITextView = {
+        let textView = UITextView()
+        textView.font = .pretendardMedium(ofSize: 14)
+        return textView
     }()
     
     private lazy var amountStackView : UIStackView = {
@@ -101,7 +110,7 @@ final class OCRImportView: BaseView{
     
     private lazy var priceStackView : UIStackView = {
         let stackView = UIStackView()
-        stackView.addArrangeSubViews(priceLabel, pricetextField)
+        stackView.addArrangeSubViews(priceLabel, priceTextField)
         stackView.spacing = 20
         return stackView
     }()
@@ -113,7 +122,7 @@ final class OCRImportView: BaseView{
         return label
     }()
     
-    lazy var pricetextField : UITextField = {
+    lazy var priceTextField : UITextField = {
         let textField = UITextField()
         textField.font = .pretendardMedium(ofSize: 14)
         return textField
@@ -166,17 +175,22 @@ final class OCRImportView: BaseView{
         stackView.spacing = 20
         return stackView
     }()
-
+    
     
     func setViewHierarchy() {
-        addSubviews(ocrImageView, informationStackView)
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubviews(mainStackView)
     }
     
     func setConstraints() {
-        ocrImageView.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(100)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(428)
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
         }
         
         [placeItemView,addresslabel,itemLabel,amountLabel,priceLabel,totalPriceLabel,dateLabel].forEach{
@@ -185,22 +199,47 @@ final class OCRImportView: BaseView{
             }
         }
         
-        informationStackView.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(20)
-            $0.top.equalTo(ocrImageView.snp.bottom).offset(20)
+        mainStackView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(10)
         }
+        
+        ocrImageView.snp.makeConstraints {
+            $0.height.equalTo(428)
+        }
+        
+        itemTextView.snp.makeConstraints {
+            $0.height.equalTo(50)
+        }
+
+        
         
     }
     
-    func setInformation(data: UploadRes){
+    func setInformation(data: UploadRes) {
         placetextField.text = data.name
         addresstextField.text = data.address
-        itemtextField.text = appendString(data.itemName)
+        itemTextView.text = appendString(data.itemName)
         amounttextField.text = appendString(data.itemCount)
-        pricetextField.text = appendString(data.itemPrice)
+        priceTextField.text = appendString(data.itemPrice)
         totalPricetextField.text = data.price
         dateTextField.text = data.date
     }
+    
+    func saveModel() -> SaveModel? {
+        guard let itemString =  itemTextView.text else { return nil }
+        var components = itemString.components(separatedBy: " / ")
+        let itemArray = components.map { $0.trimmingCharacters(in: .whitespaces) }
+        
+        guard let priceString =  priceTextField.text else { return nil }
+        components = priceString.components(separatedBy: " / ")
+        let itemPriceArray = components.map { $0.trimmingCharacters(in: .whitespaces) }
+        guard let date = dateTextField.text else { return nil }
+        print(date)
+        let saveInfo = SaveModel(date: date, address: addresstextField.text ?? "", memo: "", storeName: placetextField.text ?? "", firstName: itemArray[0], category: "", point: 3, item: itemArray, itemPrice: itemPriceArray, price: totalPricetextField.text ?? "")
+        
+        return saveInfo
+    }
+    
     
     func appendString(_ array: [String])->String{
         var string: String = array[0]

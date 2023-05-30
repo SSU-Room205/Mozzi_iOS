@@ -14,7 +14,11 @@ import Alamofire
 class MainViewController: UITabBarController {
     
     var selectedDate: Date = Date()
-    var data: DataResponse?
+    var data: DataResponse? {
+        didSet{
+            fsCalendar.reloadData()
+        }
+    }
     
     let notificaiotnImage = UIImage(named: "notification")
     
@@ -116,6 +120,7 @@ class MainViewController: UITabBarController {
         self.view.layoutIfNeeded()
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.backgroundColor = .none
+        
         setDelegate()
         fsCalendar.reloadData()
         addButton.isSelected = false
@@ -306,9 +311,11 @@ extension MainViewController: FSCalendarDelegate,FSCalendarDataSource{
         let dateString = newDate!.toString()
         
         // 데이터 배열을 순회하면서 해당 날짜와 일치하는 데이터를 찾습니다.
+        
         guard let data = data else { return nil }
         for item in data {
             if item.date == dateString {
+                print(item.date)
                 // 원하는 Substring을 추가합니다.
                 return "🌱"
             }

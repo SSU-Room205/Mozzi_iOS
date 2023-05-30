@@ -14,9 +14,9 @@ class ProfileView: UICollectionReusableView {
     let profileJong: profile = .init(name: "JongHyun", profileImage: Images.profileJong!, job: "Actor")
     let profileHee: profile = .init(name: "희", profileImage: Images.profileRabbit!, job: "iOS개발자")
     let profileHam: profile = .init(name: "햄", profileImage: Images.profileCat!, job: "먹방유튜버")
-    lazy var addProfileImage = self.profileHam.profileImage
-    lazy var name: String = self.profileHam.name
-    lazy var job: String = self.profileHam.job
+    lazy var addProfileImage = self.profileHee.profileImage
+    lazy var name: String = self.profileHee.name
+    lazy var job: String = self.profileHee.job
     
     let mypageBackgroundView: UIView = {
         let view = UIView()

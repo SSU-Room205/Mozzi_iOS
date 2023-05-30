@@ -13,6 +13,7 @@
 		362AC2D42A0D298500262E23 /* StampImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AC2D32A0D298500262E23 /* StampImages.swift */; };
 		362D08372A1E0E51002A8076 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D08362A1E0E51002A8076 /* Profile.swift */; };
 		362D08392A1E4D42002A8076 /* StampInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D08382A1E4D42002A8076 /* StampInfo.swift */; };
+		362D084C2A211E61002A8076 /* SaveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D084B2A211E61002A8076 /* SaveModel.swift */; };
 		362ECDFC29F7F62700A05322 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFB29F7F62700A05322 /* UIImage+.swift */; };
 		362ECDFE29F806AA00A05322 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFD29F806AA00A05322 /* Notification.swift */; };
 		362ECE0029F93B7D00A05322 /* DaliyUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362ECDFF29F93B7D00A05322 /* DaliyUseView.swift */; };
@@ -134,6 +135,7 @@
 		362AC2D32A0D298500262E23 /* StampImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampImages.swift; sourceTree = "<group>"; };
 		362D08362A1E0E51002A8076 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		362D08382A1E4D42002A8076 /* StampInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampInfo.swift; sourceTree = "<group>"; };
+		362D084B2A211E61002A8076 /* SaveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveModel.swift; sourceTree = "<group>"; };
 		362ECDFB29F7F62700A05322 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		362ECDFD29F806AA00A05322 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		362ECDFF29F93B7D00A05322 /* DaliyUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaliyUseView.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				36A6D35A2A1B11D600D71840 /* DataResponse.swift */,
 				362D08362A1E0E51002A8076 /* Profile.swift */,
 				362D08382A1E4D42002A8076 /* StampInfo.swift */,
+				362D084B2A211E61002A8076 /* SaveModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				36A6D36D2A1BEE0200D71840 /* StampHeaderView.swift in Sources */,
 				36D3BB6629EE8A5300A82957 /* StampImageCell.swift in Sources */,
 				36A6D35B2A1B11D700D71840 /* DataResponse.swift in Sources */,
+				362D084C2A211E61002A8076 /* SaveModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,15 +14,15 @@ final class ProfileHeaderView: UICollectionReusableView {
     let profileJong: profile = .init(name: "JongHyun", profileImage: Images.profileJong!, job: "Actor")
     let profileHee: profile = .init(name: "희", profileImage: Images.profileRabbit!, job: "iOS개발자")
     let profileHam: profile = .init(name: "햄", profileImage: Images.profileCat!, job: "먹방유튜버")
-    lazy var addProfileImage = self.profileHam.profileImage
-    lazy var name: String = self.profileHam.name
-    lazy var job: String = self.profileHam.job
+    lazy var addProfileImage = self.profileHee.profileImage
+    lazy var name: String = self.profileHee.name
+    lazy var job: String = self.profileHee.job
     
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         imageView.makeCornerRound(radius: 17.5)
-        imageView.image = profileHam.profileImage
+        imageView.image = addProfileImage
         imageView.backgroundColor = .gray
         return imageView
     }()
@@ -30,7 +30,7 @@ final class ProfileHeaderView: UICollectionReusableView {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .pretendardMedium(ofSize: 14)
-        label.text = profileHam.name
+        label.text = name
         return label
     }()
     

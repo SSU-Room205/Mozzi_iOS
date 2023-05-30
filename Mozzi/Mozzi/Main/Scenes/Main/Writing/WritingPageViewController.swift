@@ -12,12 +12,12 @@ import Kingfisher
 
 class WritingPageViewController: UIViewController {
     
+    var saveData: SaveModel?
     var dummyData = Consum1.dummy()
     var data: UploadRes?
     var addData: AddRequest?
     var sendImage: UIImage?
     var memo: String?
-    
     let picker = UIImagePickerController()
     private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
     
@@ -45,16 +45,15 @@ class WritingPageViewController: UIViewController {
         
     }
     
-    func updateInfomation(data: UploadRes){
+    func updateInfomation(data: SaveModel){
         
-        writingPageView.itemTitleTextField.text = data.itemName[0]
-        writingPageView.placeTextField.text = data.name
+        writingPageView.itemTitleTextField.text = data.item[0]
+        writingPageView.placeTextField.text = data.storeName
         writingPageView.addressTextField.text = data.address
         writingPageView.priceTextField.text = data.itemPrice[0]
-        self.navigationController?.title = data.date
         
-        
-        addData = AddRequest(date: data.date, item: data.itemName, address: data.address, price: data.price, memo: writingPageView.textView.text, storeName: data.name, itemPrice: data.itemPrice, category: writingPageView.category ?? "", point: 3)
+        print(data.date)
+        addData = AddRequest(date: data.date, item: data.item, address: data.address, price: data.price, memo: writingPageView.textView.text, storeName: data.storeName, itemPrice: data.itemPrice, category: writingPageView.category ?? "", point: 3)
     }
     
     @objc func photoButtonDidTap(){
@@ -75,7 +74,7 @@ class WritingPageViewController: UIViewController {
         memo = writingPageView.textView.text
         postInfomation()
         if let image = writingPageView.placeImageView.image {
-            uploadImage(image, user: "imageUpload3")
+            uploadImage(image, user: "imageUpload2")
         }
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -97,20 +96,20 @@ private extension WritingPageViewController {
     }
     
     private func postInfomation(){
-        guard let addData = addData else { return }
+        guard let saveData = addData else { return }
         let param: Parameters = [
-            "storeName" : addData.storeName,
-            "address" : addData.address,
-            "price" : addData.price,
-            "item" : addData.item,
-            "itemPrice" : addData.itemPrice,
-            "date" : addData.date,
+            "storeName" : writingPageView.placeTextField.text,
+            "address" : writingPageView.addressTextField.text,
+            "price" : saveData.price,
+            "item" : saveData.item,
+            "itemPrice" : saveData.item,
+            "date" : saveData.category,
             "category" : writingPageView.category,
-            "point" : addData.point,
+            "point" : saveData.point,
             "memo" : memo
         ]
         
-        PostService.shared.postService(with: param, from: Config.baseURL+"add3", isTokenUse: false) {
+        PostService.shared.postService(with: param, from: Config.baseURL+"add2", isTokenUse: false) {
             (data: Post?, error) in
             guard let data = data else {
                 print("error: \(String(describing: error?.debugDescription))")

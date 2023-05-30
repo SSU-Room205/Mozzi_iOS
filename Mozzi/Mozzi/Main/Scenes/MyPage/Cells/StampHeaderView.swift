@@ -21,7 +21,7 @@ class StampHeaderView: UICollectionReusableView {
     
     private let recentLabel: UILabel = {
         let label = UILabel()
-        label.text = "최근 획득"
+        label.text = "최근 획득: 나는야 셀럽"
         label.font = .pretendardMedium(ofSize: 14)
         return label
     }()
@@ -37,6 +37,7 @@ class StampHeaderView: UICollectionReusableView {
         let stackView = UIStackView()
         stackView.addArrangeSubViews(recentLabel,rankingLabel)
         stackView.axis = .vertical
+        stackView.alignment = .trailing
         stackView.spacing = 5
         return stackView
     }()

@@ -93,7 +93,7 @@ class MapViewController: UITabBarController, NMFMapViewTouchDelegate {
         super.viewDidLoad()
         requestAuthorization()
         configure()
-        getData(dataString: "data3")
+        getData(dataString: "data2")
     }
     
     private func configure(){
@@ -256,7 +256,6 @@ extension MapViewController:CLLocationManagerDelegate {
                     completionHandler(geocode)
                     self.geocodeList.append(geocode)
                 case .failure(let error):
-                    self.placeListView.setNetWorkErrorView()
                     print(error.errorDescription ?? "")
                     
                 default:
@@ -362,8 +361,8 @@ extension MapViewController: UITextFieldDelegate {
 
 extension MapViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        getData(dataString: "data3")
-        print("reload")
-      //  placeListView.placeTableView.reloadData()
+        getData(dataString: "data2")
+       placeListView.placeTableView.reloadData()
     }
 }
+

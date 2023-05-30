@@ -15,32 +15,31 @@ class OCRViewController: UIViewController {
     private var image: UIImage?
     
     private var data: UploadRes?
-  
+    private var saveData: SaveModel?
+    
     private let loadingView = LoadingView()
     private let importView = OCRImportView()
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
         tabBarController?.tabBar.isHidden = true
         setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // 옵져버를 등록
-        // 옵저버 대상 self
-        // 옵져버 감지시 실행 함수
-        // 옵져버가 감지할 것
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardUp), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDown), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-        
-     
-
+    
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     
     func updateImage(_ image: UIImage){
         
@@ -64,7 +63,6 @@ class OCRViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-        // ______________여기까지 _______________________________
     }
     
     private func setUI(){
@@ -92,25 +90,30 @@ class OCRViewController: UIViewController {
     private func setInfomation(){
         guard let data else { return }
         importView.setInformation(data: data)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     @objc func nextButtonDidTap() {
         let nextVC = WritingPageViewController()
-        print("클릭됨")
+        saveData = self.importView.saveModel()
         guard let image else { return }
         guard let data else { return }
-        nextVC.updateInfomation(data: data)
+        nextVC.updateInfomation(data: saveData!)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @objc func keyboardUp(notification:NSNotification) {
         if let keyboardFrame:NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-           let keyboardRectangle = keyboardFrame.cgRectValue
-       
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            
             UIView.animate(
                 withDuration: 0.3
                 , animations: {
@@ -123,6 +126,6 @@ class OCRViewController: UIViewController {
     @objc func keyboardDown() {
         self.view.transform = .identity
     }
-
-
+    
+    
 }
